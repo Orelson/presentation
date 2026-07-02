@@ -10,25 +10,26 @@ export const SlideContent = ({ slide }) => {
   const { type, content } = slide;
 
   // 1. COVER SLIDE - EXACT MATCH TO OFFICIAL CAMEPT POSTER
+  // 1. COVER SLIDE - ULTRA-OPTIMIZED INSTITUTIONAL MASTERPIECE
   if (type === 'cover') {
     return (
-      <div className="w-full h-full relative flex flex-col justify-between bg-white text-gray-800 overflow-hidden select-none font-sans">
-        {/* TOP TIER: Official Logos & Presidential Patronage */}
-        <header className="relative z-30 w-full px-4 sm:px-6 lg:px-10 pt-3 sm:pt-4 pb-2 flex flex-col items-center flex-shrink-0 bg-white shadow-xs">
-          {/* 3 Logos Row */}
-          <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-4 mb-2">
+      <div className="w-full h-full relative flex flex-col justify-between bg-white text-slate-800 overflow-hidden select-none font-sans">
+        {/* 1. TOP TIER: Official Header & Presidential Patronage */}
+        <header className="relative z-30 w-full px-4 sm:px-6 lg:px-10 pt-3 sm:pt-4 pb-2 flex flex-col items-center flex-shrink-0 bg-white border-b border-slate-100 shadow-2xs">
+          {/* Three Logos Row */}
+          <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-4 mb-2">
             {/* Left: République Gabonaise */}
-            <div className="flex items-center space-x-2 border border-gray-200 bg-gray-50/80 px-2.5 py-1 rounded-lg shadow-2xs">
+            <div className="flex items-center space-x-2.5 bg-slate-50 border border-slate-200/80 px-3 py-1.5 rounded-xl shadow-2xs">
               <div className="flex flex-col space-y-0.5 w-4 overflow-hidden rounded-xs shadow-2xs flex-shrink-0">
                 <div className="h-1.5 bg-[#009e60] w-full" />
                 <div className="h-1.5 bg-[#fcd116] w-full" />
                 <div className="h-1.5 bg-[#3a75c4] w-full" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-[10px] sm:text-2xs font-black tracking-wider uppercase text-gray-900 leading-none">
+                <span className="text-[11px] sm:text-xs font-black tracking-wider uppercase text-slate-900 leading-none">
                   République Gabonaise
                 </span>
-                <span className="text-[8px] sm:text-[9px] font-bold tracking-widest uppercase text-camept-blue leading-tight mt-0.5">
+                <span className="text-[8px] sm:text-[9px] font-bold tracking-widest uppercase text-[#0B63A3] leading-tight mt-0.5">
                   Union • Travail • Justice
                 </span>
               </div>
@@ -36,191 +37,182 @@ export const SlideContent = ({ slide }) => {
 
             {/* Center: BENZEI GROUP */}
             <div className="flex flex-col items-center justify-center text-center">
-              <div className="flex items-center justify-center space-x-0.5 mb-0.5 text-amber-600">
+              <div className="flex items-center justify-center space-x-1 mb-0.5 text-amber-600">
                 <Icons.Triangle className="w-4 h-4 fill-amber-600 stroke-amber-700 -rotate-12 transform" />
-                <Icons.Triangle className="w-5 h-5 fill-gray-800 stroke-gray-900 -mt-1 transform" />
+                <Icons.Triangle className="w-5 h-5 fill-slate-800 stroke-slate-900 -mt-1 transform" />
                 <Icons.Triangle className="w-4 h-4 fill-amber-500 stroke-amber-600 rotate-12 transform" />
               </div>
-              <span className="font-serif font-black tracking-tight text-xs sm:text-sm text-gray-900 uppercase leading-none">
+              <span className="font-serif font-black tracking-tight text-xs sm:text-sm text-slate-900 uppercase leading-none">
                 BENZEI GROUP
               </span>
-              <span className="text-[7px] sm:text-[8px] font-bold tracking-widest text-gray-500 uppercase mt-0.5">
+              <span className="text-[7px] sm:text-[8px] font-bold tracking-widest text-slate-500 uppercase mt-0.5">
                 Conseil, Lobbying & Ingénierie Stratégique
               </span>
             </div>
 
             {/* Right: Afrika Transtour */}
             <div className="flex flex-col items-end justify-center">
-              <span className="font-serif font-black tracking-tighter text-lg sm:text-2xl text-[#F26E21] leading-none">
+              <span className="font-serif font-black tracking-tighter text-xl sm:text-2xl text-[#F26E21] leading-none">
                 Āfrika
               </span>
-              <span className="font-sans font-black tracking-tight text-sm sm:text-lg text-[#0B63A3] leading-none -mt-1">
+              <span className="font-sans font-black tracking-tight text-base sm:text-lg text-[#0B63A3] leading-none -mt-1">
                 Transtour
               </span>
             </div>
           </div>
 
-          {/* Patronage Line */}
+          {/* Patronage Sub-header */}
           <div className="flex flex-col items-center text-center mt-1">
-            <span className="text-2xs sm:text-xs font-semibold text-gray-600">
+            <span className="text-2xs sm:text-xs font-bold uppercase tracking-widest text-slate-500">
               Sous le Haut Parrainage de
             </span>
-            <span className="text-xs sm:text-sm md:text-base lg:text-lg font-black text-[#0B3B60] tracking-tight mt-0.5">
-              SEM Brice Clotaire Oligui N'Guema, Président de la République
+            <span className="text-xs sm:text-sm md:text-base lg:text-lg font-black text-[#0A3A60] tracking-tight mt-0.5">
+              SEM Brice Clotaire OLIGUI N'GUEMA, Président de la République
             </span>
-            <div className="w-16 h-0.5 bg-[#0B3B60]/40 rounded-full mt-1.5" />
+            <div className="w-20 h-0.5 bg-gradient-to-r from-[#F26E21] via-[#fcd116] to-[#0A3A60] rounded-full mt-1.5" />
           </div>
         </header>
 
-        {/* CENTER TIER: 3-Image Slanted Collage + Center Emblem + Title */}
-        <div className="relative flex-1 w-full min-h-0 flex flex-col items-center justify-between overflow-hidden z-10">
-          {/* Slanted Background Triptych */}
-          <div className="absolute inset-0 w-full h-full flex overflow-hidden bg-gray-900">
-            {/* Center image (Refinery & Female African Engineer) - covers full background */}
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1400&q=80"
-              alt="Ingénieure CAMEPT"
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-95"
-            />
-            {/* Left slanted image (Port & Shipping Logistics) */}
-            <div
-              className="absolute left-0 top-0 w-[38%] h-full overflow-hidden z-10 shadow-2xl"
-              style={{ clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)' }}
-            >
+        {/* 2. CENTER TIER: Architectural Triptych Showcase + CAMEPT Emblem Card */}
+        <div className="relative flex-1 w-full min-h-0 flex flex-col items-center justify-center p-3 sm:p-4 lg:p-6 overflow-hidden bg-gradient-to-b from-slate-50 via-blue-50/25 to-white z-10">
+          {/* Background Architectural Triptych Grid (No buggy clip-paths) */}
+          <div className="absolute inset-0 grid grid-cols-3 gap-1.5 opacity-30 pointer-events-none overflow-hidden">
+            <div className="w-full h-full relative overflow-hidden bg-slate-900">
               <img
                 src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
-                alt="Logistique Portuaire"
-                className="w-full h-full object-cover object-left"
+                alt="Logistique & Transports"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-y-0 right-0 w-1 bg-white shadow-lg transform -skew-x-[12deg] translate-x-1" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0A3A60]/40 to-transparent" />
             </div>
-            {/* Right slanted image (Mining Caterpillar Excavator) */}
-            <div
-              className="absolute right-0 top-0 w-[38%] h-full overflow-hidden z-10 shadow-2xl"
-              style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}
-            >
+            <div className="w-full h-full relative overflow-hidden bg-slate-900">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80"
+                alt="Ingénierie & Énergies"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+            </div>
+            <div className="w-full h-full relative overflow-hidden bg-slate-900">
               <img
                 src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80"
-                alt="Exploitation Minière"
-                className="w-full h-full object-cover object-right"
+                alt="Mines & Extraction"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-y-0 left-0 w-1 bg-white shadow-lg transform -skew-x-[12deg] -translate-x-1" />
+              <div className="absolute inset-0 bg-gradient-to-l from-[#F26E21]/30 to-transparent" />
             </div>
-
-            {/* Top-center white glow to ensure emblem and text legibility over sky */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 md:w-3/5 h-3/4 bg-gradient-to-b from-white via-white/95 to-transparent z-10 pointer-events-none blur-xs" />
           </div>
 
-          {/* CAMEPT Logo Emblem & Main Title Overlay */}
-          <div className="relative z-20 flex flex-col items-center text-center mt-2 sm:mt-3 px-4 max-w-4xl mx-auto">
-            {/* CAMEPT Emblem + Text Row */}
+          {/* Majestic Center Glassmorphic Emblem Box */}
+          <div className="relative z-20 w-full max-w-4xl mx-auto my-auto flex flex-col items-center">
             <motion.div
-              className="flex items-center justify-center space-x-3 sm:space-x-4 mb-2"
-              initial={{ opacity: 0, scale: 0.9 }}
+              className="bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_20px_60px_-15px_rgba(10,58,96,0.25)] rounded-3xl p-5 sm:p-7 md:p-9 w-full flex flex-col items-center justify-center text-center relative overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              {/* Circular Emblem Badge */}
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white shadow-xl border-4 border-white flex items-center justify-center overflow-hidden flex-shrink-0">
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-camept-blue/40 m-1 animate-spin-slow" />
-                <div className="grid grid-cols-2 gap-1 p-2 w-full h-full items-center justify-items-center">
-                  <div className="p-1 rounded bg-green-100 text-green-700"><Icons.Pickaxe className="w-3.5 h-3.5 sm:w-4 sm:h-4" /></div>
-                  <div className="p-1 rounded bg-yellow-100 text-yellow-600"><Icons.Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" /></div>
-                  <div className="p-1 rounded bg-orange-100 text-orange-600"><Icons.Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4" /></div>
-                  <div className="p-1 rounded bg-blue-100 text-blue-700"><Icons.Ship className="w-3.5 h-3.5 sm:w-4 sm:h-4" /></div>
-                </div>
-                <div className="absolute bottom-0.5 inset-x-0 bg-[#0B3B60] text-white text-[5px] sm:text-[6px] font-black tracking-tighter text-center py-0.5 uppercase">
-                  Dév. & Progrès
-                </div>
+              {/* Top Sector Badges Row */}
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <span className="bg-green-50 border border-green-200/80 text-green-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
+                  <Icons.Pickaxe className="w-3.5 h-3.5" />
+                  <span>Mines</span>
+                </span>
+                <span className="bg-amber-50 border border-amber-200/80 text-amber-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
+                  <Icons.Zap className="w-3.5 h-3.5" />
+                  <span>Énergies</span>
+                </span>
+                <span className="bg-orange-50 border border-orange-200/80 text-orange-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
+                  <Icons.Flame className="w-3.5 h-3.5" />
+                  <span>Pétrole</span>
+                </span>
+                <span className="bg-blue-50 border border-blue-200/80 text-blue-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
+                  <Icons.Ship className="w-3.5 h-3.5" />
+                  <span>Transports</span>
+                </span>
               </div>
 
-              {/* CAMEPT Giant Letters */}
-              <div className="flex flex-col text-left">
-                <span className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[#0A3A60] leading-none drop-shadow-sm">
-                  CAMEPT
-                </span>
-                <span className="text-[9px] sm:text-xs md:text-sm font-extrabold tracking-wider text-gray-800 uppercase mt-0.5 leading-tight">
-                  Congrès Africain des Mines, des Énergies, du Pétrole et des Transports
-                </span>
+              {/* CAMEPT Title */}
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#0A3A60] tracking-tighter leading-none font-sans drop-shadow-xs">
+                CAMEPT <span className="text-[#F26E21]">2026</span>
+              </h1>
+              
+              <p className="text-xs sm:text-sm md:text-base font-extrabold text-slate-700 tracking-wider uppercase mt-2 max-w-2xl leading-snug">
+                Congrès Africain des Mines, des Énergies, du Pétrole et des Transports
+              </p>
+
+              <div className="inline-flex items-center space-x-1.5 bg-orange-50 border border-orange-200/80 text-[#F26E21] px-3.5 py-0.5 rounded-full font-black text-[10px] sm:text-2xs uppercase tracking-widest mt-2.5 shadow-2xs">
+                <span>DÉVELOPPEMENT & PROGRÈS AFRICAIN</span>
+              </div>
+
+              {/* Main Banner */}
+              <div className="mt-4 sm:mt-6 w-full max-w-2xl">
+                <div className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-[#0A3A60] via-[#0E4F84] to-[#0A3A60] text-white font-black text-base sm:text-xl md:text-2xl tracking-tight uppercase shadow-xl border border-blue-300/30">
+                  Activités Phares du CAMEPT
+                </div>
               </div>
             </motion.div>
-
-            {/* ACTIVITÉS PHARES DU CAMEPT Banner */}
-            <motion.h1
-              className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase text-[#0A3A60] bg-white/90 backdrop-blur-md px-6 sm:px-8 py-1.5 sm:py-2 rounded-full border border-blue-200/80 shadow-lg mt-1 sm:mt-2"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Activités Phares du CAMEPT
-            </motion.h1>
           </div>
 
-          {/* 5 Horizontal Activity Cards Floating over Bottom Edge of Image */}
-          <motion.div
-            className="relative z-30 w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mb-3 sm:mb-4"
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
+          {/* 3. THE 5 ACTIVITY CARDS ROW (Floating at Bottom of Hero) */}
+          <div className="relative z-30 w-full max-w-7xl mx-auto px-2 sm:px-4 mt-auto pt-4 flex-shrink-0">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3.5">
               {/* Card 1 */}
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-2 sm:p-3 border border-white/90 flex items-center space-x-2.5 hover:-translate-y-1 transition-all">
-                <div className="bg-[#F26E21] text-white p-2 sm:p-2.5 rounded-xl shadow-md flex-shrink-0">
-                  <Icons.Store className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#F26E21] to-[#d8580c] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+                  <Icons.Store className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <span className="text-[#F26E21] font-black text-xs sm:text-sm leading-tight">
                   Exposition commerciale
                 </span>
               </div>
               {/* Card 2 */}
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-2 sm:p-3 border border-white/90 flex items-center space-x-2.5 hover:-translate-y-1 transition-all">
-                <div className="bg-[#108A7E] text-white p-2 sm:p-2.5 rounded-xl shadow-md flex-shrink-0">
-                  <Icons.Users className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#108A7E] to-[#0b665d] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+                  <Icons.Users className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <span className="text-[#108A7E] font-black text-xs sm:text-sm leading-tight">
                   Forum de discussion international
                 </span>
               </div>
               {/* Card 3 */}
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-2 sm:p-3 border border-white/90 flex items-center space-x-2.5 hover:-translate-y-1 transition-all">
-                <div className="bg-[#0A588C] text-white p-2 sm:p-2.5 rounded-xl shadow-md flex-shrink-0">
-                  <Icons.Handshake className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#0B63A3] to-[#084877] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+                  <Icons.Handshake className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <span className="text-[#0A588C] font-black text-xs sm:text-sm leading-tight">
+                <span className="text-[#0B63A3] font-black text-xs sm:text-sm leading-tight">
                   Rencontres B2B, B2G et G2G
                 </span>
               </div>
               {/* Card 4 */}
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-2 sm:p-3 border border-white/90 flex items-center space-x-2.5 hover:-translate-y-1 transition-all">
-                <div className="bg-[#A6886A] text-white p-2 sm:p-2.5 rounded-xl shadow-md flex-shrink-0">
-                  <Icons.UsersRound className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#A6886A] to-[#80664d] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+                  <Icons.UsersRound className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <span className="text-[#2C221E] font-black text-xs sm:text-sm leading-tight">
+                <span className="text-[#403025] font-black text-xs sm:text-sm leading-tight">
                   Business Club
                 </span>
               </div>
               {/* Card 5 */}
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-2 sm:p-3 border border-white/90 flex items-center space-x-2.5 hover:-translate-y-1 transition-all col-span-2 sm:col-span-1">
-                <div className="bg-[#2B8C3E] text-white p-2 sm:p-2.5 rounded-xl shadow-md flex-shrink-0">
-                  <Icons.Utensils className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group col-span-2 sm:col-span-1">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#2B8C3E] to-[#1e662c] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+                  <Icons.Utensils className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <span className="text-[#2B8C3E] font-black text-xs sm:text-sm leading-tight">
                   Banquet officiel
                 </span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* BOTTOM TIER: Orange Footer Banner */}
-        <footer className="relative z-30 w-full bg-[#F26E21] text-white px-4 sm:px-6 lg:px-10 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-lg flex-shrink-0 text-xs sm:text-sm font-bold">
+        {/* 4. BOTTOM TIER: Official Orange Footer Bar */}
+        <footer className="relative z-30 w-full bg-[#F26E21] text-white px-4 sm:px-6 lg:px-10 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-xl flex-shrink-0 text-xs sm:text-sm font-bold">
           {/* Left: Sponsor */}
-          <div className="flex items-center space-x-2">
-            <span className="font-extrabold tracking-wider uppercase text-2xs sm:text-xs">SPONSOR</span>
-            <div className="bg-white px-2.5 py-0.5 rounded shadow-sm flex items-center space-x-1.5">
-              <Icons.Globe className="w-3.5 h-3.5 text-[#0A588C]" />
-              <span className="font-black tracking-wider text-[#0A588C] text-xs uppercase">INFRAGROUP</span>
+          <div className="flex items-center space-x-2.5">
+            <span className="font-extrabold tracking-wider uppercase text-2xs sm:text-xs text-orange-100">SPONSOR</span>
+            <div className="bg-white px-3 py-0.5 rounded shadow-sm flex items-center space-x-1.5">
+              <Icons.Globe className="w-3.5 h-3.5 text-[#0B63A3]" />
+              <span className="font-black tracking-wider text-[#0B63A3] text-xs uppercase">INFRAGROUP</span>
             </div>
           </div>
 
@@ -230,22 +222,22 @@ export const SlideContent = ({ slide }) => {
               <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center shadow-2xs">
                 <Icons.Mail className="w-3 h-3" />
               </div>
-              <span className="text-white">afrikatranstour@gmail.com</span>
+              <span>afrikatranstour@gmail.com</span>
             </div>
             <div className="flex items-center space-x-1.5">
               <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center shadow-2xs">
                 <Icons.Phone className="w-3 h-3" />
               </div>
-              <span className="text-white">+225 07 69 00 59 59</span>
+              <span>+225 07 69 00 59 59</span>
             </div>
           </div>
 
           {/* Right: Social & CAMEPT */}
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-1">
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px]">f</div>
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px]">in</div>
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px]">𝕏</div>
+              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px] shadow-2xs">f</div>
+              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px] shadow-2xs">in</div>
+              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px] shadow-2xs">𝕏</div>
             </div>
             <span className="font-black tracking-wider text-sm sm:text-base ml-1">CAMEPT</span>
           </div>
