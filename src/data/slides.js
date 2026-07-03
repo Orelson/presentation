@@ -760,45 +760,87 @@ export const slidesData = [
   },
   {
     id: 24,
-    type: "organizers",
-    title: "Les Structures Organisatrices",
-    subtitle: "L'alliance de l'événementiel institutionnel et du conseil stratégique international.",
-    headerCategory: "GOUVERNANCE & ORGANISATION",
+    type: "gov-expectations",
+    title: "Attentes institutionnelles vis-à-vis du Gouvernement",
+    subtitle: "Pour garantir le rayonnement et la portée stratégique du CAMEPT, un portage institutionnel fort du Gouvernement gabonais est essentiel.",
+    headerCategory: "ENGAGEMENT INSTITUTIONNEL & PORTAGE POLITIQUE",
     content: {
-      columns: [
+      cards: [
         {
-          name: "Afrika Transtour",
-          role: "Opérateur leader en mobilité intelligente, logistique événementielle VIP et organisation de sommets institutionnels en Afrique depuis plus de 15 ans.",
-          color: "orange"
+          title: "Portage officiel",
+          desc: "Délivrance d’un accord formel de <strong class='text-[#083f63] font-black'>Haut Parrainage</strong> ou d’un mandat à Afrika Transtour pour l’organisation du CAMEPT au Gabon, sous l’autorité du Gouvernement.",
+          icon: "Award",
+          accent: "orange"
         },
         {
-          name: "Benzei Group",
-          role: "Cabinet international de conseil en stratégie, intermédiation d’affaires, dialogue B2G et structuration de projets souverains.",
-          color: "blue"
+          title: "Communication gouvernementale",
+          desc: "Préparation d’une communication afférente au <strong class='text-[#083f63] font-black'>Conseil des Ministres</strong>.",
+          icon: "FileText",
+          accent: "blue"
+        },
+        {
+          title: "Mobilisation diplomatique de haut niveau",
+          desc: "Invitation, par le <strong class='text-[#083f63] font-black'>Chef de l’État</strong>, des plus hautes autorités ciblées : Président de la Côte d’Ivoire, Roi du Maroc, Président de la <strong class='text-[#083f63] font-black'>BAD</strong>, <strong class='text-[#083f63] font-black'>Banque mondiale</strong>, SFI, Africa50.",
+          icon: "Globe",
+          accent: "green"
+        },
+        {
+          title: "Mobilisation ministérielle",
+          desc: "Invitation des ministres techniques de la Côte d’Ivoire, du Maroc et de certains homologues de la <strong class='text-[#083f63] font-black'>CEMAC</strong> par les ministres sectoriels gabonais.",
+          icon: "Users",
+          accent: "cyan"
         }
       ],
-      closingSentence: "Une synergie paritaire pour garantir le standard d'excellence du CAMEPT 2026."
+      closingSentence: "Un portage politique clair renforcera la crédibilité, l’attractivité et la mobilisation internationale autour du CAMEPT."
     }
   },
   {
     id: 25,
-    type: "leader",
-    title: "Magnatié BAMBA",
-    subtitle: "PDG de Benzei Group • DG AFRIKA TRANSTOUR • Présidente du CAMEPT",
-    headerCategory: "GOUVERNANCE & ORGANISATION",
+    type: "gov-operations",
+    title: "Mobilisation opérationnelle et suivi post-CAMEPT",
+    subtitle: "Au-delà du portage institutionnel, la réussite du CAMEPT repose sur la mobilisation des structures nationales, des projets prioritaires et d’un mécanisme de suivi durable.",
+    headerCategory: "FEUILLE DE ROUTE OPÉRATIONNELLE & SUIVI DURABLE",
     content: {
-      credentials: "MBA de la Sorbonne Paris • Plus de 25 années d'expérience",
-      bio: "Experte multisecteur sur les sujets de développement : transports, emploi des jeunes, financement, intermédiation institutionnelle et diplomatique.",
-      roles: [
-        { title: "PDG", org: "Benzei Group" },
-        { title: "DG", org: "AFRIKA TRANSTOUR" },
-        { title: "Présidente", org: "CAMEPT" }
+      blocks: [
+        {
+          step: "01",
+          title: "Communication institutionnelle",
+          desc: "Autorisation d’une communication institutionnelle officielle autour de l’événement.",
+          icon: "Volume2",
+          color: "blue"
+        },
+        {
+          step: "02",
+          title: "Mobilisation nationale",
+          desc: "Mobilisation des structures sous tutelle nationales autour de l’événement.",
+          icon: "Building2",
+          color: "blue"
+        },
+        {
+          step: "03",
+          title: "Préparation des boardrooms",
+          desc: "Mise à disposition des projets clés pour la préparation des <strong class='text-[#f05a00] font-black'>boardrooms de financement</strong>.",
+          icon: "Briefcase",
+          color: "orange",
+          highlight: "boardrooms de financement"
+        },
+        {
+          step: "04",
+          title: "Implication du secteur privé",
+          desc: "Implication de la FEG ainsi que de tout autre acteur économique majeur.",
+          icon: "TrendingUp",
+          color: "green"
+        },
+        {
+          step: "05",
+          title: "Suivi technique et financier",
+          desc: "Autorisation de mise en place d’un comité de suivi-évaluation technique et financier sur une période allant de <strong class='text-[#f05a00] font-black px-1.5 py-0.5 bg-orange-100/80 rounded'>3 à 36 mois</strong>.",
+          icon: "LineChart",
+          color: "dark",
+          badge: "3 à 36 mois"
+        }
       ],
-      highlights: [
-        { year: "FISAT", title: "Commissaire Générale", desc: "Forum International des Transports : 8 éditions réussies - Partenariat CEDEAO et UEMOA." },
-        { year: "2024", title: "Prix d'Excellence", desc: "Distinction solennelle reçue au Palais Présidentiel d'Abidjan." },
-        { year: "25+ ans", title: "D'expérience", desc: "Expertise en intermédiation institutionnelle et diplomatique (MBA Sorbonne Paris)." }
-      ]
+      closingSentence: "Cette mobilisation permettra de transformer le CAMEPT en mécanisme durable de structuration, de financement et de suivi des projets prioritaires."
     }
   },
   {
@@ -835,6 +877,49 @@ export const slidesData = [
   },
   {
     id: 27,
+    type: "organizers",
+    title: "Les Structures Organisatrices",
+    subtitle: "L'alliance de l'événementiel institutionnel et du conseil stratégique international.",
+    headerCategory: "GOUVERNANCE & ORGANISATION",
+    content: {
+      columns: [
+        {
+          name: "Afrika Transtour",
+          role: "Opérateur leader en mobilité intelligente, logistique événementielle VIP et organisation de sommets institutionnels en Afrique depuis plus de 15 ans.",
+          color: "orange"
+        },
+        {
+          name: "Benzei Group",
+          role: "Cabinet international de conseil en stratégie, intermédiation d’affaires, dialogue B2G et structuration de projets souverains.",
+          color: "blue"
+        }
+      ],
+      closingSentence: "Une synergie paritaire pour garantir le standard d'excellence du CAMEPT 2026."
+    }
+  },
+  {
+    id: 28,
+    type: "leader",
+    title: "Magnatié BAMBA",
+    subtitle: "PDG de Benzei Group • DG AFRIKA TRANSTOUR • Présidente du CAMEPT",
+    headerCategory: "GOUVERNANCE & ORGANISATION",
+    content: {
+      credentials: "MBA de la Sorbonne Paris • Plus de 25 années d'expérience",
+      bio: "Experte multisecteur sur les sujets de développement : transports, emploi des jeunes, financement, intermédiation institutionnelle et diplomatique.",
+      roles: [
+        { title: "PDG", org: "Benzei Group" },
+        { title: "DG", org: "AFRIKA TRANSTOUR" },
+        { title: "Présidente", org: "CAMEPT" }
+      ],
+      highlights: [
+        { year: "FISAT", title: "Commissaire Générale", desc: "Forum International des Transports : 8 éditions réussies - Partenariat CEDEAO et UEMOA." },
+        { year: "2024", title: "Prix d'Excellence", desc: "Distinction solennelle reçue au Palais Présidentiel d'Abidjan." },
+        { year: "25+ ans", title: "D'expérience", desc: "Expertise en intermédiation institutionnelle et diplomatique (MBA Sorbonne Paris)." }
+      ]
+    }
+  },
+  {
+    id: 29,
     type: "closing",
     title: "Remerciements solennels & Clôture officielle",
     subtitle: "La gratitude de l'organisation envers les plus hautes autorités et nos partenaires stratégiques",
@@ -873,7 +958,7 @@ export const slidesData = [
     }
   },
   {
-    id: 28,
+    id: 30,
     type: "final_thanks",
     title: "Remerciements & Clôture",
     subtitle: "Gratitude de l'organisation",

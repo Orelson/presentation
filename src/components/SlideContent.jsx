@@ -1568,6 +1568,156 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
+  // 20b. GOV EXPECTATIONS SLIDE (Slide 24) - ATTENTES INSTITUTIONNELLES
+  if (type === 'gov-expectations') {
+    const accentColors = {
+      orange: { bg: 'bg-[#f05a00]/10', text: 'text-[#f05a00]', border: 'border-t-4 border-t-[#f05a00]' },
+      blue: { bg: 'bg-[#083f63]/10', text: 'text-[#083f63]', border: 'border-t-4 border-t-[#083f63]' },
+      green: { bg: 'bg-[#159b37]/10', text: 'text-[#159b37]', border: 'border-t-4 border-t-[#159b37]' },
+      cyan: { bg: 'bg-[#00a7c8]/10', text: 'text-[#00a7c8]', border: 'border-t-4 border-t-[#00a7c8]' },
+    };
+
+    return (
+      <div className="w-full h-full flex flex-col justify-between gap-4 sm:gap-5">
+        {/* Grille 2x2 des 4 cartes institutionnelles premium */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 flex-1 items-stretch">
+          {content.cards.map((card, idx) => {
+            const IconC = Icons[card.icon] || Icons.Award;
+            const style = accentColors[card.accent] || accentColors.blue;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className={`bg-white rounded-2xl p-5 sm:p-6 shadow-xl border border-slate-200/80 flex flex-col justify-between hover:shadow-2xl transition-all relative overflow-hidden ${style.border}`}
+              >
+                <div className="flex items-start space-x-4 mb-3">
+                  <div className={`p-3 rounded-xl ${style.bg} flex-shrink-0`}>
+                    <IconC className={`w-6 h-6 ${style.text}`} />
+                  </div>
+                  <div className="flex-1">
+                    <span className="text-3xs font-black uppercase tracking-widest text-slate-400 block mb-0.5">
+                      Volet Institutionnel 0{idx + 1}
+                    </span>
+                    <h3 className="text-base sm:text-lg font-black text-[#f05a00] leading-tight">
+                      {card.title}
+                    </h3>
+                  </div>
+                </div>
+                <div className="text-xs sm:text-sm font-medium text-[#1f2933] leading-relaxed pl-13 sm:pl-16">
+                  <span dangerouslySetInnerHTML={{ __html: card.desc }} />
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Phrase de clôture en bas de slide */}
+        <div className="p-3.5 sm:p-4 rounded-xl bg-gradient-to-r from-[#083f63] via-[#0b63a3] to-[#083f63] text-white text-center font-extrabold text-xs sm:text-sm md:text-base shadow-lg border border-white/10 flex items-center justify-center space-x-3 flex-shrink-0">
+          <Icons.CheckCircle2 className="w-5 h-5 text-[#f7c400] flex-shrink-0" />
+          <span className="leading-snug">{content.closingSentence}</span>
+        </div>
+      </div>
+    );
+  }
+
+  // 20c. GOV OPERATIONS SLIDE (Slide 25) - MOBILISATION OPÉRATIONNELLE ET SUIVI
+  if (type === 'gov-operations') {
+    return (
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~33% width): Photo institutionnelle sobre (réunion de travail / boardroom) */}
+        <div className="lg:col-span-4 flex flex-col justify-between h-full gap-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full rounded-[24px] shadow-2xl overflow-hidden border-2 border-white/80 min-h-[250px] lg:min-h-[350px] flex flex-col justify-end"
+          >
+            <img
+              src={imgSlide12Boardrooms}
+              alt="Réunion de travail institutionnelle et comité technique en Boardroom"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/50 to-transparent" />
+            <div className="relative z-10 p-5 text-white">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-2 shadow-md">
+                Dispositif Pérenne
+              </span>
+              <h4 className="text-base sm:text-lg font-black leading-tight mb-2 text-[#f7c400]">
+                De l'événementiel à l'exécution durable
+              </h4>
+              <p className="text-3xs sm:text-2xs font-semibold leading-snug text-gray-200">
+                Une synergie continue entre représentants publics, IFI et secteur privé pour concrétiser les accords issus des <strong className="text-white font-bold underline decoration-[#f05a00]">boardrooms de financement</strong>.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* RIGHT ZONE (~67% width): Les 5 blocs en chaîne de valeur / parcours progressif */}
+        <div className="lg:col-span-8 flex flex-col justify-between h-full gap-3 sm:gap-3.5">
+          <div className="space-y-2.5 flex-1 flex flex-col justify-between">
+            {content.blocks.map((block, idx) => {
+              const IconC = Icons[block.icon] || Icons.Briefcase;
+              const isPriority = block.color === 'orange' || block.color === 'dark';
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: idx * 0.08 }}
+                  className={`p-3 sm:p-3.5 rounded-xl shadow-md border transition-all flex items-center space-x-3.5 ${
+                    isPriority
+                      ? 'bg-gradient-to-r from-[#083f63] to-[#0b63a3] text-white border-white/20'
+                      : 'bg-white text-[#1f2933] border-slate-200/80 hover:border-[#083f63]/30'
+                  }`}
+                >
+                  <div className="flex items-center space-x-2.5 flex-shrink-0">
+                    <span className={`text-xs font-black px-2 py-1 rounded ${
+                      isPriority ? 'bg-[#f05a00] text-white shadow' : 'bg-[#083f63]/10 text-[#083f63]'
+                    }`}>
+                      {block.step}
+                    </span>
+                    <div className={`p-2 rounded-lg ${
+                      isPriority ? 'bg-white/10 text-[#f7c400]' : 'bg-[#f05a00]/10 text-[#f05a00]'
+                    }`}>
+                      <IconC className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className={`text-xs sm:text-sm font-black leading-tight ${
+                        isPriority ? 'text-[#f7c400]' : 'text-[#083f63]'
+                      }`}>
+                        {block.title}
+                      </h4>
+                      {block.badge && (
+                        <span className="text-3xs sm:text-2xs font-black px-2 py-0.5 rounded bg-[#f05a00] text-white flex-shrink-0 uppercase tracking-wider shadow">
+                          {block.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p className={`text-3xs sm:text-2xs mt-0.5 leading-snug ${
+                      isPriority ? 'text-gray-100 font-medium' : 'text-slate-600 font-medium'
+                    }`}>
+                      <span dangerouslySetInnerHTML={{ __html: block.desc }} />
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Phrase de clôture */}
+          <div className="p-3 sm:p-3.5 rounded-xl bg-[#f05a00] text-white text-center font-extrabold text-xs sm:text-sm shadow-md flex items-center justify-center space-x-2 flex-shrink-0">
+            <Icons.TrendingUp className="w-4 h-4 text-white flex-shrink-0" />
+            <span className="leading-snug">{content.closingSentence}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // REUSABLE MANDATORY INSTITUTIONAL HEADER (For Organizers & Leader slides if needed independently)
   const renderInstitutionalHeader = () => null;
 

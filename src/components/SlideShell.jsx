@@ -4,7 +4,7 @@ import logoGabon from '../assets/logo-gabon.png';
 import logoAfrika from '../assets/logo-afrika.png';
 import logoBenzei from '../assets/logo-benzei.png';
 
-export const SlideShell = ({ slide, children, totalSlides = 27 }) => {
+export const SlideShell = ({ slide, children, totalSlides = 30 }) => {
   const isSpecialSlide = slide.type === 'cover' || slide.type === 'opening_poster' || slide.type === 'final_thanks' || slide.type === 'followup' || slide.type === 'closing';
 
   // Animation variants for smooth slide transitions (350 - 600 ms)
