@@ -64,8 +64,8 @@ const PalaisBackgroundSlideshow = () => {
           style={{ imageRendering: 'high-quality' }}
         />
       </AnimatePresence>
-      {/* Overlay blanc élégant et légèrement transparent (85%) pour adoucir le fond et rendre tout le texte parfaitement lisible */}
-      <div className="absolute inset-0 bg-white/85 transition-all duration-500" style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)' }} />
+      {/* Overlay blanc élégant sans flou pour une netteté cristalline et une qualité optimale des photos */}
+      <div className="absolute inset-0 bg-white/76 transition-all duration-500" />
     </div>
   );
 };
@@ -156,7 +156,7 @@ export const SlideContent = ({ slide }) => {
               <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-[#f05a00] tracking-tighter leading-none font-sans drop-shadow-xs">
                 2026
               </span>
-              <span className="text-xs sm:text-sm md:text-base font-extrabold text-[#083f63] uppercase tracking-widest mt-2 px-3 py-1 bg-[#083f63]/10 rounded-lg border border-[#083f63]/20">
+              <span className="text-xs sm:text-sm md:text-base font-black text-white uppercase tracking-widest mt-2 px-3.5 py-1.5 bg-[#083f63] rounded-lg border border-white/20 shadow-md">
                 1ère Édition
               </span>
             </div>
@@ -183,7 +183,7 @@ export const SlideContent = ({ slide }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-4 sm:mt-5 w-full max-w-6xl mx-auto bg-white/90 backdrop-blur-md border-2 border-[#083f63]/30 border-l-8 border-r-8 border-l-[#083f63] border-r-[#f05a00] p-5 sm:p-7 rounded-2xl shadow-lg"
+            className="mt-4 sm:mt-5 w-full max-w-6xl mx-auto bg-white/95 backdrop-blur-md border-2 border-[#083f63]/30 border-l-8 border-r-8 border-l-[#083f63] border-r-[#f05a00] p-5 sm:p-7 rounded-2xl shadow-xl"
           >
             <div className="inline-block px-4 py-1 rounded-full bg-[#083f63] text-white text-xs sm:text-sm font-black uppercase tracking-widest mb-3 shadow-xs">
               ★ Thème Général du Congrès ★
@@ -195,9 +195,9 @@ export const SlideContent = ({ slide }) => {
         </div>
 
         {/* BOTTOM LAYER: Discreet Centered Signature ONLY */}
-        <div className="w-full pt-4 border-t border-slate-100 flex items-center justify-center text-3xs sm:text-2xs font-bold text-slate-400 tracking-widest uppercase flex-shrink-0 relative z-20">
-          <span>
-            Organisé par <strong className="font-black text-[#083f63]">Benzei Group & Afrika Transtour</strong>
+        <div className="w-full pt-3 pb-1 flex items-center justify-center relative z-20">
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#083f63] border border-white/30 shadow-md text-2xs sm:text-xs font-bold text-white tracking-widest uppercase">
+            Organisé par <strong className="font-black text-[#f7c400]">Benzei Group & Afrika Transtour</strong>
           </span>
         </div>
       </div>
