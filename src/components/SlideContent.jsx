@@ -5,6 +5,9 @@ import { GeometricPanel } from './GeometricPanel';
 import { StatCard, InfoCard } from './StatCard';
 import { ProgramDay, DailyTimeline } from './ProgramDay';
 import { BoardroomMechanics, BoardroomDeliverables } from './BoardroomCard';
+import logoGabon from '../assets/logo-gabon.png';
+import logoAfrika from '../assets/logo-afrika.png';
+import logoBenzei from '../assets/logo-benzei.png';
 
 export const SlideContent = ({ slide }) => {
   const { type, content } = slide;
@@ -18,46 +21,19 @@ export const SlideContent = ({ slide }) => {
         <header className="relative z-30 w-full px-4 sm:px-6 lg:px-10 pt-3 sm:pt-4 pb-2 flex flex-col items-center flex-shrink-0 bg-white border-b border-slate-100 shadow-2xs">
           {/* Three Logos Row */}
           <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-4 mb-2">
-            {/* Left: République Gabonaise */}
-            <div className="flex items-center space-x-2.5 bg-slate-50 border border-slate-200/80 px-3 py-1.5 rounded-xl shadow-2xs">
-              <div className="flex flex-col space-y-0.5 w-4 overflow-hidden rounded-xs shadow-2xs flex-shrink-0">
-                <div className="h-1.5 bg-[#009e60] w-full" />
-                <div className="h-1.5 bg-[#fcd116] w-full" />
-                <div className="h-1.5 bg-[#3a75c4] w-full" />
-              </div>
-              <div className="flex flex-col text-left">
-                <span className="text-[11px] sm:text-xs font-black tracking-wider uppercase text-slate-900 leading-none">
-                  République Gabonaise
-                </span>
-                <span className="text-[8px] sm:text-[9px] font-bold tracking-widest uppercase text-[#0B63A3] leading-tight mt-0.5">
-                  Union • Travail • Justice
-                </span>
-              </div>
+            {/* Extreme Left: République Gabonaise */}
+            <div className="flex items-center justify-start">
+              <img src={logoGabon} alt="République Gabonaise" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain" />
             </div>
 
-            {/* Center: BENZEI GROUP */}
-            <div className="flex flex-col items-center justify-center text-center">
-              <div className="flex items-center justify-center space-x-1 mb-0.5 text-amber-600">
-                <Icons.Triangle className="w-4 h-4 fill-amber-600 stroke-amber-700 -rotate-12 transform" />
-                <Icons.Triangle className="w-5 h-5 fill-slate-800 stroke-slate-900 -mt-1 transform" />
-                <Icons.Triangle className="w-4 h-4 fill-amber-500 stroke-amber-600 rotate-12 transform" />
-              </div>
-              <span className="font-serif font-black tracking-tight text-xs sm:text-sm text-slate-900 uppercase leading-none">
-                BENZEI GROUP
-              </span>
-              <span className="text-[7px] sm:text-[8px] font-bold tracking-widest text-slate-500 uppercase mt-0.5">
-                Conseil, Lobbying & Ingénierie Stratégique
-              </span>
+            {/* Middle: Afrika Transtour */}
+            <div className="flex items-center justify-center">
+              <img src={logoAfrika} alt="Afrika Transtour" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain" />
             </div>
 
-            {/* Right: Afrika Transtour */}
-            <div className="flex flex-col items-end justify-center">
-              <span className="font-serif font-black tracking-tighter text-xl sm:text-2xl text-[#F26E21] leading-none">
-                Āfrika
-              </span>
-              <span className="font-sans font-black tracking-tight text-base sm:text-lg text-[#0B63A3] leading-none -mt-1">
-                Transtour
-              </span>
+            {/* Right: Benzei Group */}
+            <div className="flex items-center justify-end">
+              <img src={logoBenzei} alt="Benzei Group" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain" />
             </div>
           </div>
 

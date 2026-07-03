@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoGabon from '../assets/logo-gabon.png';
+import logoAfrika from '../assets/logo-afrika.png';
+import logoBenzei from '../assets/logo-benzei.png';
 
 export const SlideShell = ({ slide, children }) => {
   const isSpecialSlide = slide.type === 'cover' || slide.type === 'closing';
@@ -52,28 +55,28 @@ export const SlideShell = ({ slide, children }) => {
           <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#0B63A3_1px,transparent_1px),linear-gradient(to_bottom,#0B63A3_1px,transparent_1px)] bg-[size:32px_32px]" />
         </div>
 
-        {/* Institutional Top Bar (for internal slides) */}
-        {!isSpecialSlide && (
-          <header className="relative z-20 px-4 sm:px-6 lg:px-8 py-2.5 bg-white/95 backdrop-blur-md border-b border-gray-200/80 flex items-center justify-between flex-wrap gap-2 flex-shrink-0 shadow-2xs">
+        {/* Institutional Top Bar (for all slides except cover which has its own custom hero header) */}
+        {slide.type !== 'cover' && (
+          <header className="relative z-20 px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 bg-white/98 backdrop-blur-md border-b border-gray-200/80 flex items-center justify-between gap-4 flex-shrink-0 shadow-xs">
+            {/* Extreme Left: République Gabonaise */}
             <div className="flex items-center space-x-3">
-              <div className="flex items-center space-x-1.5 border-r border-gray-300 pr-3">
-                <div className="w-3.5 h-2.5 bg-green-600 rounded-2xs" />
-                <div className="w-3.5 h-2.5 bg-yellow-400 rounded-2xs -ml-2" />
-                <div className="w-3.5 h-2.5 bg-blue-600 rounded-2xs -ml-2" />
-                <span className="text-2xs sm:text-xs font-bold text-gray-700 tracking-wider uppercase ml-1">
-                  République Gabonaise
+              <img src={logoGabon} alt="République Gabonaise" className="h-8 sm:h-9 lg:h-11 w-auto object-contain" />
+              {slide.headerCategory && (
+                <span className="hidden sm:inline-block text-2xs sm:text-xs font-extrabold px-2.5 py-1 rounded bg-[#0A3A60]/10 text-[#0A3A60] tracking-wider uppercase">
+                  {slide.headerCategory}
                 </span>
-              </div>
-              <span className="text-2xs sm:text-xs font-semibold text-gray-500 uppercase tracking-widest hidden sm:inline">
-                Benzei Group • Afrika Transtour
-              </span>
+              )}
             </div>
 
-            <div className="flex items-center space-x-2 sm:space-x-3">
-              <span className="text-2xs sm:text-xs font-extrabold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-camept-blue/10 text-camept-blue tracking-wider uppercase">
-                {slide.headerCategory}
-              </span>
-              <div className="flex items-center font-sans font-extrabold tracking-tighter text-xs sm:text-sm lg:text-base text-camept-dark">
+            {/* Middle: Afrika Transtour */}
+            <div className="flex items-center justify-center">
+              <img src={logoAfrika} alt="Afrika Transtour" className="h-6 sm:h-8 lg:h-9 w-auto object-contain" />
+            </div>
+
+            {/* Right: Benzei Group + CAMEPT Badge */}
+            <div className="flex items-center space-x-3 sm:space-x-4">
+              <img src={logoBenzei} alt="Benzei Group" className="h-8 sm:h-9 lg:h-11 w-auto object-contain" />
+              <div className="flex items-center font-sans font-black tracking-tighter text-xs sm:text-sm lg:text-base text-camept-dark border-l border-gray-200 pl-3">
                 <span>CAMEPT</span>
                 <span className="text-camept-orange ml-0.5">2026</span>
               </div>
