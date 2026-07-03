@@ -64,8 +64,8 @@ const PalaisBackgroundSlideshow = () => {
           style={{ imageRendering: 'high-quality' }}
         />
       </AnimatePresence>
-      {/* Overlay blanc élégant sans flou pour une netteté cristalline et une qualité optimale des photos */}
-      <div className="absolute inset-0 bg-white/76 transition-all duration-500" />
+      {/* Overlay blanc élégant et légèrement transparent (85%) pour adoucir le fond et rendre tout le texte parfaitement lisible */}
+      <div className="absolute inset-0 bg-white/85 transition-all duration-500" style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)' }} />
     </div>
   );
 };
