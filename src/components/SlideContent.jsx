@@ -18,18 +18,20 @@ import contextEngineer from '../assets/context-engineer.png';
 import whyGabonRig from '../assets/why-gabon-rig.jpg';
 import visionEngineer from '../assets/vision-engineer.png';
 import targetsEnergy from '../assets/targets-energy.png';
+import coverPoster from '../assets/visuel-12m2-v1.png';
+import heroImg from '../assets/hero.png';
 
 const PALAIS_IMAGES = [
-  '/palais/DJI_20260303182439_0768_D-scaled.webp',
-  '/palais/DJI_20260303182451_0770_D-scaled.webp',
-  '/palais/DJI_20260303182605_0775_D-scaled.webp',
-  '/palais/DJI_20260303182645_0778_D-scaled.webp',
-  '/palais/FS5A1774-scaled.webp',
-  '/palais/FS5A1780-scaled.webp',
-  '/palais/FS5A2021-scaled.webp',
-  '/palais/FS5A2024-scaled.webp',
-  '/palais/FS5A2027-scaled.webp',
-  '/palais/FS5A2040-scaled.webp'
+  './palais/DJI_20260303182439_0768_D-scaled.webp',
+  './palais/DJI_20260303182451_0770_D-scaled.webp',
+  './palais/DJI_20260303182605_0775_D-scaled.webp',
+  './palais/DJI_20260303182645_0778_D-scaled.webp',
+  './palais/FS5A1774-scaled.webp',
+  './palais/FS5A1780-scaled.webp',
+  './palais/FS5A2021-scaled.webp',
+  './palais/FS5A2024-scaled.webp',
+  './palais/FS5A2027-scaled.webp',
+  './palais/FS5A2040-scaled.webp'
 ];
 
 const PalaisBackgroundSlideshow = () => {
@@ -72,7 +74,7 @@ export const SlideContent = ({ slide }) => {
     return (
       <div className="relative w-full h-full min-h-full flex items-center justify-center bg-gray-950 overflow-hidden px-4 pt-2 pb-14 sm:px-6 sm:pt-4 sm:pb-16 lg:px-8 lg:pt-4 lg:pb-16">
         <img
-          src={content.image || "/visuel-12m2-v1.png"}
+          src={content.image && !content.image.startsWith('/') ? content.image : coverPoster}
           alt="Couverture Officielle CAMEPT 2026"
           className="w-full h-full object-contain object-center transition-transform duration-700 hover:scale-[1.01]"
           style={{ imageRendering: 'high-quality' }}
@@ -295,7 +297,7 @@ export const SlideContent = ({ slide }) => {
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "/logo-camept.png";
+                  e.target.src = logoCamept;
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/90 via-transparent to-transparent" />
@@ -377,7 +379,7 @@ export const SlideContent = ({ slide }) => {
                 src={whyGabonRig}
                 alt="Plateforme pétrolière et richesses offshore du Gabon"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png'; }}
+                onError={(e) => { e.target.onerror = null; e.target.src = heroImg; }}
               />
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
@@ -460,7 +462,7 @@ export const SlideContent = ({ slide }) => {
                 alt="Leadership et Souveraineté Industrielle en Afrique"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 style={{ imageRendering: 'high-quality' }}
-                onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png'; }}
+                onError={(e) => { e.target.onerror = null; e.target.src = heroImg; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
 
@@ -692,7 +694,7 @@ export const SlideContent = ({ slide }) => {
                 src={targetsEnergy}
                 alt="Transformation structurelle et énergies vertes en Afrique"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png'; }}
+                onError={(e) => { e.target.onerror = null; e.target.src = heroImg; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/25 to-transparent" />
 

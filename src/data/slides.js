@@ -5,7 +5,7 @@ export const slidesData = [
     title: "Affiche Officielle CAMEPT 2026",
     subtitle: "Congrès Africain des Mines, des Énergies, du Pétrole et des Transports",
     content: {
-      image: "/visuel-12m2-v1.png"
+      image: "./visuel-12m2-v1.png"
     }
   },
   {
