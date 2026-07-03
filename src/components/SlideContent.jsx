@@ -13,7 +13,7 @@ import logoCamept from '../assets/logo-camept.png';
 import roiMaroc from '../assets/roi-maroc.png';
 import presidentCI from '../assets/president-ci.png';
 import bambaGallery4 from '../assets/bamba-gallery-3.jpg';
-import bambaPhotoFinal from '../assets/bamba-gallery-4.jpg';
+import bambaPhotoFinal from '../assets/bamba-trophy.jpg';
 import contextEngineer from '../assets/context-engineer.png';
 import whyGabonRig from '../assets/why-gabon-rig.jpg';
 import visionEngineer from '../assets/vision-engineer.png';
@@ -54,10 +54,11 @@ const PalaisBackgroundSlideshow = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.8, ease: "easeInOut" }}
           className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ imageRendering: 'high-quality' }}
         />
       </AnimatePresence>
-      {/* Overlay dégradé blanc élégant pour garantir 100% de lisibilité du texte et du logo */}
-      <div className="absolute inset-0 bg-white/82 backdrop-blur-[2px] transition-all duration-500" />
+      {/* Overlay blanc élégant sans flou pour une netteté cristalline et une qualité optimale des photos */}
+      <div className="absolute inset-0 bg-white/76 transition-all duration-500" />
     </div>
   );
 };
@@ -66,17 +67,17 @@ export const SlideContent = ({ slide }) => {
   const { type, content } = slide;
   const [galleryTab, setGalleryTab] = React.useState(0);
 
-  // 0. OPENING POSTER SLIDE - FULLSCREEN COVER POSTER
+  // 0. OPENING POSTER SLIDE - FULLSCREEN COVER POSTER WITHOUT CROPPING
   if (type === 'opening_poster') {
     return (
-      <div className="relative w-full h-full min-h-full flex items-center justify-center bg-gray-950 overflow-hidden group">
+      <div className="relative w-full h-full min-h-full flex items-center justify-center bg-gray-950 overflow-hidden px-4 pt-2 pb-14 sm:px-6 sm:pt-4 sm:pb-16 lg:px-8 lg:pt-4 lg:pb-16">
         <img
           src={content.image || "/visuel-12m2-v1.png"}
           alt="Couverture Officielle CAMEPT 2026"
-          className="w-full h-full object-cover sm:object-contain object-center transition-transform duration-700 group-hover:scale-[1.01]"
+          className="w-full h-full object-contain object-center transition-transform duration-700 hover:scale-[1.01]"
           style={{ imageRendering: 'high-quality' }}
         />
-        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_50px_rgba(0,0,0,0.3)]" />
+        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_40px_rgba(0,0,0,0.4)]" />
       </div>
     );
   }
@@ -1594,67 +1595,71 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
-  // 27. FINAL THANKS SLIDE - EXECUTIVE BLUE WITH MME BAMBA PHOTO & BALANCED LOGOS
+  // 27. FINAL THANKS SLIDE - EXECUTIVE BLUE WITH MME BAMBA TROPHY PHOTO & BALANCED LOGOS
   if (type === 'final_thanks') {
     return (
-      <div className="w-full h-full min-h-full flex flex-col justify-between bg-gradient-to-br from-[#083f63] via-[#052942] to-[#01121f] text-white p-6 sm:p-8 lg:p-10 relative overflow-hidden font-sans select-none">
+      <div className="w-full h-full min-h-full flex flex-col justify-between bg-gradient-to-br from-[#041a2f] via-[#083f63] to-[#02101e] text-white p-6 sm:p-8 lg:p-10 relative overflow-hidden font-sans select-none">
         
         {/* Background Decorative Accents */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#f05a00]/20 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-500/15 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-[#f05a00]/25 via-camept-yellow/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-cyan-400/15 via-blue-600/10 to-transparent rounded-full blur-3xl" />
           <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
-        {/* Top Equilibrium Bar: All Official Logos Balanced */}
+        {/* Top Equilibrium Bar: All Official Logos Balanced in Symmetric Glory */}
         <motion.header 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative z-20 w-full max-w-6xl mx-auto bg-white/95 backdrop-blur-md px-6 sm:px-10 py-3 sm:py-4 rounded-2xl shadow-xl border border-white/20 flex items-center justify-between gap-4 sm:gap-8 flex-shrink-0"
+          className="relative z-20 w-full max-w-6xl mx-auto bg-white/95 backdrop-blur-md px-6 sm:px-10 py-3 sm:py-4 rounded-2xl shadow-2xl border border-white/30 flex items-center justify-between gap-4 sm:gap-8 flex-shrink-0"
         >
           {/* République Gabonaise */}
           <div className="flex items-center">
-            <img src={logoGabon} alt="République Gabonaise" className="h-12 sm:h-16 lg:h-[68px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
+            <img src={logoGabon} alt="République Gabonaise" className="h-14 sm:h-18 lg:h-[76px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
           </div>
           {/* Afrika Transtour */}
           <div className="flex items-center justify-center">
-            <img src={logoAfrika} alt="Afrika Transtour" className="h-10 sm:h-14 lg:h-[60px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
+            <img src={logoAfrika} alt="Afrika Transtour" className="h-12 sm:h-16 lg:h-[68px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
           </div>
           {/* Benzei Group */}
           <div className="flex items-center">
-            <img src={logoBenzei} alt="Benzei Group" className="h-12 sm:h-16 lg:h-[68px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
+            <img src={logoBenzei} alt="Benzei Group" className="h-14 sm:h-18 lg:h-[76px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
           </div>
           {/* CAMEPT 2026 */}
           <div className="flex items-center justify-center border-l-2 border-slate-200 pl-4 sm:pl-6">
-            <div className="font-sans font-black tracking-tighter text-base sm:text-xl lg:text-2xl text-[#083f63] flex items-center">
+            <div className="font-sans font-black tracking-tighter text-lg sm:text-xl lg:text-3xl text-[#083f63] flex items-center">
               <span>CAMEPT</span>
               <span className="text-[#f05a00] ml-1">2026</span>
             </div>
           </div>
         </motion.header>
 
-        {/* Center Zone: Mme BAMBA Photo & Majestic Typography */}
-        <div className="relative z-10 flex-1 flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto my-auto py-6">
-          {/* Left Side: Photo of Mme BAMBA */}
+        {/* Center Zone: Mme BAMBA Trophy Showcase & Solennel Gratitude Typography */}
+        <div className="relative z-10 flex-1 flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-14 max-w-6xl mx-auto my-auto py-6">
+          {/* Left Side: Photo of Mme BAMBA with Prix d'Excellence Trophy */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, x: -30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative flex-shrink-0 group"
           >
-            <div className="absolute -inset-2 bg-gradient-to-tr from-[#f05a00] via-camept-yellow to-white rounded-[2rem] blur-md opacity-75 group-hover:opacity-100 transition duration-500" />
-            <div className="relative w-52 h-64 sm:w-60 sm:h-76 lg:w-68 lg:h-84 rounded-[1.75rem] overflow-hidden shadow-2xl border-2 border-white/40 bg-slate-900">
+            <div className="absolute -inset-3 bg-gradient-to-tr from-[#f05a00] via-camept-yellow to-white rounded-[2.25rem] blur-xl opacity-70 group-hover:opacity-100 transition duration-500" />
+            <div className="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-[320px] lg:h-[410px] rounded-[2rem] overflow-hidden shadow-2xl border-2 border-white/50 bg-slate-900 flex flex-col justify-end">
               <img 
                 src={bambaPhotoFinal} 
-                alt="Magnatié BAMBA" 
-                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                alt="Magnatié BAMBA - Prix d'Excellence 2024" 
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                style={{ imageRendering: 'high-quality' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-center">
-                <h4 className="text-base sm:text-lg font-black text-white tracking-wide">Magnatié BAMBA</h4>
-                <p className="text-[10px] sm:text-2xs font-extrabold text-camept-yellow uppercase tracking-widest mt-0.5">Directrice Générale, Afrika Transtour</p>
-                <p className="text-[9px] font-bold text-white/90 uppercase tracking-wider mt-1 bg-white/10 px-2 py-0.5 rounded-full inline-block backdrop-blur-xs border border-white/10">Co-Organisatrice CAMEPT 2026</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#041a2f] via-[#041a2f]/40 to-transparent" />
+              <div className="relative z-10 p-5 text-center bg-[#041a2f]/85 backdrop-blur-md border-t border-white/20">
+                <span className="text-[10px] sm:text-2xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-2 shadow-md">
+                  ★ Prix d'Excellence 2024 ★
+                </span>
+                <h4 className="text-lg sm:text-xl font-black text-white tracking-wide">Magnatié BAMBA</h4>
+                <p className="text-xs font-extrabold text-camept-yellow uppercase tracking-widest mt-0.5">Directrice Générale, Afrika Transtour</p>
+                <p className="text-[10px] font-bold text-slate-300 uppercase tracking-wider mt-1">Co-Organisatrice CAMEPT 2026</p>
               </div>
             </div>
           </motion.div>
@@ -1664,28 +1669,29 @@ export const SlideContent = ({ slide }) => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col items-center md:items-start text-center md:text-left space-y-5 max-w-xl"
+            className="flex flex-col items-center md:items-start text-center md:text-left space-y-6 max-w-2xl"
           >
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-camept-yellow font-black text-xs uppercase tracking-widest shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#f05a00] animate-pulse" />
-              <span>Gratitude & Clôture Officielle</span>
+            <div className="inline-flex items-center space-x-2.5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-camept-yellow font-black text-xs sm:text-sm uppercase tracking-widest shadow-lg">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#f05a00] animate-ping" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#f05a00] absolute" />
+              <span>Clôture Solennelle & Gratitude</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-camept-yellow drop-shadow-lg">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-camept-yellow drop-shadow-2xl">
               JE VOUS REMERCIE
             </h1>
 
-            <p className="text-sm sm:text-base lg:text-lg font-medium text-slate-200 leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg lg:text-xl font-medium text-slate-200 leading-relaxed max-w-xl">
               Pour votre aimable attention, votre confiance institutionnelle et votre engagement solennel envers l’essor d’une Afrique souveraine, industrielle et prospère.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
-              <span className="px-4 py-2 rounded-xl bg-[#f05a00] text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-[#f05a00]/30 border border-white/20">
-                Rendez-vous à Libreville • 02-04 Sept. 2026
-              </span>
-              <span className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md text-white font-extrabold text-xs uppercase tracking-wider border border-white/20">
-                Palais des Congrès Omar Bongo
-              </span>
+            <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-4">
+              <div className="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#f05a00] to-[#d04a00] text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-[#f05a00]/30 border border-white/25 flex items-center space-x-2">
+                <span>Rendez-vous à Libreville • 02-04 Sept. 2026</span>
+              </div>
+              <div className="px-5 py-3 rounded-2xl bg-white/10 backdrop-blur-md text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider border border-white/20">
+                <span>Palais des Congrès Omar Bongo</span>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -1695,14 +1701,14 @@ export const SlideContent = ({ slide }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="relative z-20 w-full max-w-6xl mx-auto bg-black/40 backdrop-blur-md px-6 sm:px-8 py-3 rounded-2xl border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300 font-semibold flex-shrink-0"
+          className="relative z-20 w-full max-w-6xl mx-auto bg-black/40 backdrop-blur-md px-6 sm:px-8 py-3.5 rounded-2xl border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-slate-300 font-semibold flex-shrink-0"
         >
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 rounded-full bg-camept-yellow" />
-            <span className="text-white font-extrabold">CAMEPT 2026 • LIBREVILLE, GABON</span>
+          <div className="flex items-center space-x-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-camept-yellow" />
+            <span className="text-white font-extrabold tracking-wide">CAMEPT 2026 • 1Ère ÉDITION • LIBREVILLE, GABON</span>
           </div>
           <div className="flex items-center space-x-4">
-            <span>Sous le Haut Parrainage de S.E.M. Brice Clotaire OLIGUI N'GUEMA</span>
+            <span className="text-camept-yellow font-bold">Sous le Haut Parrainage de S.E.M. Brice Clotaire OLIGUI N'GUEMA</span>
           </div>
         </motion.footer>
       </div>
