@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoGabon from '../assets/logo-gabon.png';
 import logoAfrika from '../assets/logo-afrika.png';
@@ -56,12 +56,12 @@ export const SlideShell = ({ slide, children, totalSlides = 24 }) => {
         </div>
 
         {/* Mandatory Institutional Top Bar on ALL slides (Increased height, larger logos, pure transparent backgrounds) */}
-        <header className="relative z-20 w-full px-6 sm:px-8 lg:px-12 py-3 sm:py-4 bg-white/98 backdrop-blur-md border-b-2 border-[#083f63] flex items-center justify-between gap-6 flex-shrink-0 shadow-xs min-h-[76px] max-h-[115px]">
+        <header className="relative z-20 w-full px-6 sm:px-8 lg:px-12 py-3 sm:py-3.5 bg-white/98 backdrop-blur-md border-b-2 border-[#083f63] flex items-center justify-between gap-6 flex-shrink-0 shadow-xs min-h-[90px] max-h-[135px]">
           {/* Extreme Left: République Gabonaise */}
-          <div className="flex items-center space-x-4">
-            <img src={logoGabon} alt="République Gabonaise" className="h-12 sm:h-14 lg:h-16 w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+          <div className="flex items-center space-x-4 sm:space-x-5">
+            <img src={logoGabon} alt="République Gabonaise" className="h-16 sm:h-20 lg:h-[96px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
             {slide.headerCategory && slide.type !== 'cover' && (
-              <span className="hidden sm:inline-block text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded bg-[#083f63]/10 text-[#083f63] tracking-wider uppercase border border-[#083f63]/20">
+              <span className="hidden sm:inline-block text-[11px] sm:text-xs font-extrabold px-3.5 py-1.5 rounded bg-[#083f63]/10 text-[#083f63] tracking-wider uppercase border border-[#083f63]/20">
                 {slide.headerCategory}
               </span>
             )}
@@ -69,13 +69,13 @@ export const SlideShell = ({ slide, children, totalSlides = 24 }) => {
 
           {/* Middle: Afrika Transtour */}
           <div className="flex items-center justify-center">
-            <img src={logoAfrika} alt="Afrika Transtour" className="h-10 sm:h-12 lg:h-14 w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+            <img src={logoAfrika} alt="Afrika Transtour" className="h-14 sm:h-[72px] lg:h-[88px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
           </div>
 
           {/* Right: Benzei Group + CAMEPT 2026 Badge */}
-          <div className="flex items-center space-x-4 sm:space-x-5">
-            <img src={logoBenzei} alt="Benzei Group" className="h-12 sm:h-14 lg:h-16 w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
-            <div className="hidden md:flex items-center font-sans font-black tracking-tighter text-sm sm:text-base lg:text-lg text-[#083f63] border-l-2 border-gray-200 pl-4">
+          <div className="flex items-center space-x-4 sm:space-x-6">
+            <img src={logoBenzei} alt="Benzei Group" className="h-16 sm:h-20 lg:h-[96px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+            <div className="hidden md:flex items-center font-sans font-black tracking-tighter text-base sm:text-lg lg:text-2xl text-[#083f63] border-l-2 border-gray-300 pl-4 sm:pl-5">
               <span>CAMEPT</span>
               <span className="text-[#f05a00] ml-0.5">2026</span>
             </div>
