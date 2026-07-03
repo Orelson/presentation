@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Leftover root files
+couverture-officielle.png
+palais/
+docs/
+president.png
+slide-expert-panel.jpg
+slide-ribbon-cutting.jpg
+visuel-*.png
