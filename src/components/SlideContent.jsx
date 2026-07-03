@@ -20,6 +20,11 @@ import visionEngineer from '../assets/vision-engineer.png';
 import targetsEnergy from '../assets/targets-energy.png';
 import coverPoster from '../assets/visuel-12m2-v1.png';
 import heroImg from '../assets/hero.png';
+import imgSlide5Pndt from '../assets/slide5-pndt-port.jpg';
+import imgSlide7Platform from '../assets/slide7-camept-plenary.jpg';
+import imgSlide12Boardrooms from '../assets/slide12-boardrooms-meeting.jpg';
+import imgSlide14Program from '../assets/slide14-programme-hall.jpg';
+import imgSlide16Day2 from '../assets/slide16-jour2-financement.jpg';
 
 const PALAIS_IMAGES = [
   './palais/DJI_20260303182439_0768_D-scaled.webp',
@@ -568,94 +573,151 @@ export const SlideContent = ({ slide }) => {
   }
 
   // 5. PNCD SLIDE - CONSOLIDATED NATIONAL PORTFOLIO & STRATEGIC FOCUS
+  // 5. PNCD SLIDE - CONSOLIDATED NATIONAL PORTFOLIO & STRATEGIC FOCUS (2-zone with situational image)
   if (type === 'pncd') {
     return (
-      <div className="flex flex-col justify-start gap-4 sm:gap-5 w-full">
-        {/* Top Stats Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 flex-shrink-0">
-          {content.stats?.map((st, idx) => (
-            <StatCard
-              key={idx}
-              value={st.value}
-              unit={st.unit}
-              label={st.label}
-              accent={st.accent}
-              delay={idx * 0.15}
-            />
-          ))}
-        </div>
-
-        {/* 4 Strategic Sector Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch w-full">
-          {content.sectors?.map((sec, idx) => {
-            const IconComponent = Icons[sec.icon] || Icons.HelpCircle;
-            return (
-              <motion.div
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~60% width): Stats, 4 Sectors & Key Message */}
+        <div className="lg:col-span-7 flex flex-col justify-between h-full gap-4 sm:gap-5">
+          {/* Top Stats Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 flex-shrink-0">
+            {content.stats?.map((st, idx) => (
+              <StatCard
                 key={idx}
-                className="p-4 sm:p-5 rounded-xl bg-white shadow-card hover:shadow-elevated transition-all border-t-8 border-camept-blue flex flex-col justify-between h-full"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
-              >
-                <div>
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-2xs sm:text-xs px-2.5 py-1 rounded-full bg-camept-orange/10 text-camept-orange font-bold uppercase tracking-wider">
-                      {sec.share}
-                    </span>
-                    <IconComponent className="w-6 h-6 text-camept-blue flex-shrink-0" />
+                value={st.value}
+                unit={st.unit}
+                label={st.label}
+                accent={st.accent}
+                delay={idx * 0.15}
+              />
+            ))}
+          </div>
+
+          {/* 4 Strategic Sector Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 items-stretch w-full flex-1">
+            {content.sectors?.map((sec, idx) => {
+              const IconComponent = Icons[sec.icon] || Icons.HelpCircle;
+              return (
+                <motion.div
+                  key={idx}
+                  className="p-3.5 sm:p-4 rounded-xl bg-white shadow-card hover:shadow-elevated transition-all border-t-4 border-camept-blue flex flex-col justify-between h-full"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.2 + idx * 0.08 }}
+                >
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-2xs sm:text-xs px-2 py-0.5 rounded-full bg-camept-orange/10 text-camept-orange font-bold uppercase tracking-wider">
+                        {sec.share}
+                      </span>
+                      <IconComponent className="w-5 h-5 text-camept-blue flex-shrink-0" />
+                    </div>
+                    <h3 className="text-sm sm:text-base font-extrabold text-camept-dark mb-1 leading-tight">{sec.title}</h3>
+                    <p className="text-2xs sm:text-xs text-gray-600 leading-relaxed line-clamp-3">{sec.desc}</p>
                   </div>
-                  <h3 className="text-base sm:text-lg font-extrabold text-camept-dark mb-2 leading-tight">{sec.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{sec.desc}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Key Message Ribbon */}
+          {content.keyMessage && (
+            <div className="p-3 sm:p-3.5 bg-gradient-to-r from-camept-yellow/30 via-amber-100/50 to-camept-yellow/30 rounded-xl text-center border border-camept-yellow flex items-center justify-center space-x-2 flex-shrink-0 shadow-2xs">
+              <Icons.Zap className="w-4 h-4 text-camept-orange flex-shrink-0 fill-current" />
+              <p className="text-2xs sm:text-xs md:text-sm font-extrabold text-camept-darker">
+                {content.keyMessage}
+              </p>
+            </div>
+          )}
         </div>
 
-        {/* Key Message Ribbon */}
-        {content.keyMessage && (
-          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-camept-yellow/30 via-amber-100/50 to-camept-yellow/30 rounded-xl text-center border border-camept-yellow flex items-center justify-center space-x-2.5 flex-shrink-0 mt-auto shadow-2xs">
-            <Icons.Zap className="w-5 h-5 text-camept-orange flex-shrink-0 fill-current" />
-            <p className="text-xs sm:text-sm md:text-base font-extrabold text-camept-darker">
-              {content.keyMessage}
-            </p>
-          </div>
-        )}
+        {/* RIGHT ZONE (~40% width): Image institutionnelle & corridor logistique */}
+        <div className="lg:col-span-5 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full rounded-[24px] shadow-2xl overflow-hidden border-2 border-white/80 min-h-[350px] lg:min-h-[450px]"
+          >
+            <img
+              src={imgSlide5Pndt}
+              alt="Projets prioritaires PNDT, infrastructures, port et transformation économique"
+              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5 text-white">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-2 shadow-md">
+                Infrastructures & Corridors
+              </span>
+              <p className="text-sm sm:text-base font-extrabold leading-snug">
+                Projets structurants, modernisation logistique et essor industriel du Gabon.
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
     );
   }
 
-  // 7. PLATFORM SLIDE
+  // 7. PLATFORM SLIDE (2-zone with situational image)
   if (type === 'platform') {
     return (
-      <div className="flex flex-col justify-start gap-4 sm:gap-5 w-full">
-        <div className="flex flex-col sm:flex-row items-center justify-between p-5 sm:p-6 bg-gradient-to-r from-camept-blue via-camept-dark to-camept-blue text-white rounded-xl shadow-elevated flex-shrink-0">
-          <div className="flex items-baseline space-x-3">
-            <span className="text-4xl sm:text-6xl font-black text-camept-yellow font-sans">{content.mainStat.number}</span>
-            <span className="text-lg sm:text-xl font-bold uppercase tracking-wide">Décideurs & Délégués</span>
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~60% width): Main Stat, Stakeholders Grid, Key Message */}
+        <div className="lg:col-span-7 flex flex-col justify-between h-full gap-4 sm:gap-5">
+          <div className="flex flex-col sm:flex-row items-center justify-between p-4 sm:p-5 bg-gradient-to-r from-camept-blue via-camept-dark to-camept-blue text-white rounded-xl shadow-elevated flex-shrink-0">
+            <div className="flex items-baseline space-x-3">
+              <span className="text-3xl sm:text-5xl font-black text-camept-yellow font-sans">{content.mainStat.number}</span>
+              <span className="text-base sm:text-lg font-bold uppercase tracking-wide">Décideurs & Délégués</span>
+            </div>
+            <p className="text-2xs sm:text-xs max-w-sm text-gray-200 mt-1 sm:mt-0 font-medium text-center sm:text-right">
+              {content.mainStat.label}
+            </p>
           </div>
-          <p className="text-xs sm:text-sm max-w-md text-gray-200 mt-2 sm:mt-0 font-medium text-center sm:text-right">
-            {content.mainStat.label}
-          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 items-stretch w-full flex-1">
+            {content.stakeholders.map((stk, idx) => (
+              <InfoCard
+                key={idx}
+                title={stk.title}
+                description={stk.desc}
+                icon={stk.icon}
+                color={idx % 2 === 0 ? 'blue' : 'orange'}
+                delay={0.15 + idx * 0.06}
+                className="h-full"
+              />
+            ))}
+          </div>
+
+          <div className="p-3.5 bg-gray-100 rounded-xl text-center font-bold text-2xs sm:text-xs text-camept-dark flex items-center justify-center space-x-2 flex-shrink-0 border border-gray-200 shadow-2xs">
+            <Icons.ShieldCheck className="w-4 h-4 text-camept-blue flex-shrink-0" />
+            <span>{content.keyMessage}</span>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch w-full">
-          {content.stakeholders.map((stk, idx) => (
-            <InfoCard
-              key={idx}
-              title={stk.title}
-              description={stk.desc}
-              icon={stk.icon}
-              color={idx % 2 === 0 ? 'blue' : 'orange'}
-              delay={0.2 + idx * 0.08}
-              className="h-full"
+        {/* RIGHT ZONE (~40% width): Image plénière CAMEPT */}
+        <div className="lg:col-span-5 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full rounded-[24px] shadow-2xl overflow-hidden border-2 border-white/80 min-h-[350px] lg:min-h-[450px]"
+          >
+            <img
+              src={imgSlide7Platform}
+              alt="Plénière CAMEPT, networking de haut niveau, délégations et décideurs"
+              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
             />
-          ))}
-        </div>
-
-        <div className="p-4 bg-gray-100 rounded-xl text-center font-bold text-xs sm:text-sm text-camept-dark flex items-center justify-center space-x-2 flex-shrink-0 mt-auto border border-gray-200">
-          <Icons.ShieldCheck className="w-5 h-5 text-camept-blue flex-shrink-0" />
-          <span>{content.keyMessage}</span>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5 text-white">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-2 shadow-md">
+                Hub Panafricain
+              </span>
+              <p className="text-sm sm:text-base font-extrabold leading-snug">
+                Le carrefour exclusif des leaders publics, privés et investisseurs stratégiques.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     );
@@ -1144,24 +1206,161 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
-  // 15. PROGRAM OVERVIEW SLIDE - ARCHITECTURAL MASTERPIECE
+  // 15. PROGRAM OVERVIEW SLIDE - ARCHITECTURAL MASTERPIECE (2-zone with situational image)
   if (type === 'program-overview') {
     return (
-      <div className="flex flex-col justify-start gap-4 sm:gap-5 w-full">
-        <ProgramDay days={content.days} />
-        <div className="p-4 bg-gradient-to-r from-camept-dark via-black to-camept-dark text-white rounded-xl text-center font-bold text-xs sm:text-sm md:text-base flex items-center justify-center space-x-3 flex-shrink-0 mt-auto border border-camept-yellow/60 shadow-elevated">
-          <div className="p-1.5 rounded-full bg-camept-yellow/20 text-camept-yellow flex-shrink-0">
-            <Icons.Clock className="w-4 h-4" />
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~38% width): Image d'ambiance générale (hall d'accueil & networking) */}
+        <div className="lg:col-span-4 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full rounded-[24px] shadow-2xl overflow-hidden border-2 border-white/80 min-h-[350px] lg:min-h-[450px]"
+          >
+            <img
+              src={imgSlide14Program}
+              alt="Hall d'accueil et networking CAMEPT 2026"
+              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5 text-white">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-2 shadow-md">
+                Ambiance Panafricaine
+              </span>
+              <p className="text-sm sm:text-base font-extrabold leading-snug">
+                Accueil VIP, networking de rang ministériel et circulation fluidifiée.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* RIGHT ZONE (~62% width): Les 3 journées structurées et très lisibles */}
+        <div className="lg:col-span-8 flex flex-col justify-between h-full gap-4 sm:gap-5">
+          <div className="flex-1">
+            <ProgramDay days={content.days} layout="vertical-stack" />
           </div>
-          <span className="leading-snug">{content.dailyRhythm}</span>
+          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-[#083f63] via-[#0b63a3] to-[#083f63] text-white rounded-xl text-center font-bold text-xs sm:text-sm md:text-base flex items-center justify-center space-x-3 flex-shrink-0 border border-white/10 shadow-lg">
+            <div className="p-1.5 rounded-full bg-[#f7c400]/20 text-[#f7c400] flex-shrink-0">
+              <Icons.Clock className="w-5 h-5" />
+            </div>
+            <span className="leading-snug">{content.dailyRhythm}</span>
+          </div>
         </div>
       </div>
     );
   }
 
-  // 16, 17, 18. DAY 1, 2, 3 SLIDES
-  if (type === 'day1' || type === 'day2' || type === 'day3') {
+  // 16, 18. DAY 1, 3 SLIDES
+  if (type === 'day1' || type === 'day3') {
     return <DailyTimeline timeline={content.timeline} />;
+  }
+
+  // 17. DAY 2 SLIDE (2-zone with situational image & structured highlights)
+  if (type === 'day2') {
+    return (
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~60% width): 3 sections structurées et temps forts mis en avant */}
+        <div className="lg:col-span-7 flex flex-col justify-between h-full gap-4 sm:gap-5">
+          {/* Top banner: Temps forts mis visuellement en avant */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-[#083f63] to-[#1f2933] text-white shadow-xl border border-white/10 flex flex-col justify-between gap-3 flex-shrink-0">
+            <div className="flex items-center justify-between">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white">
+                Focus Opérationnel Jour 2
+              </span>
+              <span className="text-2xs font-bold text-[#f7c400]">Projets & Financements</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+              {[
+                { label: 'Business speed dating', icon: 'Clock' },
+                { label: 'Boardrooms deal', icon: 'Briefcase' },
+                { label: 'Clinique PPP', icon: 'TrendingUp' },
+                { label: 'Signature de LoI', icon: 'CheckCircle2' }
+              ].map((hf, idx) => {
+                const IconC = Icons[hf.icon] || Icons.CheckCircle2;
+                return (
+                  <div key={idx} className="p-2 sm:p-2.5 rounded-xl bg-white/10 border border-white/15 flex flex-col items-center text-center gap-1 hover:bg-white/20 transition-all">
+                    <IconC className="w-4 h-4 text-[#f7c400]" />
+                    <span className="text-[11px] sm:text-xs font-extrabold leading-tight text-white">{hf.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 3 Sections structurées : Énergie, Transports, Financement */}
+          <div className="grid grid-cols-1 gap-3 sm:gap-3.5 flex-1">
+            {[
+              {
+                title: '1. Énergie & Transition Énergétique',
+                desc: 'Hydroélectricité, mix solaire, sécurisation énergétique des zones industrielles et projets de barrages.',
+                color: 'border-l-[#083f63] bg-blue-50/40',
+                badge: 'Panel & Boardrooms'
+              },
+              {
+                title: '2. Transports & Infrastructures Stratégiques',
+                desc: 'Réhabilitation du Transgabonais, extension du Port en Eau Profonde, logistique multimodale et marine marchande.',
+                color: 'border-l-[#f05a00] bg-orange-50/40',
+                badge: 'Projets Structurants'
+              },
+              {
+                title: '3. Financement & Partenariats PPP',
+                desc: 'Ateliers cliniques PPP, mécanismes de garantie multilatérales, rencontres G2G et cocktail des investisseurs.',
+                color: 'border-l-[#159b37] bg-green-50/40',
+                badge: 'Clôture Financière'
+              }
+            ].map((sec, idx) => (
+              <motion.div
+                key={idx}
+                className={`p-3.5 sm:p-4 rounded-xl bg-white shadow-sm hover:shadow-md transition-all border border-gray-100 border-l-4 ${sec.color} flex flex-col justify-between`}
+                initial={{ opacity: 0, x: -15 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: idx * 0.1 }}
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <h4 className="text-xs sm:text-sm font-black text-[#1f2933] leading-snug">{sec.title}</h4>
+                  <span className="text-[10px] sm:text-2xs font-extrabold uppercase px-2 py-0.5 rounded bg-white border border-gray-200 text-gray-700">{sec.badge}</span>
+                </div>
+                <p className="text-2xs sm:text-xs text-gray-600 font-medium leading-relaxed">{sec.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="p-3 bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-between text-2xs sm:text-xs text-[#083f63] font-bold">
+            <span className="flex items-center gap-1.5">
+              <Icons.Award className="w-4 h-4 text-[#f05a00]" />
+              <span>Journée active, concrète et orientée signature de partenariats.</span>
+            </span>
+            <span className="text-gray-400 font-normal">03 Septembre 2026</span>
+          </div>
+        </div>
+
+        {/* RIGHT ZONE (~40% width): Grand cadre carré - Financement des infrastructures & partenariats */}
+        <div className="lg:col-span-5 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full rounded-[24px] shadow-2xl overflow-hidden border-2 border-white/80 min-h-[350px] lg:min-h-[450px]"
+          >
+            <img
+              src={imgSlide16Day2}
+              alt="Financement des infrastructures et partenariats PPP"
+              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5 text-white">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#159b37] text-white inline-block mb-2 shadow-md">
+                Financement & PPP
+              </span>
+              <p className="text-sm sm:text-base font-extrabold leading-snug">
+                Table de financement des infrastructures, structuration bancaire et accords G2G/B2B.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    );
   }
 
   // 19. GABON BENEFITS SLIDE

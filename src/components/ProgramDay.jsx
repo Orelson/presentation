@@ -2,9 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, CheckCircle2, Award, Briefcase, Mic2, Coffee, ArrowRight, Calendar, Sparkles, ChevronRight } from 'lucide-react';
 
-export const ProgramDay = ({ days }) => {
+export const ProgramDay = ({ days, layout }) => {
+  const gridClasses = layout === 'vertical-stack' 
+    ? 'flex flex-col gap-3.5 sm:gap-4 w-full' 
+    : 'grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 min-h-full items-stretch';
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 min-h-full items-stretch">
+    <div className={gridClasses}>
       {days.map((day, idx) => {
         const colorStyles = {
           'camept-blue': 'border-t-camept-blue bg-white hover:border-t-camept-blue-light',
