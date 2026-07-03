@@ -1253,6 +1253,65 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
+  // 15b. PROGRAM OVERVIEW SLIDE PART 2 - FOCUS JOUR 3 & MÉTHODOLOGIE
+  if (type === 'program-overview-p2') {
+    return (
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~50% width): Focus Jour 3 - Clôture et Signatures */}
+        <div className="lg:col-span-6 flex flex-col justify-between h-full gap-4">
+          <div className="flex-1">
+            <ProgramDay days={content.days} layout="vertical-stack" />
+          </div>
+          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-[#159b37] via-[#11802d] to-[#159b37] text-white rounded-xl text-center font-bold text-xs sm:text-sm md:text-base flex items-center justify-center space-x-3 flex-shrink-0 shadow-lg border border-white/10">
+            <div className="p-1.5 rounded-full bg-[#f7c400]/20 text-[#f7c400] flex-shrink-0">
+              <Icons.Award className="w-5 h-5" />
+            </div>
+            <span className="leading-snug">Clôture officielle : Déclaration de Libreville & Banquet de Gala</span>
+          </div>
+        </div>
+
+        {/* RIGHT ZONE (~50% width): Rythme quotidien et Méthodologie CAMEPT */}
+        <div className="lg:col-span-6 flex flex-col justify-between h-full gap-4">
+          <div className="p-5 rounded-2xl bg-gradient-to-br from-[#083f63] to-[#1f2933] text-white shadow-xl border border-white/10 flex flex-col justify-between flex-1">
+            <div>
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-3 shadow-md">
+                Méthodologie CAMEPT
+              </span>
+              <h3 className="text-lg sm:text-xl font-black tracking-tight leading-tight text-[#f7c400] mb-2">
+                {content.methodologyTitle || "Rythme quotidien des travaux"}
+              </h3>
+              <p className="text-xs sm:text-sm font-medium text-gray-200 leading-relaxed mb-4">
+                {content.dailyRhythm}
+              </p>
+            </div>
+
+            <div className="space-y-3 mt-auto">
+              {[
+                { time: "08h30 - 13h00 • Matinées", title: "Plénières Stratégiques & Débats Sectoriels", desc: "Vision souveraine, panels d'experts et partage d'expertises internationales.", icon: "Sun", color: "text-[#f7c400]" },
+                { time: "14h30 - 17h30 • Après-midis", title: "Boardrooms Investisseurs & Cliniques PPP", desc: "Négociations à huis clos, structuration financière et signatures d'accords.", icon: "Briefcase", color: "text-[#f05a00]" },
+                { time: "18h00 - 21h00 • Soirées", title: "Networking VIP & Banquets Officiels", desc: "Rencontres B2B/G2G de haut niveau et consolidation des partenariats.", icon: "Users", color: "text-emerald-400" }
+              ].map((step, idx) => {
+                const IconC = Icons[step.icon] || Icons.Clock;
+                return (
+                  <div key={idx} className="p-3 rounded-xl bg-white/10 border border-white/15 flex items-start space-x-3 hover:bg-white/15 transition-all">
+                    <div className="p-2 rounded-lg bg-white/10 flex-shrink-0 mt-0.5">
+                      <IconC className={`w-4 h-4 ${step.color}`} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-3xs sm:text-2xs font-extrabold uppercase tracking-wider text-gray-300 block">{step.time}</span>
+                      <h4 className="text-xs sm:text-sm font-bold text-white leading-tight mt-0.5">{step.title}</h4>
+                      <p className="text-3xs sm:text-2xs text-gray-200 mt-0.5 leading-snug">{step.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // 16, 18. DAY 1, 3 SLIDES
   if (type === 'day1' || type === 'day3') {
     return <DailyTimeline timeline={content.timeline} />;
