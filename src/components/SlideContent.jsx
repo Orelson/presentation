@@ -339,8 +339,8 @@ export const SlideContent = ({ slide }) => {
         </div>
 
         {/* ── RIGHT: 4 info cards stacked in 2Õ2 + key message ribbon ── */}
-        <div className="lg:col-span-7 flex flex-col gap-4 h-full">
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch min-h-0">
+        <div className="lg:col-span-7 flex flex-col justify-between gap-4 h-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 my-auto">
             {content.blocks.map((block, idx) => (
               <InfoCard
                 key={idx}
@@ -349,7 +349,7 @@ export const SlideContent = ({ slide }) => {
                 icon={block.icon}
                 color={block.color}
                 delay={idx * 0.1}
-                className="h-full"
+                className="shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200/80 bg-white"
               />
             ))}
           </div>
@@ -826,7 +826,7 @@ export const SlideContent = ({ slide }) => {
                       className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5"
                       style={{ background: a.accentColor + '25', color: a.accentColor, border: `1px solid ${a.accentColor}50` }}
                     >
-                      ⭐ Partenaire VIP
+                      ⭐ INVITÉ D'HONNEUR
                     </span>
                     {/* Country name */}
                     <h3 className="text-base sm:text-lg lg:text-xl font-black text-white leading-tight flex items-center gap-2">
@@ -1279,30 +1279,47 @@ export const SlideContent = ({ slide }) => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:col-span-7 flex flex-col justify-center"
           >
-            <span className="text-xs font-black uppercase tracking-widest text-[#f05a00] block mb-2">
-              • Leadership & Gouvernance
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-[#083f63] tracking-tight leading-none mb-3">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-[#083f63] tracking-tight leading-none mb-4">
               {slide.title}
             </h1>
-            <h2 className="text-base sm:text-lg lg:text-xl font-bold text-[#f05a00] mb-6">
-              {slide.subtitle}
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-700 leading-relaxed font-medium mb-10 max-w-2xl">
-              {content.bio}
-            </p>
 
-            {/* 3 repères clés épurés en ligne horizontale */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200">
+            {/* Subtitle / Roles Pills */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-5">
+              {content.roles ? (
+                content.roles.map((r, rIdx) => (
+                  <span key={rIdx} className="px-3.5 py-1.5 rounded-lg bg-[#083f63] text-white text-xs sm:text-sm font-black tracking-wide shadow-sm flex items-center gap-1.5 border border-white/10">
+                    <span className="text-[#f7c400] font-extrabold">•</span>
+                    <span className="text-[#f7c400]">{r.title}</span>
+                    <span className="text-white/95 font-bold">{r.org}</span>
+                  </span>
+                ))
+              ) : (
+                <h2 className="text-base sm:text-lg lg:text-xl font-bold text-[#f05a00]">
+                  {slide.subtitle}
+                </h2>
+              )}
+            </div>
+
+            {/* Bio / Expertise */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 mb-6 shadow-xs">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-800 leading-relaxed font-bold">
+                {content.bio}
+              </p>
+            </div>
+
+            {/* 3 repères clés en grille 3 colonnes */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-2 border-t border-slate-200">
               {content.highlights?.map((item, idx) => (
-                <div key={idx} className={`${idx > 0 ? 'sm:border-l sm:border-slate-200 sm:pl-6' : ''}`}>
-                  <span className="block text-2xl lg:text-3xl font-black text-[#083f63] leading-none mb-1">
-                    {item.year}
-                  </span>
-                  <span className="block text-xs lg:text-sm font-bold text-[#f05a00] uppercase tracking-tight mb-1">
-                    {item.title}
-                  </span>
-                  <p className="text-xs text-slate-500 leading-snug font-medium">
+                <div key={idx} className="p-3 sm:p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/70 shadow-xs flex flex-col justify-between">
+                  <div>
+                    <span className="block text-xl lg:text-2xl font-black text-[#083f63] leading-none mb-1">
+                      {item.year}
+                    </span>
+                    <span className="block text-xs font-bold text-[#f05a00] uppercase tracking-tight mb-1">
+                      {item.title}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-snug font-medium mt-1">
                     {item.desc}
                   </p>
                 </div>
@@ -1509,7 +1526,7 @@ export const SlideContent = ({ slide }) => {
             </div>
           </div>
           <div className="text-2xs sm:text-xs font-mono text-gray-300 text-center sm:text-right space-y-0.5">
-            <div><span className="text-camept-orange font-bold">Web :</span> {content.contact?.web}</div>
+            {content.contact?.web && <div><span className="text-camept-orange font-bold">Web :</span> {content.contact?.web}</div>}
             <div><span className="text-camept-orange font-bold">Email :</span> {content.contact?.email}</div>
           </div>
         </div>

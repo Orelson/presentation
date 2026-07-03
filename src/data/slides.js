@@ -324,7 +324,7 @@ export const slidesData = [
         },
         {
           name: "Royaume du Maroc",
-          role: "Partenaire d'Honneur",
+          role: "Invité d'Honneur",
           desc: "Modèle de coopération Sud-Sud, leader des phosphates, de l'hydrogène vert, de l'industrie navale et des infrastructures ferroviaires.",
           highlights: ["Expertise Portuaire & Logistique", "Gouvernance Phosphatière", "Diplomatie Économique"],
           color: "bg-white text-camept-dark border-t-8 border-camept-blue shadow-card",
@@ -332,7 +332,7 @@ export const slidesData = [
         },
         {
           name: "République de Côte d'Ivoire",
-          role: "Partenaire d'Honneur",
+          role: "Invité d'Honneur",
           desc: "Hub économique ouest-africain, champion de la croissance, du dynamisme des PPP et de la transformation locale de matières premières.",
           highlights: ["Grands Projets Structurants", "Dynamisme du Secteur Privé", "Modèle d'Attractivité IDE"],
           color: "bg-white text-camept-dark border-t-8 border-camept-green shadow-card",
@@ -345,9 +345,9 @@ export const slidesData = [
   {
     id: 10,
     type: "partners",
-    title: "Deux partenaires pour renforcer l'expertise",
-    subtitle: "Synergies techniques et alliances stratégiques avec le Maroc et la Côte d'Ivoire",
-    headerCategory: "DIPLOMATIE ÉCONOMIQUE",
+    title: "Deux Invités d'Honneur pour renforcer l'expertise",
+    subtitle: "Synergies techniques, diplomatie et alliances stratégiques avec le Maroc et la Côte d'Ivoire",
+    headerCategory: "PAYS & INVITÉS D'HONNEUR",
     content: {
       columns: [
         {
@@ -773,14 +773,20 @@ export const slidesData = [
     id: 23,
     type: "leader",
     title: "Magnatié BAMBA",
-    subtitle: "Commissaire Générale & Dirigeante d’Afrika Transtour et du Benzei Group",
+    subtitle: "PDG de Benzei Group • DG AFRIKA TRANSTOUR • Présidente du CAMEPT",
     headerCategory: "GOUVERNANCE & ORGANISATION",
     content: {
-      bio: "Entrepreneure ivoirienne récompensée par le Prix National d’Excellence 2024, elle met au service du CAMEPT plus de 25 ans d'expertise en logistique, mobilité, intermédiation institutionnelle et diplomatique.",
+      credentials: "MBA de la Sorbonne Paris • Plus de 25 années d'expérience",
+      bio: "Experte multisecteur sur les sujets de développement : transports, emploi des jeunes, financement, intermédiation institutionnelle et diplomatique.",
+      roles: [
+        { title: "PDG", org: "Benzei Group" },
+        { title: "DG", org: "AFRIKA TRANSTOUR" },
+        { title: "Présidente", org: "CAMEPT" }
+      ],
       highlights: [
-        { year: "2024", title: "Prix National d'Excellence", desc: "Distinction solennelle au Palais Présidentiel d'Abidjan." },
-        { year: "FISAT", title: "Commissaire Générale", desc: "Forum International des Transports, mobilisant 45 délégations." },
-        { year: "25 ans", title: "D'expérience stratégique", desc: "Au service du dialogue public-privé (B2G) et des projets structurants." }
+        { year: "25+ ans", title: "D'expérience", desc: "Expertise en intermédiation institutionnelle et diplomatique." },
+        { year: "MBA", title: "Sorbonne Paris", desc: "Excellence académique et vision stratégique internationale." },
+        { year: "2024", title: "Prix d'Excellence", desc: "Distinction solennelle reçue au Palais Présidentiel d'Abidjan." }
       ]
     }
   },
@@ -849,7 +855,6 @@ export const slidesData = [
       contact: {
         title: "Rejoignez la dynamique CAMEPT 2026 à Libreville",
         dates: "Du 02 au 04 Septembre 2026 • Palais des Congrès Omar Bongo Odimba",
-        web: "www.camept-gabon.com",
         email: "contact@camept-gabon.com",
         phone: "+241 01 00 00 00 / +241 07 00 00 00"
       },

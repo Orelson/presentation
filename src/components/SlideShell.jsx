@@ -128,7 +128,6 @@ export const SlideShell = ({ slide, children, totalSlides = 24 }) => {
               <span>Palais des Congrès Omar Bongo Odimba • Libreville (02 • 04 Septembre 2026)</span>
             </div>
             <div className="flex items-center space-x-4 font-semibold">
-              <span className="text-[#0b63a3]">www.camept-gabon.com</span>
               <span className="font-extrabold px-2 py-0.5 bg-[#083f63]/10 text-[#083f63] rounded border border-[#083f63]/20">
                 Slide {slide.id} / {totalSlides}
               </span>
