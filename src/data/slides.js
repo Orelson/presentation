@@ -559,9 +559,9 @@ export const slidesData = [
   {
     id: 17,
     type: "program-overview",
-    title: "Trois journées, une dynamique ascendante",
-    subtitle: "De la vision souveraine aux engagements contractuels de clôture",
-    headerCategory: "ARCHITECTURE DU PROGRAMME",
+    title: "Trois journées, une dynamique ascendante (1/2)",
+    subtitle: "Focus Jour 1 & Jour 2 : Des ressources extractives aux infrastructures structurantes",
+    headerCategory: "ARCHITECTURE DU PROGRAMME (1/2)",
     content: {
       days: [
         {
@@ -589,7 +589,19 @@ export const slidesData = [
             "Clinique des PPP et Business Speed Dating",
             "Boardrooms Transgabonais, Ports, Hydroélectricité Kinguélé Aval"
           ]
-        },
+        }
+      ],
+      dailyRhythm: "Les journées 1 et 2 posent le socle souverain et déploient les négociations intensives dans le hall et les 12 Boardrooms."
+    }
+  },
+  {
+    id: 18,
+    type: "program-overview-p2",
+    title: "Trois journées, une dynamique ascendante (2/2)",
+    subtitle: "Focus Jour 3 & Rythme d'exécution : Intégration, Financements et Clôture",
+    headerCategory: "ARCHITECTURE DU PROGRAMME (2/2)",
+    content: {
+      days: [
         {
           dayNumber: "JOUR 3",
           date: "Vendredi 04 Sept. 2026",
@@ -604,11 +616,12 @@ export const slidesData = [
           ]
         }
       ],
+      methodologyTitle: "Rythme quotidien des travaux et méthodologie CAMEPT",
       dailyRhythm: "Chaque matinée combine plénières inspirantes et débats sectoriels, tandis que les après-midis sont dédiés au travail en Boardrooms et au networking B2B."
     }
   },
   {
-    id: 18,
+    id: 19,
     type: "day1",
     title: "Jour 1 • Ouverture officielle & Extractifs",
     subtitle: "Mines, Pétrole et Souveraineté Économique au cœur des débats",
@@ -628,7 +641,7 @@ export const slidesData = [
     }
   },
   {
-    id: 19,
+    id: 20,
     type: "day2",
     title: "Jour 2 • Transition, Infrastructures & PPP",
     subtitle: "Énergie, Transports, Marine Marchande et Accès universel à l'Eau",
@@ -648,7 +661,7 @@ export const slidesData = [
     }
   },
   {
-    id: 20,
+    id: 21,
     type: "day3",
     title: "Jour 3 • Intégration, Engagements & Clôture",
     subtitle: "ZLECAf, Marchés Financiers, Signatures solennelles et Banquet Officiel",
@@ -666,7 +679,7 @@ export const slidesData = [
     }
   },
   {
-    id: 21,
+    id: 22,
     type: "gabon-benefits",
     title: "Un levier direct et puissant pour la Nation",
     subtitle: "Les retombées concrètes et durables du CAMEPT pour le Gabon",
@@ -674,46 +687,35 @@ export const slidesData = [
     content: {
       benefits: [
         {
-          title: "Investissements Mobilisés",
-          value: "293 Projets",
-          desc: "Afflux direct de capitaux privés et multilatéraux sur les projets structurants et prioritaires du PNCD.",
-          icon: "TrendingUp",
-          color: "blue"
+          title: "Attractivité des Capitaux Internationales",
+          desc: "Positionnement de Libreville comme place de marché régionale incontournable pour les investissements extractifs et énergétiques.",
+          metrics: "5 à 10 milliards FCFA",
+          sub: "d'effets économiques directs attendus"
         },
         {
-          title: "Emplois & Contenu Local",
-          value: "Priorité PME",
-          desc: "Intégration accrue des PME gabonaises et exigence contractuelle de sous-traitance et de transfert de compétences.",
-          icon: "Briefcase",
-          color: "orange"
+          title: "Valorisation Locale & Transformation",
+          desc: "Accélération des projets d'usines locales et de raffinage (SOGARA, manganèse, fer de Belinga) pour retenir la valeur ajoutée au Gabon.",
+          metrics: "Création d'emplois",
+          sub: "pour la jeunesse et les PME gabonaises"
         },
         {
-          title: "Attractivité Économique",
-          value: "Sovereign Trust",
-          desc: "Amélioration concrète de la perception du risque pays et démonstration de l'efficacité des réformes économiques.",
-          icon: "ShieldCheck",
-          color: "yellow"
+          title: "Accélération des PPP Infrastructures",
+          desc: "Déblocage de financements syndiqués pour la modernisation du Transgabonais, des ports et des barrages hydroélectriques.",
+          metrics: "12 projets clés",
+          sub: "présentés dans les Boardrooms"
         },
         {
-          title: "Rayonnement Diplomatique",
-          value: "Hub Central",
-          desc: "Affirmation indiscutable de Libreville comme capitale économique et de dialogue stratégique en Afrique centrale.",
-          icon: "Globe",
-          color: "green"
-        },
-        {
-          title: "Transformation Industrielle",
-          value: "Fin du Tout-Brut",
-          desc: "Impulsion décisive pour le raffinage sur sol gabonais, la chaîne de valeur métallurgique et la valorisation locale.",
-          icon: "Factory",
-          color: "cyan"
+          title: "Rayonnement Diplomatique & Souveraineté",
+          desc: "Affirmation du leadership du Gabon et de ses autorités dans la gouvernance des ressources naturelles en Afrique Centrale.",
+          metrics: "25+ délégations",
+          sub: "ministérielles et internationales attendues"
         }
       ],
       keyMessage: "Le CAMEPT n'est pas une dépense de prestige, mais un investissement à haut rendement économique et social pour la Nation."
     }
   },
   {
-    id: 22,
+    id: 23,
     type: "credibility",
     title: "Une crédibilité globale pour maximiser l'impact",
     subtitle: "L'alignement d'une communication à 360°, d'une rigueur scientifique et du co-pilotage de l'État",
@@ -757,7 +759,7 @@ export const slidesData = [
     }
   },
   {
-    id: 23,
+    id: 24,
     type: "organizers",
     title: "Les Structures Organisatrices",
     subtitle: "L'alliance de l'événementiel institutionnel et du conseil stratégique international.",
@@ -779,7 +781,7 @@ export const slidesData = [
     }
   },
   {
-    id: 24,
+    id: 25,
     type: "leader",
     title: "Magnatié BAMBA",
     subtitle: "PDG de Benzei Group • DG AFRIKA TRANSTOUR • Présidente du CAMEPT",
@@ -800,7 +802,7 @@ export const slidesData = [
     }
   },
   {
-    id: 25,
+    id: 26,
     type: "followup",
     title: "Transformer le congrès en engagements suivis",
     subtitle: "L'après-CAMEPT : un mécanisme de suivi et de redevabilité sur 3 ans",
@@ -832,7 +834,7 @@ export const slidesData = [
     }
   },
   {
-    id: 26,
+    id: 27,
     type: "closing",
     title: "Remerciements solennels & Clôture officielle",
     subtitle: "La gratitude de l'organisation envers les plus hautes autorités et nos partenaires stratégiques",
@@ -871,7 +873,7 @@ export const slidesData = [
     }
   },
   {
-    id: 27,
+    id: 28,
     type: "final_thanks",
     title: "Remerciements & Clôture",
     subtitle: "Gratitude de l'organisation",

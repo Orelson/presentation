@@ -25,6 +25,8 @@ import imgSlide7Platform from '../assets/slide7-camept-plenary.jpg';
 import imgSlide12Boardrooms from '../assets/slide12-boardrooms-meeting.jpg';
 import imgSlide14Program from '../assets/slide14-programme-hall.jpg';
 import imgSlide16Day2 from '../assets/slide16-jour2-financement.jpg';
+import imgRibbonCutting from '../assets/slide-ribbon-cutting.jpg';
+import imgExpertPanel from '../assets/slide-expert-panel.jpg';
 
 const PALAIS_IMAGES = [
   './palais/DJI_20260303182439_0768_D-scaled.webp',
@@ -1364,84 +1366,145 @@ export const SlideContent = ({ slide }) => {
   }
 
   // 19. GABON BENEFITS SLIDE
+  // 19. GABON BENEFITS SLIDE - DESIGN PREMIUM AVEC COUPURE DE RUBAN
   if (type === 'gabon-benefits') {
     return (
-      <div className="flex flex-col justify-start gap-4 sm:gap-5 w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch w-full">
-          {content.benefits.map((ben, idx) => (
-            <InfoCard
-              key={idx}
-              title={ben.title}
-              description={ben.desc}
-              icon={ben.icon}
-              badge={ben.value}
-              color={idx === 1 ? 'orange' : idx === 4 ? 'dark' : 'blue'}
-              delay={idx * 0.1}
-              className={`${idx === 4 ? 'sm:col-span-2 lg:col-span-1' : ''} h-full`}
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~42% width): Image institutionnelle de coupure de ruban */}
+        <div className="lg:col-span-5 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full rounded-[24px] shadow-2xl overflow-hidden border-2 border-white/80 min-h-[320px] lg:min-h-[420px] flex flex-col justify-end"
+          >
+            <img
+              src={imgRibbonCutting}
+              alt="Coupure de ruban officielle et concrétisation des projets"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
             />
-          ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+            <div className="relative z-10 p-5 sm:p-6 text-white">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-2 shadow-md">
+                Concrétisation & Réalisations
+              </span>
+              <h4 className="text-base sm:text-lg font-black leading-tight mb-1 text-[#f7c400]">
+                De la vision aux réalisations sur le terrain
+              </h4>
+              <p className="text-2xs sm:text-xs font-semibold leading-snug text-gray-100">
+                L'inauguration solennelle des nouvelles usines de transformation, des infrastructures de transport et des projets énergétiques issus des accords CAMEPT.
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        <GeometricPanel variant="ribbon" color="dark" className="p-4 rounded-xl text-center font-extrabold text-xs sm:text-sm md:text-base text-camept-yellow flex items-center justify-center space-x-2.5 flex-shrink-0 mt-auto shadow-elevated">
-          <Icons.Award className="w-5 h-5 text-camept-yellow flex-shrink-0" />
-          <span>{content.keyMessage}</span>
-        </GeometricPanel>
+        {/* RIGHT ZONE (~58% width): Grille 2x2 des retombées et message clé */}
+        <div className="lg:col-span-7 flex flex-col justify-between h-full gap-4 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 items-stretch flex-1">
+            {content.benefits.map((ben, idx) => (
+              <InfoCard
+                key={idx}
+                title={ben.title}
+                description={ben.desc}
+                icon={ben.icon || (idx === 0 ? 'TrendingUp' : idx === 1 ? 'Factory' : idx === 2 ? 'Briefcase' : 'Globe')}
+                badge={ben.metrics || ben.value || 'Priorité'}
+                color={idx === 0 ? 'blue' : idx === 1 ? 'orange' : idx === 2 ? 'green' : 'cyan'}
+                delay={idx * 0.1}
+                className="h-full"
+              />
+            ))}
+          </div>
+
+          <GeometricPanel variant="ribbon" color="dark" className="p-3.5 sm:p-4 rounded-xl text-center font-extrabold text-xs sm:text-sm md:text-base text-camept-yellow flex items-center justify-center space-x-2.5 flex-shrink-0 shadow-elevated">
+            <Icons.Award className="w-5 h-5 text-camept-yellow flex-shrink-0" />
+            <span className="leading-snug">{content.keyMessage}</span>
+          </GeometricPanel>
+        </div>
       </div>
     );
   }
 
-  // 20. CREDIBILITY SLIDE
+  // 20. CREDIBILITY SLIDE - DESIGN PREMIUM AVEC PANEL D'EXPERTS SUR SCÈNE
   if (type === 'credibility') {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-stretch w-full">
-        {content.columns.map((col, idx) => {
-          const colorClasses = {
-            'camept-blue': 'border-t-camept-blue bg-white text-camept-dark',
-            'camept-orange': 'border-t-camept-orange bg-white text-camept-dark',
-            'camept-green': 'border-t-camept-green bg-white text-camept-dark',
-          };
-          const headerClasses = {
-            'camept-blue': 'bg-gradient-to-r from-camept-blue to-camept-dark text-white',
-            'camept-orange': 'bg-gradient-to-r from-camept-orange to-amber-600 text-white',
-            'camept-green': 'bg-gradient-to-r from-camept-green to-emerald-800 text-white',
-          };
-          const IconComp = Icons[col.icon] || Icons.CheckCircle2;
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* LEFT ZONE (~42% width): Image institutionnelle du panel d'experts et plateau TV */}
+        <div className="lg:col-span-5 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-full h-full rounded-[24px] shadow-2xl overflow-hidden border-2 border-white/80 min-h-[320px] lg:min-h-[420px] flex flex-col justify-end"
+          >
+            <img
+              src={imgExpertPanel}
+              alt="Panel d'experts et débats de rang international sur scène"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/40 to-transparent" />
+            <div className="relative z-10 p-5 sm:p-6 text-white">
+              <span className="text-2xs sm:text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-2 shadow-md">
+                Légitimité & Rayonnement
+              </span>
+              <h4 className="text-base sm:text-lg font-black leading-tight mb-1 text-[#f7c400]">
+                Des panels scientifiques et un plateau TV en direct
+              </h4>
+              <p className="text-2xs sm:text-xs font-semibold leading-snug text-gray-100">
+                Des débats sectoriels de haut niveau animés par des experts internationaux, couplés à une diffusion média à 360° auprès des décideurs mondiaux.
+              </p>
+            </div>
+          </motion.div>
+        </div>
 
-          return (
-            <motion.div
-              key={idx}
-              className={`rounded-xl shadow-card hover:shadow-elevated border-t-8 overflow-hidden flex flex-col justify-between transition-all duration-300 ${colorClasses[col.color] || colorClasses['camept-blue']} h-full`}
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: idx * 0.15 }}
-            >
-              <div className="flex-1 flex flex-col justify-start">
-                <div className={`p-4 sm:p-5 flex items-center space-x-3 ${headerClasses[col.color] || headerClasses['camept-blue']}`}>
-                  <div className="p-2 rounded-lg bg-white/20 backdrop-blur-sm">
-                    <IconComp className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+        {/* RIGHT ZONE (~58% width): Les 3 piliers de crédibilité en stack vertical épuré */}
+        <div className="lg:col-span-7 flex flex-col justify-between h-full gap-3.5 sm:gap-4">
+          {content.columns.map((col, idx) => {
+            const colorClasses = {
+              'camept-blue': 'border-l-camept-blue bg-blue-50/30 text-camept-dark',
+              'camept-orange': 'border-l-camept-orange bg-orange-50/30 text-camept-dark',
+              'camept-green': 'border-l-camept-green bg-green-50/30 text-camept-dark',
+            };
+            const headerClasses = {
+              'camept-blue': 'bg-[#083f63] text-white',
+              'camept-orange': 'bg-[#f05a00] text-white',
+              'camept-green': 'bg-[#159b37] text-white',
+            };
+            const IconComp = Icons[col.icon] || Icons.CheckCircle2;
+
+            return (
+              <motion.div
+                key={idx}
+                className={`rounded-xl shadow-card hover:shadow-md border border-gray-100 border-l-8 overflow-hidden flex flex-col justify-between transition-all duration-300 bg-white ${colorClasses[col.color] || colorClasses['camept-blue']} flex-1`}
+                initial={{ opacity: 0, x: 25 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.15 }}
+              >
+                <div className={`py-2.5 px-4 flex items-center space-x-2.5 ${headerClasses[col.color] || headerClasses['camept-blue']}`}>
+                  <div className="p-1.5 rounded bg-white/20">
+                    <IconComp className="w-4 h-4 flex-shrink-0 text-white" />
                   </div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-black leading-tight tracking-tight">
+                  <h3 className="text-xs sm:text-sm font-black uppercase tracking-wide">
                     {col.title}
                   </h3>
                 </div>
 
-                <div className="p-4 sm:p-5 space-y-2.5 flex-1 flex flex-col justify-start">
+                <div className="p-3 sm:p-3.5 grid grid-cols-1 sm:grid-cols-2 gap-2 flex-1 items-center">
                   {col.items.map((item, iIdx) => (
                     <div
                       key={iIdx}
-                      className="p-3 rounded-lg bg-camept-bg hover:bg-gray-100/80 transition-colors border border-gray-100 flex items-start space-x-2.5 text-2xs sm:text-xs text-gray-800 font-semibold"
+                      className="p-2 rounded bg-gray-50/80 hover:bg-gray-100/90 transition-colors border border-gray-100 flex items-start space-x-2 text-3xs sm:text-2xs text-gray-800 font-semibold h-full"
                     >
-                      <Icons.CheckCircle2 className="w-4 h-4 text-camept-orange flex-shrink-0 mt-0.5" />
+                      <Icons.CheckCircle2 className="w-3.5 h-3.5 text-[#f05a00] flex-shrink-0 mt-0.5" />
                       <span className="leading-snug break-words flex-1">
                         {item}
                       </span>
                     </div>
                   ))}
                 </div>
-              </div>
-            </motion.div>
-          );
-        })}
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     );
   }
