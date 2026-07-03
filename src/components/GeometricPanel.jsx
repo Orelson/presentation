@@ -66,6 +66,12 @@ export const GeometricPanel = ({
 
   const anim = animations[variant] || animations.default;
 
+  const innerFlexClass = className.includes('flex-col') 
+    ? 'flex flex-col justify-between h-full' 
+    : className.includes('flex') 
+      ? 'flex items-center justify-center gap-2.5 flex-wrap sm:flex-nowrap' 
+      : '';
+
   return (
     <motion.div
       className={baseStyle}
@@ -75,7 +81,7 @@ export const GeometricPanel = ({
     >
       {/* Subtle geometric pattern overlay */}
       <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
-      <div className="relative z-10">{children}</div>
+      <div className={`relative z-10 w-full h-full ${innerFlexClass}`}>{children}</div>
     </motion.div>
   );
 };

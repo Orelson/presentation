@@ -41,8 +41,8 @@ export default function App() {
       <ProgressBar currentSlide={currentSlide} totalSlides={slidesData.length} />
 
       {/* Main 16:9 Slide Shell & Content */}
-      <main className="w-full h-screen">
-        <SlideShell slide={currentSlideData}>
+      <main className="w-full h-screen flex items-center justify-center overflow-hidden">
+        <SlideShell slide={currentSlideData} totalSlides={slidesData.length}>
           <SlideContent slide={currentSlideData} />
         </SlideShell>
       </main>

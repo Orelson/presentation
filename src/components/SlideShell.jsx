@@ -1,11 +1,11 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoGabon from '../assets/logo-gabon.png';
 import logoAfrika from '../assets/logo-afrika.png';
 import logoBenzei from '../assets/logo-benzei.png';
 
-export const SlideShell = ({ slide, children }) => {
-  const isSpecialSlide = slide.type === 'cover' || slide.type === 'closing';
+export const SlideShell = ({ slide, children, totalSlides = 24 }) => {
+  const isSpecialSlide = slide.type === 'cover' || slide.type === 'followup' || slide.type === 'closing';
 
   // Animation variants for smooth slide transitions (350 - 600 ms)
   const slideVariants = {
@@ -35,13 +35,13 @@ export const SlideShell = ({ slide, children }) => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-950 flex items-center justify-center p-0 lg:p-3 xl:p-6 overflow-y-auto lg:overflow-hidden">
+    <div className="w-full h-full min-h-screen bg-gray-950 flex items-center justify-center p-0 lg:p-3 xl:p-6 overflow-hidden">
       {/* 
         Responsive Slide Container:
         - Mobile & Tablet (< lg): Full width, auto height, natural vertical flow
         - Desktop Projection (>= lg): Centered 16:9 ratio, responsive max height
       */}
-      <div className="slide-container w-full min-h-screen lg:min-h-0 lg:h-full lg:max-w-[1778px] lg:max-h-[calc(100vh-1.5rem)] lg:aspect-[16/9] bg-camept-bg relative lg:overflow-hidden lg:shadow-2xl lg:rounded-xl border-0 lg:border lg:border-white/10 flex flex-col justify-between pb-20 lg:pb-0">
+      <div className="slide-container w-full min-h-screen lg:min-h-0 lg:h-full lg:max-w-[calc((100vh-1.5rem)*16/9)] lg:max-h-[calc(100vh-1.5rem)] lg:aspect-[16/9] bg-camept-bg relative lg:overflow-hidden lg:shadow-2xl lg:rounded-xl border-0 lg:border lg:border-white/10 flex flex-col justify-between pb-20 lg:pb-0 mx-auto my-auto">
         
         {/* Larana-inspired Geometric Background Polygons */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -55,34 +55,32 @@ export const SlideShell = ({ slide, children }) => {
           <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#0B63A3_1px,transparent_1px),linear-gradient(to_bottom,#0B63A3_1px,transparent_1px)] bg-[size:32px_32px]" />
         </div>
 
-        {/* Institutional Top Bar (for all slides except cover which has its own custom hero header) */}
-        {slide.type !== 'cover' && (
-          <header className="relative z-20 px-4 sm:px-6 lg:px-8 py-2 sm:py-2.5 bg-white/98 backdrop-blur-md border-b border-gray-200/80 flex items-center justify-between gap-4 flex-shrink-0 shadow-xs">
-            {/* Extreme Left: République Gabonaise */}
-            <div className="flex items-center space-x-3">
-              <img src={logoGabon} alt="République Gabonaise" className="h-8 sm:h-9 lg:h-11 w-auto object-contain" />
-              {slide.headerCategory && (
-                <span className="hidden sm:inline-block text-2xs sm:text-xs font-extrabold px-2.5 py-1 rounded bg-[#0A3A60]/10 text-[#0A3A60] tracking-wider uppercase">
-                  {slide.headerCategory}
-                </span>
-              )}
-            </div>
+        {/* Mandatory Institutional Top Bar on ALL slides (Increased height, larger logos, pure transparent backgrounds) */}
+        <header className="relative z-20 w-full px-6 sm:px-8 lg:px-12 py-3 sm:py-4 bg-white/98 backdrop-blur-md border-b-2 border-[#083f63] flex items-center justify-between gap-6 flex-shrink-0 shadow-xs min-h-[76px] max-h-[115px]">
+          {/* Extreme Left: République Gabonaise */}
+          <div className="flex items-center space-x-4">
+            <img src={logoGabon} alt="République Gabonaise" className="h-12 sm:h-14 lg:h-16 w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+            {slide.headerCategory && slide.type !== 'cover' && (
+              <span className="hidden sm:inline-block text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded bg-[#083f63]/10 text-[#083f63] tracking-wider uppercase border border-[#083f63]/20">
+                {slide.headerCategory}
+              </span>
+            )}
+          </div>
 
-            {/* Middle: Afrika Transtour */}
-            <div className="flex items-center justify-center">
-              <img src={logoAfrika} alt="Afrika Transtour" className="h-6 sm:h-8 lg:h-9 w-auto object-contain" />
-            </div>
+          {/* Middle: Afrika Transtour */}
+          <div className="flex items-center justify-center">
+            <img src={logoAfrika} alt="Afrika Transtour" className="h-10 sm:h-12 lg:h-14 w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+          </div>
 
-            {/* Right: Benzei Group + CAMEPT Badge */}
-            <div className="flex items-center space-x-3 sm:space-x-4">
-              <img src={logoBenzei} alt="Benzei Group" className="h-8 sm:h-9 lg:h-11 w-auto object-contain" />
-              <div className="flex items-center font-sans font-black tracking-tighter text-xs sm:text-sm lg:text-base text-camept-dark border-l border-gray-200 pl-3">
-                <span>CAMEPT</span>
-                <span className="text-camept-orange ml-0.5">2026</span>
-              </div>
+          {/* Right: Benzei Group + CAMEPT 2026 Badge */}
+          <div className="flex items-center space-x-4 sm:space-x-5">
+            <img src={logoBenzei} alt="Benzei Group" className="h-12 sm:h-14 lg:h-16 w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+            <div className="hidden md:flex items-center font-sans font-black tracking-tighter text-sm sm:text-base lg:text-lg text-[#083f63] border-l-2 border-gray-200 pl-4">
+              <span>CAMEPT</span>
+              <span className="text-[#f05a00] ml-0.5">2026</span>
             </div>
-          </header>
-        )}
+          </div>
+        </header>
 
         {/* Main Slide Content Area - Robust Scrollable with justify-start to NEVER push title under header */}
         <div className={`relative z-10 flex-1 min-h-0 flex flex-col justify-start px-4 sm:px-6 lg:px-8 ${isSpecialSlide ? 'p-0 overflow-hidden' : 'pt-3 sm:pt-4 pb-12 sm:pb-14 overflow-y-auto custom-scrollbar'}`}>
@@ -99,13 +97,13 @@ export const SlideShell = ({ slide, children }) => {
               {!isSpecialSlide && (
                 <div className="mb-3 sm:mb-4 flex-shrink-0">
                   <div className="flex items-center space-x-2 mb-1">
-                    <div className="w-8 sm:w-12 lg:w-16 h-1 sm:h-1.5 bg-camept-orange rounded-full" />
+                    <div className="w-8 sm:w-12 lg:w-16 h-1 sm:h-1.5 bg-[#f05a00] rounded-full" />
                   </div>
-                  <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-camept-dark tracking-tight leading-tight">
+                  <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-[#083f63] tracking-tight leading-tight">
                     {slide.title}
                   </h1>
                   {slide.subtitle && (
-                    <p className="text-xs sm:text-sm md:text-base font-medium text-gray-600 mt-0.5 max-w-4xl leading-snug">
+                    <p className="text-xs sm:text-sm md:text-base font-medium text-[#1f2933] mt-0.5 max-w-4xl leading-snug">
                       {slide.subtitle}
                     </p>
                   )}
@@ -120,12 +118,21 @@ export const SlideShell = ({ slide, children }) => {
           </AnimatePresence>
         </div>
 
-        {/* Footer Bar for internal slides */}
+        {/* Discrete Footer Bar for internal slides */}
         {!isSpecialSlide && (
-          <footer className="relative z-20 px-4 sm:px-6 lg:px-8 py-1.5 bg-gray-100/95 border-t border-gray-200/80 flex items-center justify-between text-2xs sm:text-xs text-gray-500 font-medium flex-shrink-0 hidden sm:flex">
-            <span>Palais des Congrès Omar Bongo Odimba • Libreville (02-04 Sept. 2026)</span>
-            <span className="hidden md:inline font-semibold text-camept-blue">www.camept-gabon.com</span>
-            <span>Document Institutionnel • 16:9 Webapp</span>
+          <footer className="relative z-20 px-4 sm:px-8 lg:px-10 py-2 bg-white border-t border-gray-200 flex items-center justify-between text-[11px] sm:text-xs text-[#1f2933] font-medium flex-shrink-0 hidden sm:flex">
+            <div className="flex items-center space-x-2.5">
+              <div className="w-2 h-2 rounded-full bg-[#f05a00]" />
+              <span className="font-extrabold text-[#083f63]">CAMEPT 2026</span>
+              <span className="text-gray-300">•</span>
+              <span>Palais des Congrès Omar Bongo Odimba • Libreville (02 • 04 Septembre 2026)</span>
+            </div>
+            <div className="flex items-center space-x-4 font-semibold">
+              <span className="text-[#0b63a3]">www.camept-gabon.com</span>
+              <span className="font-extrabold px-2 py-0.5 bg-[#083f63]/10 text-[#083f63] rounded border border-[#083f63]/20">
+                Slide {slide.id} / {totalSlides}
+              </span>
+            </div>
           </footer>
         )}
       </div>

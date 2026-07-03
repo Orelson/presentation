@@ -4,11 +4,10 @@ export const slidesData = [
     type: "cover",
     title: "CAMEPT 2026",
     subtitle: "1er Congrès Africain des Mines, des Énergies, du Pétrole et des Transports",
-    headerCategory: "ÉVÉNEMENT INSTITUTIONNEL PANAFRICAIN",
     content: {
       location: "Libreville, République Gabonaise",
       venue: "Palais des Congrès Omar Bongo Odimba",
-      dates: "02 — 04 Septembre 2026",
+      dates: "02 • 04 Septembre 2026",
       patronage: "Sous le haut parrainage de SEM Brice Clotaire OLIGUI N'GUEMA, Président de la République, Chef de l'État",
       organizers: ["Benzei Group", "Afrika Transtour"],
       theme: "Mines, énergies, pétrole, transports : nouvelles niches de croissance pour une souveraineté accrue et un développement équitable et durable.",
@@ -17,6 +16,57 @@ export const slidesData = [
   },
   {
     id: 2,
+    type: "outline",
+    title: "Plan de la Présentation",
+    subtitle: "Architecture générale et feuille de route du dossier de présentation CAMEPT 2026",
+    headerCategory: "SOMMAIRE EXÉCUTIF",
+    content: {
+      sections: [
+        {
+          num: "01",
+          title: "Contexte & Vision Souveraine",
+          desc: "Le paradoxe africain, le positionnement stratégique du Gabon et l'ambition institutionnelle (Vision 2050).",
+          slides: "Slides 03 • 05",
+          icon: "Compass",
+          color: "blue"
+        },
+        {
+          num: "02",
+          title: "Portefeuille de Projets : PNCD",
+          desc: "Présentation des opportunités bancables dans les Mines, l'Énergie, le Pétrole et les Transports.",
+          slides: "Slide 06",
+          icon: "Layers",
+          color: "orange"
+        },
+        {
+          num: "03",
+          title: "Plateforme & Diplomatie Économique",
+          desc: "Le sommet panafricain d'investissement et l'axe d'excellence Libreville - Rabat - Abidjan.",
+          slides: "Slides 07 • 10",
+          icon: "Globe",
+          color: "yellow"
+        },
+        {
+          num: "04",
+          title: "Architecture & Programme Détaillé",
+          desc: "Les 12 Boardrooms transactionnelles, la scénographie 360° et le programme solennel des 3 journées.",
+          slides: "Slides 11 • 19",
+          icon: "Calendar",
+          color: "green"
+        },
+        {
+          num: "05",
+          title: "Retombées Nationales & Gouvernance",
+          desc: "Impact direct pour la Nation, présentation des organisateurs et mécanisme de suivi post-congres.",
+          slides: "Slides 20 • 25",
+          icon: "Award",
+          color: "blue"
+        }
+      ]
+    }
+  },
+  {
+    id: 3,
     type: "paradox",
     title: "Un paradoxe que l'Afrique ne peut plus accepter",
     subtitle: "Le contraste saisissant entre la richesse du sous-sol et la captation de valeur mondiale",
@@ -43,7 +93,7 @@ export const slidesData = [
     }
   },
   {
-    id: 3,
+    id: 4,
     type: "why-gabon",
     title: "Le Gabon a tout pour ouvrir la voie",
     subtitle: "Une ambition nationale transformée en plateforme panafricaine d'investissement",
@@ -79,7 +129,7 @@ export const slidesData = [
     }
   },
   {
-    id: 4,
+    id: 5,
     type: "vision",
     title: "Une vision de souveraineté, de dignité et de transformation",
     subtitle: "L'alignement stratégique des piliers nationaux pour un développement équitable",
@@ -124,94 +174,53 @@ export const slidesData = [
     }
   },
   {
-    id: 5,
-    type: "pndt",
-    title: "Transformer les priorités en projets bancables",
-    subtitle: "Le Plan National de Développement de la Transition (PNDT) au cœur des négociations",
-    headerCategory: "PORTFEUILLE DE PROJETS",
+    id: 6,
+    type: "pncd",
+    title: "Transformer les priorités nationales en projets bancables",
+    subtitle: "Le Plan National de Capitalisation et de Diversification (PNCD 2026-2030) au cœur des négociations",
+    headerCategory: "PORTFEUILLE DE PROJETS • PNCD 2026-2030",
     content: {
       stats: [
         {
-          value: "4 536",
-          unit: "Mds FCFA",
-          label: "d'investissement global prévu dans le cadre du PNDT",
-          accent: "orange"
-        },
-        {
           value: "293",
           unit: "Projets",
-          label: "structurants inscrits comme priorités nationales d'infrastructures",
+          label: "inscrits au portefeuille national global du PNCD pour la transformation et la diversification du Gabon",
           accent: "blue"
+        },
+        {
+          value: "Ciblage",
+          unit: "CAMEPT",
+          label: "Sélection stricte et exclusive des projets structurants relevant des 5 secteurs stratégiques du congrès",
+          accent: "orange"
         }
       ],
       sectors: [
         {
-          title: "Mines & Hydrocarbures",
-          desc: "Mise en valeur de gisements géants (Fer de Belinga, Manganèse) et optimisation du raffinage national.",
-          share: "35% du volume",
+          title: "Mines & Métaux Critiques",
+          desc: "Mise en valeur de gisements géants (Fer de Belinga, Manganèse) et exigence contractuelle d'unités locales de raffinage et transformation.",
+          share: "Industrialisation",
           icon: "Gem"
         },
         {
+          title: "Hydrocarbures & Gaz",
+          desc: "Optimisation des champs matures, valorisation du gaz offshore et orientation des revenus vers le financement de la diversification.",
+          share: "Souveraineté",
+          icon: "Flame"
+        },
+        {
           title: "Énergie & Accès à l'Eau",
-          desc: "Grands barrages hydroélectriques (Kinguélé Aval), centrales solaires et extension du réseau d'eau potable.",
-          share: "38% du volume",
+          desc: "Grands barrages hydroélectriques (Kinguélé Aval), centrales solaires et extension massive du réseau d'eau potable pour tous.",
+          share: "Infrastructures",
           icon: "Zap"
         },
         {
-          title: "Transports & Marine Marchande",
-          desc: "Modernisation du Transgabonais, ports en eau profonde, corridors routiers et logistique navale.",
-          share: "27% du volume",
+          title: "Transports & Corridors Logistiques",
+          desc: "Modernisation du Transgabonais, construction de ports en eau profonde, corridors routiers inter-États et marine marchande.",
+          share: "Désenclavement",
           icon: "Ship"
         }
       ],
-      keyMessage: "Faire passer impérativement les projets du stade de priorité nationale au stade de transaction finançable face aux investisseurs."
-    }
-  },
-  {
-    id: 6,
-    type: "pncd",
-    title: "Une trajectoire de croissance souveraine",
-    subtitle: "Le Plan National de Capitalisation et de Diversification (PNCD 2026-2030)",
-    headerCategory: "STRATÉGIE SECTORIELLE",
-    content: {
-      challenges: [
-        {
-          sector: "Hydrocarbures",
-          goal: "Réduire la dépendance & Maximiser les revenus",
-          action: "Optimiser les champs matures, développer le gaz en mer et orienter les revenus pétroliers vers le financement de la transition.",
-          color: "bg-camept-dark text-white border-l-4 border-camept-orange"
-        },
-        {
-          sector: "Mines & Métaux",
-          goal: "De l'export brut à la transformation locale",
-          action: "Imposer des unités de raffinage sur place et structurer des chaînes de valeur intégrées pour les métaux critiques et l'acier.",
-          color: "bg-white text-camept-dark border-l-4 border-camept-blue shadow-card"
-        },
-        {
-          sector: "Énergie & Électricité",
-          goal: "Réduire les déficits & Accélérer la transition",
-          action: "Développer l'hydroélectricité, le solaire et moderniser les réseaux de transport pour garantir une énergie stable aux industriels.",
-          color: "bg-white text-camept-dark border-l-4 border-camept-green shadow-card"
-        },
-        {
-          sector: "Transports & Logistique",
-          goal: "Désenclaver & Moderniser les corridors",
-          action: "Réhabiliter le chemin de fer Transgabonais, construire de nouvelles infrastructures portuaires et fluidifier l'intermodalité.",
-          color: "bg-camept-blue text-white border-l-4 border-camept-yellow"
-        },
-        {
-          sector: "Eau Potable",
-          goal: "Accélérer l'accès universel",
-          action: "Investir massivement dans le captage, le traitement et la distribution d'eau potable dans les centres urbains et ruraux.",
-          color: "bg-white text-camept-dark border-l-4 border-camept-cyan shadow-card"
-        },
-        {
-          sector: "Financement",
-          goal: "Mobiliser des capitaux alternatifs",
-          action: "Créer des mécanismes de garantie, structurer des PPP innovants et attirer les fonds souverains africains et internationaux.",
-          color: "bg-camept-bg-alt text-camept-dark border-l-4 border-camept-orange shadow-card"
-        }
-      ]
+      keyMessage: "Sur les 293 projets du PNCD, le CAMEPT concentre ses Boardrooms et ses investisseurs exclusivement sur les projets bancables de nos secteurs stratégiques."
     }
   },
   {
@@ -301,14 +310,14 @@ export const slidesData = [
     id: 9,
     type: "countries",
     title: "Trois pays au cœur de la dynamique 2026",
-    subtitle: "L'axe stratégique Libreville — Rabat — Abidjan pour une diplomatie d'excellence",
+    subtitle: "L'axe stratégique Libreville • Rabat • Abidjan pour une diplomatie d'excellence",
     headerCategory: "PAYS À L'HONNEUR",
     content: {
       countries: [
         {
           name: "République Gabonaise",
           role: "Pays Hôte & Moteur",
-          desc: "Plateforme d'accueil, moteur de la transformation des ressources en Afrique centrale et terre d'opportunités du PNDT.",
+          desc: "Plateforme d'accueil, moteur de la transformation des ressources en Afrique centrale et terre d'opportunités du PNCD.",
           highlights: ["Mines de Fer & Manganèse", "Infrastructures Transgabonais", "Leadership Éco-responsable"],
           color: "bg-camept-dark text-white border-t-8 border-camept-orange",
           badge: "PAYS HÔTE"
@@ -347,7 +356,7 @@ export const slidesData = [
           items: [
             { title: "Infrastructures & Logistique", desc: "Partage d'expérience sur les grands corridors portuaires (Tanger Med) et autoroutiers." },
             { title: "Phosphates & Industrialisation", desc: "Savoir-faire OCP dans la valorisation minière et la production d'engrais souverains." },
-            { title: "Hydrogène Vert & Énergies", desc: "Coopération dans le développement des énergies renouvelables et de la transition." },
+            { title: "Hydrogène Vert & Énergies", desc: "Coopération dans le développement des énergies renouvelables et de la transition verte." },
             { title: "Ferroviaire & Maritime", desc: "Assistance technique pour la modernisation du réseau ferré et des ports en eau profonde." },
             { title: "Diplomatie Économique", desc: "Réseau bancaire et financier marocain fortement implanté en Afrique centrale." }
           ],
@@ -423,6 +432,58 @@ export const slidesData = [
   },
   {
     id: 12,
+    type: "scenography",
+    title: "Scénographie & Immersion au Palais des Congrès",
+    subtitle: "Une projection visuelle concrète dans les espaces de prestige, de débat et de négociation du CAMEPT",
+    headerCategory: "EXPÉRIENCE IMMERSIVE 360°",
+    content: {
+      spaces: [
+        {
+          title: "Habillage & Charte Graphique",
+          subtitle: "Palais des Congrès Omar Bongo Odimba",
+          desc: "Déploiement monumental des couleurs statutaires (Bleu Profond, Orange, Or) dès le parvis extérieur, signalétique d'excellence et salons d'accueil VIP.",
+          icon: "Building2",
+          badge: "CHARTE VISUELLE",
+          color: "blue"
+        },
+        {
+          title: "Cérémonie d'Ouverture & Ruban",
+          subtitle: "Sous le Haut Parrainage Présidentiel",
+          desc: "Accueil solennel des chefs de délégations par le Chef de l'État, haie d'honneur de la Garde Républicaine, tapis rouge institutionnel et coupure officielle du ruban tricolore.",
+          icon: "Award",
+          badge: "PROTOCOLE ÉTAT",
+          color: "orange"
+        },
+        {
+          title: "Scénographie des Panels",
+          subtitle: "Configuration Plénière Executive",
+          desc: "Podium majestueux aménagé avec 5 fauteuils exécutifs haut de gamme, écran LED panoramique géant en arrière-plan et pupitre oratoire officiel latéral.",
+          icon: "Tv",
+          badge: "DÉBAT & VISION",
+          color: "dark"
+        },
+        {
+          title: "Les 12 Boardrooms (Salles de Deal)",
+          subtitle: "Huis Clos Transactionnel",
+          desc: "Salles de négociation en table ronde fermée (10 à 15 VIP), écrans tactiles de projection technique, isolation acoustique et secrétariat de transaction.",
+          icon: "BriefcaseBusiness",
+          badge: "TRANSACTION",
+          color: "green"
+        },
+        {
+          title: "Le Banquet Officiel de Gala",
+          subtitle: "Dîner d'Excellence & Prix",
+          desc: "Configuration en dîner assis de prestige, tables rondes habillées, éclairage d'ambiance solennel et scène d'honneur pour la remise du Prix Alassane Ouattara.",
+          icon: "Sparkles",
+          badge: "PRESTIGE",
+          color: "yellow"
+        }
+      ],
+      keyMessage: "Chaque mètre carré du Palais des Congrès est architecturé pour inspirer la confiance souveraine et accélérer la signature d'accords historiques."
+    }
+  },
+  {
+    id: 13,
     type: "boardrooms-mechanics",
     title: "Douze salles fermées pour passer au deal",
     subtitle: "Le cœur transactionnel du CAMEPT : un format de travail intensif à huis clos sous la règle de Chatham House",
@@ -438,7 +499,7 @@ export const slidesData = [
     }
   },
   {
-    id: 13,
+    id: 14,
     type: "boardrooms-deliverables",
     title: "Des engagements contractuels actés en clôture",
     subtitle: "Les 5 livrables contractuels exigés à l'issue des sessions de négociation en Boardroom",
@@ -455,7 +516,7 @@ export const slidesData = [
     }
   },
   {
-    id: 14,
+    id: 15,
     type: "ifi",
     title: "Mettre les projets face aux bons capitaux",
     subtitle: "Mobilisation des plus grandes institutions financières internationales et régionales",
@@ -487,7 +548,7 @@ export const slidesData = [
     }
   },
   {
-    id: 15,
+    id: 16,
     type: "program-overview",
     title: "Trois journées, une dynamique ascendante",
     subtitle: "De la vision souveraine aux engagements contractuels de clôture",
@@ -514,7 +575,7 @@ export const slidesData = [
           theme: "Infrastructures de base, Eau, Énergie & Logistique",
           color: "camept-orange",
           highlights: [
-            "Panels Transition Énergétique & Accès universel à l'Eau",
+            "Panels Énergie Verte & Accès universel à l'Eau",
             "Panels Transports, Marine marchande et Corridors logistiques",
             "Clinique des PPP et Business Speed Dating",
             "Boardrooms Transgabonais, Ports, Hydroélectricité Kinguélé Aval"
@@ -538,9 +599,9 @@ export const slidesData = [
     }
   },
   {
-    id: 16,
+    id: 17,
     type: "day1",
-    title: "Jour 1 — Ouverture officielle & Extractifs",
+    title: "Jour 1 • Ouverture officielle & Extractifs",
     subtitle: "Mines, Pétrole et Souveraineté Économique au cœur des débats",
     headerCategory: "PROGRAMME DÉTAILLÉ • 02 SEPTEMBRE 2026",
     content: {
@@ -552,15 +613,15 @@ export const slidesData = [
         { time: "13h00 - 14h30", title: "Déjeuner de Networking & VIP Lounge", desc: "Rencontres informelles entre ministres, dirigeants d'entreprises et financeurs.", type: "networking" },
         { time: "14h30 - 16h00", title: "Panel Mines & Ressources Géologiques", desc: "Stratégies de valorisation locale du fer, du manganèse et des métaux critiques.", type: "panel" },
         { time: "14h30 - 17h00", title: "Boardrooms Session 1 : Pétrole & Mines", desc: "Salles fermées : Projets SOGARA (Raffinage) & Projet Fer de Belinga.", type: "boardroom" },
-        { time: "16h15 - 17h45", title: "Panel Pétrole & Hydrocarbures", desc: "Champs matures, gaz offshore et financement de la transition énergétique.", type: "panel" },
+        { time: "16h15 - 17h45", title: "Panel Pétrole & Hydrocarbures", desc: "Champs matures, gaz offshore et financement de la transition verte.", type: "panel" },
         { time: "18h00 - 19h30", title: "Cocktail Inaugural & Project Pitching", desc: "Présentation flash des projets innovants et networking d'affaires du Jour 1.", type: "networking" }
       ]
     }
   },
   {
-    id: 17,
+    id: 18,
     type: "day2",
-    title: "Jour 2 — Transition, Infrastructures & PPP",
+    title: "Jour 2 • Transition, Infrastructures & PPP",
     subtitle: "Énergie, Transports, Marine Marchande et Accès universel à l'Eau",
     headerCategory: "PROGRAMME DÉTAILLÉ • 03 SEPTEMBRE 2026",
     content: {
@@ -578,9 +639,9 @@ export const slidesData = [
     }
   },
   {
-    id: 18,
+    id: 19,
     type: "day3",
-    title: "Jour 3 — Intégration, Engagements & Clôture",
+    title: "Jour 3 • Intégration, Engagements & Clôture",
     subtitle: "ZLECAf, Marchés Financiers, Signatures solennelles et Banquet Officiel",
     headerCategory: "PROGRAMME DÉTAILLÉ • 04 SEPTEMBRE 2026",
     content: {
@@ -596,7 +657,7 @@ export const slidesData = [
     }
   },
   {
-    id: 19,
+    id: 20,
     type: "gabon-benefits",
     title: "Un levier direct et puissant pour la Nation",
     subtitle: "Les retombées concrètes et durables du CAMEPT pour le Gabon",
@@ -606,7 +667,7 @@ export const slidesData = [
         {
           title: "Investissements Mobilisés",
           value: "293 Projets",
-          desc: "Afflux direct de capitaux privés et multilatéraux sur les 293 projets prioritaires du PNDT et du PNCD.",
+          desc: "Afflux direct de capitaux privés et multilatéraux sur les projets structurants et prioritaires du PNCD.",
           icon: "TrendingUp",
           color: "blue"
         },
@@ -620,7 +681,7 @@ export const slidesData = [
         {
           title: "Attractivité Économique",
           value: "Sovereign Trust",
-          desc: "Amélioration concrète de la perception du risque pays et démonstration de la transparence de la transition.",
+          desc: "Amélioration concrète de la perception du risque pays et démonstration de l'efficacité des réformes économiques.",
           icon: "ShieldCheck",
           color: "yellow"
         },
@@ -643,7 +704,7 @@ export const slidesData = [
     }
   },
   {
-    id: 20,
+    id: 21,
     type: "credibility",
     title: "Une crédibilité globale pour maximiser l'impact",
     subtitle: "L'alignement d'une communication à 360°, d'une rigueur scientifique et du co-pilotage de l'État",
@@ -667,7 +728,7 @@ export const slidesData = [
           color: "camept-orange",
           items: [
             "Comité scientifique international sélectionnant les experts et intervenants",
-            "implication des instituts techniques et de recherche miniers et énergétiques",
+            "Implication des instituts techniques et de recherche miniers et énergétiques",
             "Panels structurés sur des données rigoureuses et des études de faisabilité",
             "Production d'actes officiels et de livres blancs sectoriels post-congrès"
           ]
@@ -687,40 +748,112 @@ export const slidesData = [
     }
   },
   {
-    id: 21,
-    type: "closing",
+    id: 22,
+    type: "organizers",
+    title: "Les Structures Organisatrices",
+    subtitle: "L'alliance de l'événementiel institutionnel et du conseil stratégique international.",
+    headerCategory: "GOUVERNANCE & ORGANISATION",
+    content: {
+      columns: [
+        {
+          name: "Afrika Transtour",
+          role: "Opérateur leader en mobilité intelligente, logistique événementielle VIP et organisation de sommets institutionnels en Afrique depuis plus de 15 ans.",
+          color: "orange"
+        },
+        {
+          name: "Benzei Group",
+          role: "Cabinet international de conseil en stratégie, intermédiation d’affaires, dialogue B2G et structuration de projets souverains.",
+          color: "blue"
+        }
+      ],
+      closingSentence: "Une synergie paritaire pour garantir le standard d'excellence du CAMEPT 2026."
+    }
+  },
+  {
+    id: 23,
+    type: "leader",
+    title: "Magnatié BAMBA",
+    subtitle: "Commissaire Générale & Dirigeante d’Afrika Transtour et du Benzei Group",
+    headerCategory: "GOUVERNANCE & ORGANISATION",
+    content: {
+      bio: "Entrepreneure ivoirienne récompensée par le Prix National d’Excellence 2024, elle met au service du CAMEPT plus de 25 ans d'expertise en logistique, mobilité, intermédiation institutionnelle et diplomatique.",
+      highlights: [
+        { year: "2024", title: "Prix National d'Excellence", desc: "Distinction solennelle au Palais Présidentiel d'Abidjan." },
+        { year: "FISAT", title: "Commissaire Générale", desc: "Forum International des Transports, mobilisant 45 délégations." },
+        { year: "25 ans", title: "D'expérience stratégique", desc: "Au service du dialogue public-privé (B2G) et des projets structurants." }
+      ]
+    }
+  },
+  {
+    id: 24,
+    type: "followup",
     title: "Transformer le congrès en engagements suivis",
-    subtitle: "L'après-CAMEPT : un mécanisme institutionnel de suivi et de redevabilité",
+    subtitle: "L'après-CAMEPT : un mécanisme de suivi et de redevabilité sur 3 ans",
     headerCategory: "HÉRITAGE & SUIVI",
     content: {
       steps: [
         {
           step: "01",
-          title: "Déclaration Solennelle de Libreville",
-          desc: "Publication du manifeste panafricain fixant les priorités de souveraineté et d'industrialisation."
+          title: "Déclaration de Libreville",
+          desc: "Publication du manifeste souverain et industriel."
         },
         {
           step: "02",
-          title: "Consolidation des Livrables",
-          desc: "Archivage légal et transmission officielle des procès-verbaux, LoI et mandats signés en Boardrooms."
+          title: "Livrables & Accords",
+          desc: "Archivage et transmission légale des contrats signés en Boardroom."
         },
         {
           step: "03",
-          title: "Comité de Suivi-Évaluation (3 à 36 mois)",
-          desc: "Mise en place d'une task-force paritaire État-Organisateurs-IFI pour suivre l'exécution des accords."
+          title: "Comité de Suivi (3-36 mois)",
+          desc: "Task-force paritaire État-Organisateurs-IFI."
         },
         {
           step: "04",
-          title: "Rapports d'Avancement Semestriels",
-          desc: "Publication de bilans transparents sur le décaissement des fonds et l'avancement des chantiers du PNDT."
+          title: "Bilans Semestriels",
+          desc: "Rapports publics sur l'avancement et les décaissements."
         }
       ],
-      finalMessage: "Faire du CAMEPT bien plus qu'un congrès réussi : un mécanisme pérenne de gouvernance économique, de mobilisation des capitaux et de transformation réelle de l'Afrique.",
-      callToAction: {
-        text: "Rejoignez la dynamique CAMEPT 2026 à Libreville",
-        subtext: "02 — 04 Septembre 2026 • Palais des Congrès Omar Bongo Odimba",
-        contact: "www.camept-gabon.com | contact@camept-gabon.com"
-      }
+      finalMessage: "Un suivi rigoureux pour garantir un impact économique réel et pérenne."
+    }
+  },
+  {
+    id: 25,
+    type: "closing",
+    title: "Remerciements solennels & Clôture officielle",
+    subtitle: "La gratitude de l'organisation envers les plus hautes autorités et nos partenaires stratégiques",
+    headerCategory: "CLÔTURE DU CONGRÈS",
+    content: {
+      thanks: [
+        {
+          target: "Son Excellence Monsieur Brice Clotaire OLIGUI N'GUEMA",
+          role: "Président de la République, Chef de l'État",
+          desc: "Pour son Haut Parrainage, sa vision souveraine pour la transformation du Gabon et son soutien indéfectible à cette initiative panafricaine."
+        },
+        {
+          target: "Le Gouvernement de la République Gabonaise",
+          role: "Ministères Co-Pilotes & Autorités Hôtes",
+          desc: "Pour l'accompagnement technique et institutionnel des Ministères des Mines, du Pétrole, de l'Énergie, et des Transports."
+        },
+        {
+          target: "Le Royaume du Maroc & la République de Côte d'Ivoire",
+          role: "Pays et Invités d'Honneur",
+          desc: "Pour leur fraternité diplomatique, leur presence au plus haut niveau et le partage inestimable de leur expertise industrielle et logistique."
+        },
+        {
+          target: "Les IFI, Investisseurs et Délégués Panafricains",
+          role: "Partenaires du Développement",
+          desc: "Pour leur confiance, leur mobilisation active au sein des Boardrooms et leur engagement pour le financement de notre continent."
+        }
+      ],
+      logosTitle: "Une organisation institutionnelle signée par :",
+      contact: {
+        title: "Rejoignez la dynamique CAMEPT 2026 à Libreville",
+        dates: "Du 02 au 04 Septembre 2026 • Palais des Congrès Omar Bongo Odimba",
+        web: "www.camept-gabon.com",
+        email: "contact@camept-gabon.com",
+        phone: "+241 01 00 00 00 / +241 07 00 00 00"
+      },
+      finalQuote: "Ensemble, transformons nos richesses en souveraineté et notre vision en héritage durable pour l'Afrique."
     }
   }
 ];

@@ -8,258 +8,280 @@ import { BoardroomMechanics, BoardroomDeliverables } from './BoardroomCard';
 import logoGabon from '../assets/logo-gabon.png';
 import logoAfrika from '../assets/logo-afrika.png';
 import logoBenzei from '../assets/logo-benzei.png';
+import presidentPhoto from '../assets/president.png';
+import logoCamept from '../assets/logo-camept.png';
+import roiMaroc from '../assets/roi-maroc.png';
+import presidentCI from '../assets/president-ci.png';
+import bambaGallery4 from '../assets/bamba-gallery-3.jpg';
+import contextEngineer from '../assets/context-engineer.png';
+import whyGabonRig from '../assets/why-gabon-rig.jpg';
+import visionEngineer from '../assets/vision-engineer.png';
+import targetsEnergy from '../assets/targets-energy.png';
 
 export const SlideContent = ({ slide }) => {
   const { type, content } = slide;
+  const [galleryTab, setGalleryTab] = React.useState(0);
 
   // 1. COVER SLIDE - EXACT MATCH TO OFFICIAL CAMEPT POSTER
   // 1. COVER SLIDE - ULTRA-OPTIMIZED INSTITUTIONAL MASTERPIECE
+  // 1. COVER SLIDE - SENIOR ART DIRECTOR AXIAL SYMMETRICAL MASTERPIECE (GOLDEN VISUAL BALANCE)
   if (type === 'cover') {
     return (
-      <div className="w-full h-full relative flex flex-col justify-between bg-white text-slate-800 overflow-hidden select-none font-sans">
-        {/* 1. TOP TIER: Official Header & Presidential Patronage */}
-        <header className="relative z-30 w-full px-4 sm:px-6 lg:px-10 pt-3 sm:pt-4 pb-2 flex flex-col items-center flex-shrink-0 bg-white border-b border-slate-100 shadow-2xs">
-          {/* Three Logos Row */}
-          <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-4 mb-2">
-            {/* Extreme Left: République Gabonaise */}
-            <div className="flex items-center justify-start">
-              <img src={logoGabon} alt="République Gabonaise" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain" />
-            </div>
-
-            {/* Middle: Afrika Transtour */}
-            <div className="flex items-center justify-center">
-              <img src={logoAfrika} alt="Afrika Transtour" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain" />
-            </div>
-
-            {/* Right: Benzei Group */}
-            <div className="flex items-center justify-end">
-              <img src={logoBenzei} alt="Benzei Group" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain" />
-            </div>
-          </div>
-
-          {/* Patronage Sub-header */}
-          <div className="flex flex-col items-center text-center mt-1">
-            <span className="text-2xs sm:text-xs font-bold uppercase tracking-widest text-slate-500">
-              Sous le Haut Parrainage de
-            </span>
-            <span className="text-xs sm:text-sm md:text-base lg:text-lg font-black text-[#0A3A60] tracking-tight mt-0.5">
-              SEM Brice Clotaire OLIGUI N'GUEMA, Président de la République
-            </span>
-            <div className="w-20 h-0.5 bg-gradient-to-r from-[#F26E21] via-[#fcd116] to-[#0A3A60] rounded-full mt-1.5" />
-          </div>
-        </header>
-
-        {/* 2. CENTER TIER: Architectural Triptych Showcase + CAMEPT Emblem Card */}
-        <div className="relative flex-1 w-full min-h-0 flex flex-col items-center justify-center p-3 sm:p-4 lg:p-6 overflow-hidden bg-gradient-to-b from-slate-50 via-blue-50/25 to-white z-10">
-          {/* Background Architectural Triptych Grid (No buggy clip-paths) */}
-          <div className="absolute inset-0 grid grid-cols-3 gap-1.5 opacity-30 pointer-events-none overflow-hidden">
-            <div className="w-full h-full relative overflow-hidden bg-slate-900">
-              <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
-                alt="Logistique & Transports"
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0A3A60]/40 to-transparent" />
-            </div>
-            <div className="w-full h-full relative overflow-hidden bg-slate-900">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80"
-                alt="Ingénierie & Énergies"
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
-            </div>
-            <div className="w-full h-full relative overflow-hidden bg-slate-900">
-              <img
-                src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80"
-                alt="Mines & Extraction"
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-l from-[#F26E21]/30 to-transparent" />
-            </div>
-          </div>
-
-          {/* Majestic Center Glassmorphic Emblem Box */}
-          <div className="relative z-20 w-full max-w-4xl mx-auto my-auto flex flex-col items-center">
-            <motion.div
-              className="bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_20px_60px_-15px_rgba(10,58,96,0.25)] rounded-3xl p-5 sm:p-7 md:p-9 w-full flex flex-col items-center justify-center text-center relative overflow-hidden"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {/* Top Sector Badges Row */}
-              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <span className="bg-green-50 border border-green-200/80 text-green-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
-                  <Icons.Pickaxe className="w-3.5 h-3.5" />
-                  <span>Mines</span>
-                </span>
-                <span className="bg-amber-50 border border-amber-200/80 text-amber-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
-                  <Icons.Zap className="w-3.5 h-3.5" />
-                  <span>Énergies</span>
-                </span>
-                <span className="bg-orange-50 border border-orange-200/80 text-orange-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
-                  <Icons.Flame className="w-3.5 h-3.5" />
-                  <span>Pétrole</span>
-                </span>
-                <span className="bg-blue-50 border border-blue-200/80 text-blue-700 px-3 py-1 rounded-full font-extrabold text-2xs sm:text-xs flex items-center space-x-1.5 shadow-2xs">
-                  <Icons.Ship className="w-3.5 h-3.5" />
-                  <span>Transports</span>
-                </span>
+      <div className="w-full h-full relative flex flex-col justify-between bg-white text-[#1f2933] overflow-hidden select-none font-sans p-6 sm:p-10 lg:p-14">
+        
+        {/* TOP LAYER: Centered Sovereign Presidential Patronage (Vertical arrangement as requested) */}
+        <div className="w-full pb-4 sm:pb-5 border-b border-slate-100 flex items-center justify-center flex-shrink-0 z-20">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col items-center justify-center bg-slate-50/95 border border-slate-200/80 px-6 sm:px-8 py-3 rounded-2xl shadow-xs group transition-all hover:bg-slate-100/90 hover:shadow-md"
+          >
+            {/* Presidential Portrait Frame */}
+            <div className="relative flex-shrink-0 mb-2 sm:mb-2.5">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 rounded-full border-[3px] border-[#f7c400] shadow-md overflow-hidden bg-[#083f63] ring-4 ring-[#083f63]/10 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                <img 
+                  src={presidentPhoto}
+                  alt="SEM Brice Clotaire OLIGUI N'GUEMA" 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-
-              {/* CAMEPT Title */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-[#0A3A60] tracking-tighter leading-none font-sans drop-shadow-xs">
-                CAMEPT <span className="text-[#F26E21]">2026</span>
-              </h1>
-              
-              <p className="text-xs sm:text-sm md:text-base font-extrabold text-slate-700 tracking-wider uppercase mt-2 max-w-2xl leading-snug">
-                Congrès Africain des Mines, des Énergies, du Pétrole et des Transports
-              </p>
-
-              <div className="inline-flex items-center space-x-1.5 bg-orange-50 border border-orange-200/80 text-[#F26E21] px-3.5 py-0.5 rounded-full font-black text-[10px] sm:text-2xs uppercase tracking-widest mt-2.5 shadow-2xs">
-                <span>DÉVELOPPEMENT & PROGRÈS AFRICAIN</span>
-              </div>
-
-              {/* Main Banner */}
-              <div className="mt-4 sm:mt-6 w-full max-w-2xl">
-                <div className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-[#0A3A60] via-[#0E4F84] to-[#0A3A60] text-white font-black text-base sm:text-xl md:text-2xl tracking-tight uppercase shadow-xl border border-blue-300/30">
-                  Activités Phares du CAMEPT
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* 3. THE 5 ACTIVITY CARDS ROW (Floating at Bottom of Hero) */}
-          <div className="relative z-30 w-full max-w-7xl mx-auto px-2 sm:px-4 mt-auto pt-4 flex-shrink-0">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3.5">
-              {/* Card 1 */}
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#F26E21] to-[#d8580c] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Icons.Store className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <span className="text-[#F26E21] font-black text-xs sm:text-sm leading-tight">
-                  Exposition commerciale
-                </span>
-              </div>
-              {/* Card 2 */}
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#108A7E] to-[#0b665d] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Icons.Users className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <span className="text-[#108A7E] font-black text-xs sm:text-sm leading-tight">
-                  Forum de discussion international
-                </span>
-              </div>
-              {/* Card 3 */}
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#0B63A3] to-[#084877] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Icons.Handshake className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <span className="text-[#0B63A3] font-black text-xs sm:text-sm leading-tight">
-                  Rencontres B2B, B2G et G2G
-                </span>
-              </div>
-              {/* Card 4 */}
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#A6886A] to-[#80664d] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Icons.UsersRound className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <span className="text-[#403025] font-black text-xs sm:text-sm leading-tight">
-                  Business Club
-                </span>
-              </div>
-              {/* Card 5 */}
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-slate-100 p-3 sm:p-3.5 flex items-center space-x-3 transform hover:-translate-y-1 transition-all duration-300 group col-span-2 sm:col-span-1">
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-[#2B8C3E] to-[#1e662c] text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-                  <Icons.Utensils className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <span className="text-[#2B8C3E] font-black text-xs sm:text-sm leading-tight">
-                  Banquet officiel
-                </span>
+              {/* Tricolore Gabon Accent at bottom center of portrait */}
+              <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-white px-2 py-0.5 rounded-full shadow-xs border border-slate-200 flex space-x-1">
+                <span className="w-2 h-2 bg-[#159b37] rounded-full" />
+                <span className="w-2 h-2 bg-[#f7c400] rounded-full" />
+                <span className="w-2 h-2 bg-[#00a7c8] rounded-full" />
               </div>
             </div>
-          </div>
+
+            {/* Exact Patronage Text Below Photo */}
+            <div className="flex flex-col items-center text-center mt-1 sm:mt-1.5">
+              <h3 className="text-xs sm:text-sm md:text-base font-black text-[#083f63] tracking-tight leading-snug">
+                SEM Brice Clotaire Oligui N'Guema, Président de la République
+              </h3>
+              <span className="text-3xs sm:text-2xs md:text-xs font-extrabold uppercase tracking-widest text-[#f05a00] mt-0.5">
+                ★ Haut Parrain de l'événement ★
+              </span>
+            </div>
+          </motion.div>
         </div>
 
-        {/* 4. BOTTOM TIER: Official Orange Footer Bar */}
-        <footer className="relative z-30 w-full bg-[#F26E21] text-white px-4 sm:px-6 lg:px-10 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-xl flex-shrink-0 text-xs sm:text-sm font-bold">
-          {/* Left: Sponsor */}
-          <div className="flex items-center space-x-2.5">
-            <span className="font-extrabold tracking-wider uppercase text-2xs sm:text-xs text-orange-100">SPONSOR</span>
-            <div className="bg-white px-3 py-0.5 rounded shadow-sm flex items-center space-x-1.5">
-              <Icons.Globe className="w-3.5 h-3.5 text-[#0B63A3]" />
-              <span className="font-black tracking-wider text-[#0B63A3] text-xs uppercase">INFRAGROUP</span>
+        {/* MIDDLE HERO LAYER: Centered Monumental Official Logo, Horizontal Date Pill & Widescreen Theme Box */}
+        <div className="flex-1 w-full min-h-0 flex flex-col justify-center items-center my-auto z-10 py-4 max-w-6xl mx-auto text-center">
+          
+          {/* Monumental Official CAMEPT Logo & 2026 Edition Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-10 my-2"
+          >
+            {/* Official Logo (Emblem + Text) */}
+            <img 
+              src={logoCamept} 
+              alt="CAMEPT - Congrès Africain des Mines, des Énergies, du Pétrole et des Transports" 
+              className="max-h-28 sm:max-h-36 md:max-h-44 lg:max-h-48 w-auto object-contain mix-blend-multiply bg-transparent transition-transform duration-500 hover:scale-105" 
+            />
+            
+            {/* Monumental Year & Edition Pillar */}
+            <div className="flex flex-col items-center sm:items-start justify-center pl-0 sm:pl-6 sm:border-l-4 border-[#f05a00]">
+              <span className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-[#f05a00] tracking-tighter leading-none font-sans drop-shadow-xs">
+                2026
+              </span>
+              <span className="text-xs sm:text-sm md:text-base font-extrabold text-[#083f63] uppercase tracking-widest mt-2 px-3 py-1 bg-[#083f63]/10 rounded-lg border border-[#083f63]/20">
+                1ère Édition
+              </span>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Center: Contacts */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-2xs sm:text-xs font-semibold">
-            <div className="flex items-center space-x-1.5">
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center shadow-2xs">
-                <Icons.Mail className="w-3 h-3" />
-              </div>
-              <span>afrikatranstour@gmail.com</span>
-            </div>
-            <div className="flex items-center space-x-1.5">
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center shadow-2xs">
-                <Icons.Phone className="w-3 h-3" />
-              </div>
-              <span>+225 07 69 00 59 59</span>
-            </div>
-          </div>
+          {/* Centered Date & Venue Horizontal Bar (Visual Anchor) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-3 sm:mt-4 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 bg-slate-50/90 border border-slate-200/80 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-2xs mx-auto"
+          >
+            <span className="text-base sm:text-lg md:text-xl font-black text-[#f05a00] font-sans">
+              Du 02 au 04 septembre 2026
+            </span>
+            <span className="hidden sm:inline text-slate-300 font-bold">•</span>
+            <span className="text-xs sm:text-sm md:text-base font-black text-[#083f63]">
+              Palais des Congrès Omar Bongo Odimba <span className="font-normal text-slate-500">• Libreville, Gabon</span>
+            </span>
+          </motion.div>
 
-          {/* Right: Social & CAMEPT */}
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center space-x-1">
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px] shadow-2xs">f</div>
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px] shadow-2xs">in</div>
-              <div className="w-5 h-5 rounded-full bg-white text-[#F26E21] flex items-center justify-center font-black text-[10px] shadow-2xs">𝕏</div>
+          {/* Centered Widescreen Theme Box (MONUMENTAL & EN GRAND) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-4 sm:mt-5 w-full max-w-6xl mx-auto bg-gradient-to-r from-[#083f63]/10 via-[#083f63]/5 to-[#083f63]/10 border-2 border-[#083f63]/25 border-l-8 border-r-8 border-l-[#083f63] border-r-[#f05a00] p-5 sm:p-7 rounded-2xl shadow-md"
+          >
+            <div className="inline-block px-4 py-1 rounded-full bg-[#083f63] text-white text-xs sm:text-sm font-black uppercase tracking-widest mb-3 shadow-xs">
+              ★ Thème Général du Congrès ★
             </div>
-            <span className="font-black tracking-wider text-sm sm:text-base ml-1">CAMEPT</span>
-          </div>
-        </footer>
+            <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-[#083f63] leading-tight tracking-tight">
+              « {content.theme || "Mines, énergies, pétrole, transports : nouvelles niches de croissance pour une souveraineté accrue et un développement équitable et durable."} »
+            </p>
+          </motion.div>
+        </div>
+
+        {/* BOTTOM LAYER: Discreet Centered Signature ONLY */}
+        <div className="w-full pt-4 border-t border-slate-100 flex items-center justify-center text-3xs sm:text-2xs font-bold text-slate-400 tracking-widest uppercase flex-shrink-0 z-20">
+          <span>
+            Organisé par <strong className="font-black text-[#083f63]">Benzei Group & Afrika Transtour</strong>
+          </span>
+        </div>
       </div>
     );
   }
 
-  // 2. PARADOX SLIDE
-  if (type === 'paradox') {
-    return (
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch w-full">
-        <div className="lg:col-span-6 flex flex-col justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
-            {content.stats.map((st, idx) => (
-              <StatCard
-                key={idx}
-                value={st.value}
-                label={st.label}
-                sublabel={st.sublabel}
-                icon={st.icon}
-                accent={idx === 0 ? 'blue' : 'orange'}
-                delay={idx * 0.15}
-                className="h-full"
-              />
-            ))}
+  // 2. OUTLINE SLIDE (PLAN DE LA PRÉSENTATION) - NOUVEAU DESIGN ÉQUILIBRÉ 3-TOP / 2-BOTTOM
+  if (type === 'outline') {
+    const renderCard = (sec, idx, delayOffset = 0) => (
+      <motion.div
+        key={sec.num || idx}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: (idx + delayOffset) * 0.1 }}
+        className="bg-white/95 border border-slate-200/80 hover:border-[#f05a00] rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-all group relative overflow-hidden h-full"
+      >
+        {/* Top Accent line */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#083f63] via-[#0b63a3] to-[#f05a00] opacity-90 group-hover:opacity-100 transition-opacity" />
+        
+        <div>
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#083f63]/20 group-hover:text-[#f05a00] transition-colors font-sans">
+              #{sec.num}
+            </span>
+            <div className="px-3 py-1 rounded-full bg-[#083f63]/5 text-[#083f63] font-bold text-xs uppercase tracking-wider border border-[#083f63]/10 shadow-2xs">
+              {sec.slides}
+            </div>
           </div>
+          <h3 className="text-base sm:text-lg lg:text-xl font-black text-[#083f63] mb-2 leading-tight group-hover:text-[#f05a00] transition-colors">
+            {sec.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+            {sec.desc}
+          </p>
         </div>
 
-        <div className="lg:col-span-6 flex flex-col justify-center">
+        <div className="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between">
+          <span className="text-3xs sm:text-2xs font-extrabold uppercase tracking-widest text-[#f05a00] flex items-center gap-1">
+            <span>•</span> CAMEPT 2026
+          </span>
+          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-100 group-hover:bg-[#f05a00] group-hover:text-white transition-all flex items-center justify-center text-xs font-bold text-[#083f63] shadow-2xs group-hover:scale-105">
+            →
+          </div>
+        </div>
+      </motion.div>
+    );
+
+    return (
+      <div className="w-full h-full flex flex-col justify-between gap-5 sm:gap-6 py-2">
+        {/* Ligne supérieure : 3 piliers (#01, #02, #03) */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 flex-1 min-h-0">
+          {content.sections?.slice(0, 3).map((sec, idx) => renderCard(sec, idx, 0))}
+        </div>
+
+        {/* Ligne inférieure : 2 piliers majeurs (#04, #05) qui bénéficient de plus de largeur */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 flex-1 min-h-0">
+          {content.sections?.slice(3, 5).map((sec, idx) => renderCard(sec, idx, 3))}
+        </div>
+      </div>
+    );
+  }
+
+  // 3. PARADOX SLIDE (AVEC CADRE D'IMAGE INTÉGRÉ EN 3 COLONNES PLEINE HAUTEUR)
+  if (type === 'paradox') {
+    return (
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* Left Column: 2 Big Stat Cards Stacked (30% vs 3,2%) */}
+        <div className="lg:col-span-4 flex flex-col justify-between gap-4 lg:gap-5 h-full">
+          {content.stats?.map((st, idx) => (
+            <StatCard
+              key={idx}
+              value={st.value}
+              label={st.label}
+              sublabel={st.sublabel}
+              icon={st.icon}
+              accent={idx === 0 ? 'blue' : 'orange'}
+              delay={idx * 0.15}
+              className="flex-1 flex flex-col justify-center"
+            />
+          ))}
+        </div>
+
+        {/* Center Column: PRESTIGIOUS IMAGE FRAME (Cadre d'image institutionnel demandé par le client) */}
+        <div className="lg:col-span-4 flex flex-col justify-between h-full">
           <motion.div
-            className="p-5 sm:p-6 lg:p-8 rounded-xl bg-white border-l-8 border-camept-dark shadow-elevated flex flex-col justify-between h-full"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="w-full h-full bg-slate-900 rounded-2xl border-2 border-[#f7c400] p-2 sm:p-3 shadow-elevated relative overflow-hidden flex flex-col justify-between group"
+          >
+            {/* Corner architectural accents */}
+            <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-[#f05a00] rounded-tl-xl z-20" />
+            <div className="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-[#f05a00] rounded-tr-xl z-20" />
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-[#f05a00] rounded-bl-xl z-20" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-[#f05a00] rounded-br-xl z-20" />
+
+            {/* Image Container */}
+            <div className="w-full flex-1 relative rounded-xl overflow-hidden bg-slate-800">
+              <img 
+                src={contextEngineer} 
+                alt="Transformation industrielle et minière en Afrique" 
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-90"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/logo-camept.png";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/90 via-transparent to-transparent" />
+            </div>
+
+            {/* Caption Frame Overlay */}
+            <div className="mt-2 sm:mt-3 px-3 py-2.5 bg-[#083f63] rounded-lg border border-white/10 text-center z-10 flex items-center justify-center">
+              <p className="text-xs sm:text-sm font-black text-white tracking-tight leading-snug">
+                Transformation Industrielle & Souveraineté
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Column: Le Diagnostic Réel & Conviction • full height, no dead space */}
+        <div className="lg:col-span-4 flex flex-col h-full">
+          <motion.div
+            className="p-5 lg:p-6 rounded-2xl bg-white border-l-8 border-[#083f63] shadow-elevated flex flex-col h-full border border-slate-100"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div>
-              <div className="flex items-center space-x-2 text-camept-orange font-bold text-xs sm:text-sm uppercase tracking-wider mb-3">
-                <Icons.AlertTriangle className="w-5 h-5 flex-shrink-0" />
-                <span>Le Diagnostic Réel</span>
-              </div>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-camept-dark leading-relaxed mb-4">
+            {/* Badge */}
+            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-[#f05a00]/10 text-[#f05a00] font-black text-xs uppercase tracking-wider mb-4 self-start flex-shrink-0">
+              <Icons.AlertTriangle className="w-4 h-4 flex-shrink-0" />
+              <span>Le Diagnostic Réel</span>
+            </div>
+
+            {/* Citation • takes all available space, text grows to fill */}
+            <div className="flex-1 flex flex-col justify-center">
+              <p className="text-sm lg:text-base xl:text-lg font-black text-[#083f63] leading-snug">
                 "{content.coreProblem}"
               </p>
-              <div className="h-0.5 bg-gray-100 w-full my-4" />
-              <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-medium">
+            </div>
+
+            {/* Divider */}
+            <div className="h-0.5 bg-gradient-to-r from-[#083f63] via-[#f05a00] to-transparent w-full my-4 flex-shrink-0" />
+
+            {/* Conviction block • anchored to bottom, expands to fill remaining space */}
+            <div className="flex-1 flex flex-col justify-center bg-slate-50 p-4 rounded-xl border border-slate-200/80">
+              <div className="flex items-center gap-2 mb-2">
+                <Icons.Lightbulb className="w-4 h-4 text-[#f05a00] flex-shrink-0" />
+                <div className="text-3xs font-extrabold uppercase tracking-widest text-slate-500">
+                  Notre Conviction Inébranlable
+                </div>
+              </div>
+              <p className="text-xs lg:text-sm text-slate-700 leading-relaxed font-semibold">
                 {content.conviction}
               </p>
             </div>
@@ -269,75 +291,212 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
-  // 3. WHY GABON SLIDE
+  // 3. WHY GABON SLIDE • 2-col layout: large image frame left + cards right
   if (type === 'why-gabon') {
     return (
-      <div className="flex flex-col justify-start gap-4 sm:gap-6 w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch w-full">
-          {content.blocks.map((block, idx) => (
-            <InfoCard
-              key={idx}
-              title={block.title}
-              description={block.description}
-              icon={block.icon}
-              color={block.color}
-              delay={idx * 0.1}
-              className="h-full"
-            />
-          ))}
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+
+        {/* ── LEFT: Prestigious image frame ── */}
+        <div className="lg:col-span-5 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative w-full h-full min-h-[220px] rounded-2xl overflow-hidden border-2 border-[#f7c400] shadow-elevated group bg-slate-900 flex flex-col"
+          >
+            {/* Corner accents */}
+            <div className="absolute top-0 left-0 w-7 h-7 border-t-4 border-l-4 border-[#f05a00] rounded-tl-xl z-20 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-7 h-7 border-t-4 border-r-4 border-[#f05a00] rounded-tr-xl z-20 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-7 h-7 border-b-4 border-l-4 border-[#f05a00] rounded-bl-xl z-20 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-7 h-7 border-b-4 border-r-4 border-[#f05a00] rounded-br-xl z-20 pointer-events-none" />
+
+            {/* Image fills frame */}
+            <div className="flex-1 relative overflow-hidden">
+              <img
+                src={whyGabonRig}
+                alt="Plateforme pétrolière et richesses offshore du Gabon"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png'; }}
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+
+              {/* Floating badge top */}
+              <div className="absolute top-4 left-4 z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white font-black text-xs uppercase tracking-widest">
+                  🌍 Gabon
+                </span>
+              </div>
+            </div>
+
+            {/* Caption bar at bottom */}
+            <div className="flex-shrink-0 px-5 py-3.5 bg-[#083f63] border-t border-[#f7c400]/30 flex items-center justify-center z-10 text-center">
+              <p className="text-sm font-black text-white leading-snug">
+                Positionnement du Gabon comme Hub Panafricain
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        <GeometricPanel variant="ribbon" color="dark" className="p-4 sm:p-5 rounded-xl text-center shadow-elevated flex items-center justify-center space-x-2.5 flex-shrink-0 mt-auto">
-          <Icons.Star className="w-5 h-5 text-camept-yellow flex-shrink-0 fill-current" />
-          <p className="text-xs sm:text-sm md:text-base font-extrabold tracking-wide text-white">
-            {content.keyMessage}
-          </p>
-        </GeometricPanel>
+        {/* ── RIGHT: 4 info cards stacked in 2Õ2 + key message ribbon ── */}
+        <div className="lg:col-span-7 flex flex-col gap-4 h-full">
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch min-h-0">
+            {content.blocks.map((block, idx) => (
+              <InfoCard
+                key={idx}
+                title={block.title}
+                description={block.description}
+                icon={block.icon}
+                color={block.color}
+                delay={idx * 0.1}
+                className="h-full"
+              />
+            ))}
+          </div>
+
+          {/* Key message ribbon anchored to bottom */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+            className="flex-shrink-0"
+          >
+            <GeometricPanel variant="ribbon" color="dark" className="p-4 sm:p-5 rounded-xl text-center shadow-elevated flex items-center justify-center space-x-2.5">
+              <Icons.Star className="w-5 h-5 text-camept-yellow flex-shrink-0 fill-current" />
+              <p className="text-xs sm:text-sm md:text-base font-extrabold tracking-wide text-white">
+                {content.keyMessage}
+              </p>
+            </GeometricPanel>
+          </motion.div>
+        </div>
+
       </div>
     );
   }
 
-  // 4. VISION SLIDE
+  // 4. VISION SLIDE - AVEC CADRE D'IMAGE STRATÉGIQUE ET DESIGN ÉQUILIBRÉ
   if (type === 'vision') {
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch w-full">
-        <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 items-stretch">
-          {content.pillars.map((pil, idx) => (
-            <InfoCard
-              key={idx}
-              title={pil.title}
-              description={pil.desc}
-              icon={pil.icon}
-              color={idx % 2 === 0 ? 'blue' : 'orange'}
-              delay={idx * 0.1}
-              className={`${idx === 4 ? 'sm:col-span-2' : ''} h-full`}
-            />
-          ))}
-        </div>
-
-        <div className="lg:col-span-4 flex flex-col justify-center">
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+        {/* ── LEFT: Cadre d'image thématique haut de gamme ── */}
+        <div className="lg:col-span-5 flex flex-col h-full">
           <motion.div
-            className="p-5 sm:p-6 rounded-xl bg-camept-dark text-white shadow-elevated relative overflow-hidden h-full flex flex-col justify-between"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative w-full h-full min-h-[260px] rounded-3xl overflow-hidden border-2 border-[#f7c400] shadow-elevated group bg-slate-900 flex flex-col justify-between"
           >
-            <div>
-              <h3 className="text-xs sm:text-sm font-bold text-camept-yellow uppercase tracking-wider mb-4 border-b border-white/15 pb-2.5 flex items-center gap-2">
-                <Icons.Target className="w-4 h-4 text-camept-orange flex-shrink-0" />
-                <span>Secteurs & Priorités Ciblées</span>
-              </h3>
-              <ul className="space-y-2.5 sm:space-y-3">
-                {content.sectorsFocus.map((focus, idx) => (
-                  <li key={idx} className="flex items-center space-x-2.5 text-xs sm:text-sm font-semibold text-gray-100 p-2 rounded bg-white/5 border border-white/10">
-                    <Icons.CheckCircle2 className="w-4 h-4 text-camept-orange flex-shrink-0" />
-                    <span>{focus}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Corner architectural accents */}
+            <div className="absolute top-0 left-0 w-7 h-7 border-t-4 border-l-4 border-[#f05a00] rounded-tl-2xl z-20 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-7 h-7 border-t-4 border-r-4 border-[#f05a00] rounded-tr-2xl z-20 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-7 h-7 border-b-4 border-l-4 border-[#f05a00] rounded-bl-2xl z-20 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-7 h-7 border-b-4 border-r-4 border-[#f05a00] rounded-br-2xl z-20 pointer-events-none" />
+
+            {/* Image fills frame */}
+            <div className="flex-1 relative overflow-hidden">
+              <img
+                src={visionEngineer}
+                alt="Leadership et Souveraineté Industrielle en Afrique"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                style={{ imageRendering: 'high-quality' }}
+                onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png'; }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+
+              {/* Floating badge */}
+              <div className="absolute top-4 left-4 z-10">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#f05a00] text-white font-black text-xs uppercase tracking-widest shadow-md border border-white/20">
+                  ⚙️ Leadership & Souveraineté
+                </span>
+              </div>
             </div>
-            <div className="mt-6 pt-4 border-t border-white/15 text-2xs sm:text-xs text-gray-300 italic">
-              {content.keyMessage}
+
+            {/* Caption bar at bottom */}
+            <div className="flex-shrink-0 px-5 py-4 bg-[#083f63] border-t border-[#f7c400]/30 flex flex-col justify-center z-10">
+              <span className="text-2xs font-extrabold uppercase tracking-widest text-[#f7c400] mb-0.5">
+                ★ AMBITION INSTITUTIONNELLE ★
+              </span>
+              <p className="text-xs sm:text-sm font-black text-white leading-snug">
+                L'ingénierie et l'expertise technique au service d'une transformation économique souveraine et durable
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ── RIGHT: 4 Piliers en grille 2x2 avec design premium, complet et équilibré + Pilier Humain en bas ── */}
+        <div className="lg:col-span-7 flex flex-col justify-between gap-4 h-full">
+          {/* Top 4 Pillars in symmetrical 2x2 grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1 min-h-0 items-stretch">
+            {content.pillars.slice(0, 4).map((pil, idx) => {
+              const tags = [
+                ["Souveraineté", "Industrialisation"],
+                ["Diplomatie", "Attractivité"],
+                ["Contrats", "Sécurité"],
+                ["Leadership", "Durable"]
+              ][idx] || ["CAMEPT", "Gabon 2026"];
+
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  className="p-4 sm:p-5 rounded-2xl bg-white border-l-8 border-[#083f63] shadow-card hover:shadow-elevated transition-all flex flex-col justify-between h-full border-t border-r border-b border-slate-100 group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-3xs font-black uppercase tracking-widest px-2.5 py-1 rounded-full bg-[#083f63]/10 text-[#083f63]">
+                        0{idx + 1} • PILIER
+                      </span>
+                      {Icons[pil.icon] && React.createElement(Icons[pil.icon], {
+                        className: "w-5 h-5 text-[#f05a00] group-hover:scale-110 transition-transform flex-shrink-0"
+                      })}
+                    </div>
+                    <h3 className="text-sm sm:text-base font-black text-[#083f63] leading-tight mb-2">
+                      {pil.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-600 font-semibold leading-relaxed">
+                      {pil.desc}
+                    </p>
+                  </div>
+                  <div className="pt-3 mt-3 border-t border-slate-100 flex items-center gap-1.5 flex-wrap">
+                    {tags.map((tag, tIdx) => (
+                      <span key={tIdx} className="text-[10px] font-extrabold px-2 py-0.5 rounded bg-slate-50 text-slate-500 border border-slate-200/60">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Bottom consolidated 5th Pillar & Key Message Ribbon */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="flex-shrink-0 bg-[#083f63] text-white p-4 sm:p-5 rounded-2xl border-l-8 border-[#f05a00] shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+          >
+            <div className="flex items-start gap-3 min-w-0">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Icons.Users className="w-5 h-5 text-[#f7c400]" />
+              </div>
+              <div className="min-w-0">
+                <div className="text-2xs font-extrabold text-[#f7c400] uppercase tracking-widest">
+                  Pilier 05 • {content.pillars[4]?.title || "Développement Humain Durable"}
+                </div>
+                <p className="text-xs sm:text-sm font-semibold text-white/90 leading-snug mt-0.5">
+                  {content.pillars[4]?.desc || "Création d'emplois qualifiés et amélioration des conditions de vie."}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex-shrink-0 self-end sm:self-center">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#f05a00] text-white font-black text-2xs uppercase tracking-wider shadow-xs">
+                <Icons.CheckCircle2 className="w-3.5 h-3.5" />
+                <span>Projets Bancables</span>
+              </span>
             </div>
           </motion.div>
         </div>
@@ -345,12 +504,13 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
-  // 5. PNDT SLIDE
-  if (type === 'pndt') {
+  // 5. PNCD SLIDE - CONSOLIDATED NATIONAL PORTFOLIO & STRATEGIC FOCUS
+  if (type === 'pncd') {
     return (
       <div className="flex flex-col justify-start gap-4 sm:gap-5 w-full">
+        {/* Top Stats Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 flex-shrink-0">
-          {content.stats.map((st, idx) => (
+          {content.stats?.map((st, idx) => (
             <StatCard
               key={idx}
               value={st.value}
@@ -362,71 +522,42 @@ export const SlideContent = ({ slide }) => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-stretch w-full">
-          {content.sectors.map((sec, idx) => (
-            <motion.div
-              key={idx}
-              className="p-4 sm:p-5 rounded-xl bg-white shadow-card hover:shadow-elevated transition-all border-t-8 border-camept-blue flex flex-col justify-between h-full"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
-            >
-              <div>
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-2xs sm:text-xs px-2.5 py-1 rounded-full bg-camept-orange/10 text-camept-orange font-bold uppercase">
-                    {sec.share}
-                  </span>
-                  {Icons[sec.icon] && React.createElement(Icons[sec.icon], { className: "w-6 h-6 text-camept-blue flex-shrink-0" })}
+        {/* 4 Strategic Sector Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch w-full">
+          {content.sectors?.map((sec, idx) => {
+            const IconComponent = Icons[sec.icon] || Icons.HelpCircle;
+            return (
+              <motion.div
+                key={idx}
+                className="p-4 sm:p-5 rounded-xl bg-white shadow-card hover:shadow-elevated transition-all border-t-8 border-camept-blue flex flex-col justify-between h-full"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
+              >
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-2xs sm:text-xs px-2.5 py-1 rounded-full bg-camept-orange/10 text-camept-orange font-bold uppercase tracking-wider">
+                      {sec.share}
+                    </span>
+                    <IconComponent className="w-6 h-6 text-camept-blue flex-shrink-0" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-extrabold text-camept-dark mb-2 leading-tight">{sec.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{sec.desc}</p>
                 </div>
-                <h3 className="text-base sm:text-lg font-extrabold text-camept-dark mb-2">{sec.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{sec.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
-        <div className="p-3.5 sm:p-4 bg-gradient-to-r from-camept-yellow/30 via-amber-100/50 to-camept-yellow/30 rounded-xl text-center border border-camept-yellow flex items-center justify-center space-x-2.5 flex-shrink-0 mt-auto shadow-2xs">
-          <Icons.Zap className="w-5 h-5 text-camept-orange flex-shrink-0 fill-current" />
-          <p className="text-xs sm:text-sm md:text-base font-extrabold text-camept-darker">
-            {content.keyMessage}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  // 6. PNCD SLIDE
-  if (type === 'pncd') {
-    return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 items-stretch w-full">
-        {content.challenges.map((ch, idx) => (
-          <motion.div
-            key={idx}
-            className={`p-4 sm:p-5 rounded-xl flex flex-col justify-between transition-all duration-300 shadow-card hover:shadow-elevated ${ch.color} h-full`}
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: idx * 0.08 }}
-          >
-            <div className="space-y-2.5">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] sm:text-2xs font-black uppercase tracking-widest opacity-80">
-                  Défi Sectoriel #{idx + 1}
-                </span>
-                <Icons.Target className="w-4 h-4 text-camept-orange flex-shrink-0" />
-              </div>
-              <h3 className="text-base sm:text-lg font-black tracking-tight leading-snug">
-                {ch.sector}
-              </h3>
-              <div className="p-2.5 rounded-lg bg-black/5 dark:bg-white/10 font-bold text-2xs sm:text-xs flex items-center space-x-2">
-                <Icons.Sparkles className="w-3.5 h-3.5 flex-shrink-0 text-camept-orange" />
-                <span>{ch.goal}</span>
-              </div>
-              <p className="text-xs leading-relaxed opacity-90 pt-1">
-                {ch.action}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+        {/* Key Message Ribbon */}
+        {content.keyMessage && (
+          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-camept-yellow/30 via-amber-100/50 to-camept-yellow/30 rounded-xl text-center border border-camept-yellow flex items-center justify-center space-x-2.5 flex-shrink-0 mt-auto shadow-2xs">
+            <Icons.Zap className="w-5 h-5 text-camept-orange flex-shrink-0 fill-current" />
+            <p className="text-xs sm:text-sm md:text-base font-extrabold text-camept-darker">
+              {content.keyMessage}
+            </p>
+          </div>
+        )}
       </div>
     );
   }
@@ -467,69 +598,118 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
-  // 8. IMPACT SLIDE
+  // 8. IMPACT SLIDE • 2-col: large image left + objective ribbon + 5 target cards right
   if (type === 'impact') {
+    const colorMap = {
+      blue:   'border-t-4 border-camept-blue bg-white text-camept-dark',
+      orange: 'border-t-4 border-camept-orange bg-white text-camept-dark',
+      yellow: 'border-t-4 border-camept-yellow bg-camept-dark text-white',
+      green:  'border-t-4 border-camept-green bg-white text-camept-dark',
+      dark:   'border-t-4 border-camept-orange bg-camept-darker text-white',
+    };
+
     return (
-      <div className="flex flex-col justify-start gap-4 w-full">
-        <div className="p-4 sm:p-5 bg-camept-dark text-white rounded-xl clip-angled-header shadow-md flex-shrink-0 flex items-center gap-3">
-          <div className="p-2 rounded bg-camept-orange/20 text-camept-orange flex-shrink-0">
-            <Icons.Target className="w-6 h-6" />
-          </div>
-          <div>
-            <span className="text-[10px] sm:text-2xs text-camept-yellow font-bold uppercase tracking-widest block mb-0.5">
-              Objectif Stratégique Général
-            </span>
-            <p className="text-xs sm:text-sm md:text-base font-bold leading-relaxed text-gray-100">
-              {content.generalObjective}
-            </p>
-          </div>
+      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
+
+        {/* ── LEFT: Prestigious image frame ── */}
+        <div className="lg:col-span-4 flex flex-col h-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative w-full h-full min-h-[220px] rounded-2xl overflow-hidden border-2 border-[#f7c400] shadow-elevated group bg-slate-900 flex flex-col"
+          >
+            {/* Corner accents */}
+            <div className="absolute top-0 left-0 w-7 h-7 border-t-4 border-l-4 border-[#f05a00] rounded-tl-xl z-20 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-7 h-7 border-t-4 border-r-4 border-[#f05a00] rounded-tr-xl z-20 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-7 h-7 border-b-4 border-l-4 border-[#f05a00] rounded-bl-xl z-20 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-7 h-7 border-b-4 border-r-4 border-[#f05a00] rounded-br-xl z-20 pointer-events-none" />
+
+            {/* Image */}
+            <div className="flex-1 relative overflow-hidden">
+              <img
+                src={targetsEnergy}
+                alt="Transformation structurelle et énergies vertes en Afrique"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                onError={(e) => { e.target.onerror = null; e.target.src = '/hero.png'; }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/25 to-transparent" />
+
+              {/* Floating badge */}
+              <div className="absolute top-4 left-4 z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 text-white font-black text-xs uppercase tracking-widest">
+                  🎯 Impact
+                </span>
+              </div>
+
+              {/* Stat overlay bottom-left */}
+              <div className="absolute bottom-4 left-4 right-4 z-10">
+                <p className="text-white/90 text-xs font-bold leading-snug line-clamp-3">
+                  {content.generalObjective}
+                </p>
+              </div>
+            </div>
+
+            {/* Caption bar */}
+            <div className="flex-shrink-0 px-5 py-3 bg-[#083f63] border-t border-[#f7c400]/30 flex items-center gap-2 z-10">
+              <Icons.Target className="w-4 h-4 text-[#f7c400] flex-shrink-0" />
+              <div>
+                <span className="text-2xs font-extrabold uppercase tracking-widest text-[#f7c400] block">
+                  Objectif Stratégique
+                </span>
+                <p className="text-xs font-black text-white leading-tight">
+                  Transformation Structurelle Panafricaine
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5 items-stretch w-full">
-          {content.impacts.map((imp, idx) => {
-            const colorMap = {
-              blue: 'border-t-4 border-camept-blue bg-white text-camept-dark',
-              orange: 'border-t-4 border-camept-orange bg-white text-camept-dark',
-              yellow: 'border-t-4 border-camept-yellow bg-camept-dark text-white',
-              green: 'border-t-4 border-camept-green bg-white text-camept-dark',
-              dark: 'border-t-4 border-camept-orange bg-camept-darker text-white',
-            };
-
-            return (
+        {/* ── RIGHT: 5 target cards in spacious grid ── */}
+        <div className="lg:col-span-8 flex flex-col h-full justify-between">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch h-full">
+            {content.impacts.map((imp, idx) => (
               <motion.div
                 key={idx}
-                className={`p-4 rounded-xl shadow-card hover:shadow-elevated transition-all flex flex-col justify-between ${colorMap[imp.color] || colorMap.blue} h-full`}
+                className={`p-4 sm:p-5 rounded-2xl shadow-card hover:shadow-elevated transition-all flex flex-col justify-between border border-slate-200/80 ${colorMap[imp.color] || colorMap.blue} h-full ${idx === 4 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                transition={{ duration: 0.4, delay: 0.1 + idx * 0.08 }}
               >
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-[10px] sm:text-2xs font-extrabold uppercase tracking-wider opacity-75">
+                    <span className={`text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded ${imp.color === 'yellow' || imp.color === 'dark' ? 'bg-white/15 text-white' : 'bg-black/5 text-slate-600'}`}>
                       Cible #{idx + 1}
                     </span>
                     {Icons[imp.icon] && React.createElement(Icons[imp.icon], { className: "w-5 h-5 text-camept-orange flex-shrink-0" })}
                   </div>
-                  <h3 className="text-sm sm:text-base font-black leading-tight border-b border-gray-200/40 pb-2">{imp.target}</h3>
+                  <h3 className={`text-sm sm:text-base font-black leading-tight border-b pb-2 ${imp.color === 'yellow' || imp.color === 'dark' ? 'border-white/20 text-white' : 'border-gray-200/60 text-[#083f63]'}`}>{imp.target}</h3>
                   <ul className="space-y-2 pt-1">
                     {imp.benefits.map((ben, bIdx) => (
-                      <li key={bIdx} className="text-2xs sm:text-xs flex items-start space-x-2 leading-snug p-1.5 rounded bg-black/5 dark:bg-white/5">
-                        <Icons.CheckCircle2 className="w-3.5 h-3.5 text-camept-orange flex-shrink-0 mt-0.5" />
-                        <span className="font-medium">{ben}</span>
+                      <li key={bIdx} className={`text-xs sm:text-sm flex items-start space-x-2 leading-snug font-semibold ${imp.color === 'yellow' || imp.color === 'dark' ? 'text-slate-100' : 'text-slate-700'}`}>
+                        <Icons.CheckCircle2 className="w-4 h-4 text-camept-orange flex-shrink-0 mt-0.5" />
+                        <span>{ben}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
+
       </div>
     );
   }
 
   // 9. COUNTRIES SLIDE
   if (type === 'countries') {
+    const flagImages = {
+      "République Gabonaise": "https://flagcdn.com/w160/ga.png",
+      "Royaume du Maroc": "https://flagcdn.com/w160/ma.png",
+      "République de Côte d'Ivoire": "https://flagcdn.com/w160/ci.png"
+    };
+
     return (
       <div className="flex flex-col justify-start gap-4 sm:gap-5 w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-stretch w-full">
@@ -546,7 +726,7 @@ export const SlideContent = ({ slide }) => {
                   <span className="text-2xs sm:text-xs px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm font-extrabold uppercase tracking-wider">
                     {cnt.badge}
                   </span>
-                  <Icons.Globe className="w-6 h-6 opacity-80 flex-shrink-0" />
+                  <img src={flagImages[cnt.name] || "https://flagcdn.com/w160/ga.png"} alt={`Drapeau ${cnt.name}`} className="w-8 h-5 object-cover rounded shadow-sm border border-white/30 flex-shrink-0" />
                 </div>
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-black">{cnt.name}</h3>
                 <p className="text-2xs sm:text-xs font-extrabold text-camept-orange uppercase tracking-wider bg-black/10 px-2.5 py-1 rounded inline-block">{cnt.role}</p>
@@ -578,43 +758,128 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
-  // 10. PARTNERS SLIDE
+  // 10. PARTNERS SLIDE — premium horizontal redesign
   if (type === 'partners') {
+    const countryAssets = {
+      'Royaume du Maroc': {
+        portrait: roiMaroc,
+        leader: 'Sa Majesté le Roi Mohammed VI du Maroc',
+        flagImg: 'https://flagcdn.com/w160/ma.png',
+        borderColor: '#083f63',
+        accentColor: '#f7c400',
+        bgFrom: '#083f63',
+        bgTo: '#0a4d7a',
+      },
+      "République de Côte d'Ivoire": {
+        portrait: presidentCI,
+        leader: 'SEM Alassane Ouattara, Président de la République',
+        flagImg: 'https://flagcdn.com/w160/ci.png',
+        borderColor: '#f05a00',
+        accentColor: '#f7c400',
+        bgFrom: '#1a1a2e',
+        bgTo: '#2d1b00',
+      },
+    };
+
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-stretch w-full">
-        {content.columns.map((col, idx) => (
-          <motion.div
-            key={idx}
-            className={`p-5 sm:p-6 rounded-xl bg-white shadow-card hover:shadow-elevated transition-all border-t-8 flex flex-col justify-between h-full ${
-              col.color === 'blue' ? 'border-camept-blue' : 'border-camept-orange'
-            }`}
-            initial={{ opacity: 0, x: idx === 0 ? -30 : 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="space-y-4">
-              <div className="flex justify-between items-center border-b border-gray-100 pb-3">
-                <div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-camept-dark">{col.country}</h3>
-                  <p className="text-2xs sm:text-xs font-bold text-gray-500 mt-0.5">{col.subtitle}</p>
-                </div>
-                <span className="text-2xs sm:text-xs px-3 py-1 rounded-full bg-camept-blue/10 font-extrabold text-camept-blue uppercase">Partenaire VIP</span>
+      <div className="w-full h-full flex flex-col gap-4">
+        {content.columns.map((col, idx) => {
+          const a = countryAssets[col.country] || { borderColor: '#083f63', accentColor: '#f7c400', flagImg: 'https://flagcdn.com/w160/ga.png', bgFrom: '#083f63', bgTo: '#0a4d7a' };
+
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: idx === 0 ? -30 : 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              className="flex-1 min-h-0 rounded-2xl overflow-hidden shadow-elevated flex flex-row"
+              style={{ background: `linear-gradient(135deg, ${a.bgFrom} 0%, ${a.bgTo} 100%)`, border: `2px solid ${a.borderColor}` }}
+            >
+
+              {/* ── LEFT: Portrait in natural-ratio frame, no upscale ── */}
+              <div
+                className="flex-shrink-0 relative overflow-hidden"
+                style={{ width: '28%', minWidth: '120px', maxWidth: '200px' }}
+              >
+                {/* Portrait at natural aspect ratio — displayed at its own size, centred */}
+                <img
+                  src={a.portrait}
+                  alt={a.leader}
+                  className="w-full h-full object-cover object-top"
+                  style={{ imageRendering: 'high-quality' }}
+                />
+                {/* Colour accent strip on right edge */}
+                <div className="absolute top-0 right-0 bottom-0 w-1" style={{ background: a.accentColor }} />
+                {/* Corner accents */}
+                <div className="absolute top-0 left-0 w-5 h-5 border-t-4 border-l-4 z-10 pointer-events-none" style={{ borderColor: a.accentColor }} />
+                <div className="absolute bottom-0 left-0 w-5 h-5 border-b-4 border-l-4 z-10 pointer-events-none" style={{ borderColor: a.accentColor }} />
               </div>
 
-              <div className="space-y-2.5">
-                {col.items.map((item, iIdx) => (
-                  <div key={iIdx} className="p-3 rounded-lg bg-camept-bg hover:bg-gray-100/80 transition-colors border border-gray-100">
-                    <h4 className="text-xs sm:text-sm font-bold text-camept-dark mb-1 flex items-center space-x-2">
-                      <Icons.CheckCircle2 className="w-4 h-4 text-camept-orange flex-shrink-0" />
-                      <span>{item.title}</span>
-                    </h4>
-                    <p className="text-2xs sm:text-xs text-gray-600 leading-relaxed pl-6">{item.desc}</p>
+              {/* ── RIGHT: Country info + expertise items ── */}
+              <div className="flex-1 flex flex-col p-4 sm:p-5 min-w-0">
+
+                {/* Header row */}
+                <div className="flex items-start justify-between gap-3 mb-3 flex-shrink-0">
+                  <div>
+                    {/* VIP badge */}
+                    <span
+                      className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5"
+                      style={{ background: a.accentColor + '25', color: a.accentColor, border: `1px solid ${a.accentColor}50` }}
+                    >
+                      ⭐ Partenaire VIP
+                    </span>
+                    {/* Country name */}
+                    <h3 className="text-base sm:text-lg lg:text-xl font-black text-white leading-tight flex items-center gap-2">
+                      <img src={a.flagImg} alt={`Drapeau ${col.country}`} className="w-5 h-3.5 object-cover rounded shadow-2xs border border-white/20 flex-shrink-0" />
+                      <span>{col.country}</span>
+                    </h3>
+                    {/* Leader name */}
+                    <p className="text-[10px] sm:text-xs mt-0.5 font-semibold" style={{ color: a.accentColor }}>
+                      {a.leader}
+                    </p>
+                    {/* Subtitle */}
+                    <p className="text-[10px] sm:text-xs text-white/60 font-medium mt-0.5">
+                      {col.subtitle}
+                    </p>
                   </div>
-                ))}
+                  {/* Large official flag at extreme right */}
+                  <div className="flex-shrink-0 pl-2 flex items-center">
+                    <img 
+                      src={a.flagImg} 
+                      alt={`Drapeau officiel ${col.country}`} 
+                      className="w-14 sm:w-16 md:w-20 h-9 sm:h-11 md:h-13 object-cover rounded-lg shadow-md border-2 border-white/30 group-hover:scale-105 transition-transform" 
+                    />
+                  </div>
+                </div>
+
+                {/* Accent divider */}
+                <div className="h-px mb-3 flex-shrink-0" style={{ background: `linear-gradient(to right, ${a.accentColor}, transparent)` }} />
+
+                {/* Items — compact horizontal chips */}
+                <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-1.5 content-start overflow-hidden">
+                  {col.items.map((item, iIdx) => (
+                    <div
+                      key={iIdx}
+                      className="flex items-start gap-2 rounded-lg p-2 transition-colors"
+                      style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+                    >
+                      <div
+                        className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                        style={{ background: a.borderColor + '40', border: `1px solid ${a.accentColor}60` }}
+                      >
+                        <Icons.CheckCircle2 className="w-3 h-3 flex-shrink-0" style={{ color: a.accentColor }} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-[10px] sm:text-xs font-black text-white leading-tight truncate">{item.title}</p>
+                        <p className="text-[9px] sm:text-[10px] text-white/50 leading-snug mt-0.5 font-medium line-clamp-2">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
     );
   }
@@ -650,6 +915,84 @@ export const SlideContent = ({ slide }) => {
             </div>
           ))}
         </div>
+      </div>
+    );
+  }
+
+  // 11. SCENOGRAPHY SLIDE - IMMERSIVE 360 VISUAL EXPERIENCE
+  if (type === 'scenography') {
+    const colorMap = {
+      blue: "border-t-8 border-camept-blue bg-white text-camept-dark",
+      orange: "border-t-8 border-camept-orange bg-white text-camept-dark",
+      dark: "border-t-8 border-camept-yellow bg-camept-dark text-white",
+      green: "border-t-8 border-camept-green bg-white text-camept-dark",
+      yellow: "border-t-8 border-amber-500 bg-amber-50/40 text-camept-dark border border-amber-200"
+    };
+
+    return (
+      <div className="flex flex-col justify-start gap-4 sm:gap-5 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch w-full">
+          {content.spaces?.slice(0, 3).map((sp, idx) => {
+            const IconComponent = Icons[sp.icon] || Icons.Sparkles;
+            return (
+              <motion.div
+                key={idx}
+                className={`p-4 sm:p-5 rounded-xl shadow-card hover:shadow-elevated transition-all flex flex-col justify-between h-full ${colorMap[sp.color] || colorMap.blue}`}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+              >
+                <div>
+                  <div className="flex justify-between items-start mb-3">
+                    <span className={`text-2xs font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider ${sp.color === 'dark' ? 'bg-white/10 text-camept-yellow' : 'bg-slate-100 text-slate-700'}`}>
+                      {sp.badge}
+                    </span>
+                    <IconComponent className={`w-6 h-6 flex-shrink-0 ${sp.color === 'dark' ? 'text-camept-yellow' : 'text-camept-blue'}`} />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-black mb-1 leading-tight">{sp.title}</h3>
+                  <h4 className={`text-xs font-semibold mb-2.5 ${sp.color === 'dark' ? 'text-gray-300' : 'text-camept-orange'}`}>{sp.subtitle}</h4>
+                  <p className={`text-xs sm:text-sm leading-relaxed ${sp.color === 'dark' ? 'text-gray-200' : 'text-gray-600'}`}>{sp.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch w-full">
+          {content.spaces?.slice(3).map((sp, idx) => {
+            const IconComponent = Icons[sp.icon] || Icons.Sparkles;
+            return (
+              <motion.div
+                key={idx + 3}
+                className={`p-4 sm:p-5 rounded-xl shadow-card hover:shadow-elevated transition-all flex flex-col justify-between h-full ${colorMap[sp.color] || colorMap.green}`}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: (idx + 3) * 0.1 }}
+              >
+                <div>
+                  <div className="flex justify-between items-start mb-3">
+                    <span className="text-2xs font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider bg-slate-100 text-slate-700">
+                      {sp.badge}
+                    </span>
+                    <IconComponent className="w-6 h-6 text-camept-blue flex-shrink-0" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-black mb-1 leading-tight">{sp.title}</h3>
+                  <h4 className="text-xs font-semibold text-camept-orange mb-2.5">{sp.subtitle}</h4>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{sp.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {content.keyMessage && (
+          <div className="p-3.5 sm:p-4 bg-gradient-to-r from-camept-blue via-camept-dark to-camept-blue rounded-xl text-center text-white flex items-center justify-center space-x-2.5 flex-shrink-0 mt-auto shadow-elevated">
+            <Icons.Eye className="w-5 h-5 text-camept-yellow flex-shrink-0" />
+            <p className="text-xs sm:text-sm md:text-base font-extrabold tracking-wide">
+              {content.keyMessage}
+            </p>
+          </div>
+        )}
       </div>
     );
   }
@@ -841,72 +1184,333 @@ export const SlideContent = ({ slide }) => {
     );
   }
 
-  // 21. CLOSING SLIDE
-  if (type === 'closing') {
-    return (
-      <div className="w-full h-full relative flex flex-col lg:flex-row items-stretch justify-between bg-camept-dark text-white overflow-y-auto lg:overflow-hidden">
-        {/* Left diagonal banner */}
-        <div className="lg:w-5/12 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between relative z-10 clip-diagonal-left bg-gradient-to-br from-camept-blue via-camept-dark to-camept-darker flex-shrink-0">
-          <div>
-            <span className="px-3.5 py-1.5 bg-camept-yellow text-camept-darker font-black text-xs uppercase tracking-widest rounded-full shadow-md inline-flex items-center gap-1.5 mb-6">
-              <Icons.ShieldCheck className="w-4 h-4 flex-shrink-0" />
-              <span>Mécanisme Pérenne</span>
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white mb-4">
-              Transformer le congrès en engagements suivis
-            </h1>
-            <p className="text-sm sm:text-base text-gray-200 font-medium leading-relaxed mb-8">
-              {content.subtitle}
-            </p>
-          </div>
+  // REUSABLE MANDATORY INSTITUTIONAL HEADER (For Organizers & Leader slides if needed independently)
+  const renderInstitutionalHeader = () => null;
 
-          <div className="p-5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
-            <h4 className="text-xs font-extrabold text-camept-yellow uppercase tracking-wider mb-2 flex items-center space-x-2">
-              <Icons.Mail className="w-4 h-4 text-camept-yellow flex-shrink-0" />
-              <span>Contact & Participation Officielle</span>
-            </h4>
-            <p className="text-sm font-black text-white mb-1">
-              {content.callToAction.text}
-            </p>
-            <p className="text-xs text-gray-300 font-mono font-semibold">
-              {content.callToAction.contact}
-            </p>
-          </div>
+  // 21. ORGANIZERS SLIDE - NOUVELLE SLIDE ULTRA-ÉPURÉE ET MINIMALISTE (Slide 22)
+  if (type === 'organizers') {
+    return (
+      <div className="w-full h-full flex flex-col justify-between bg-white text-[#1f2933] overflow-hidden p-6 sm:p-10 lg:p-12">
+
+        {/* Titre épuré */}
+        <div className="my-auto max-w-5xl">
+          <span className="text-xs font-black uppercase tracking-widest text-[#f05a00] block mb-2">• Alliance Stratégique</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#083f63] tracking-tight leading-tight mb-4">
+            {slide.title}
+          </h1>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed max-w-3xl">
+            {slide.subtitle}
+          </p>
         </div>
 
-        {/* Right side: 4 steps of follow-up */}
-        <div className="lg:w-7/12 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center relative z-0 bg-camept-bg text-camept-dark overflow-y-auto custom-scrollbar flex-1">
-          <div className="space-y-3.5 max-w-2xl mx-auto my-auto py-4">
-            <h3 className="text-xs sm:text-sm font-extrabold text-camept-orange uppercase tracking-wider mb-3 flex items-center space-x-2">
-              <Icons.ListChecks className="w-5 h-5 text-camept-orange flex-shrink-0" />
-              <span>Feuille de Route de Suivi et de Redevabilité</span>
-            </h3>
-            {content.steps.map((st, idx) => (
+        {/* 2 Colonnes pures (zéro carte, zéro fond gris, zéro bordure lourde) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 my-auto py-6 border-y border-slate-200/80">
+          {content.columns?.map((col, idx) => {
+            const isOrange = col.color === 'orange';
+            const logo = isOrange ? logoAfrika : logoBenzei;
+
+            return (
               <motion.div
                 key={idx}
-                className="p-4 rounded-xl bg-white shadow-card hover:shadow-elevated border-l-4 border-camept-blue flex items-start space-x-4 transition-all"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.2 }}
+                className={`flex flex-col justify-center ${idx === 1 ? 'md:border-l md:border-slate-200 md:pl-12 lg:pl-20' : ''}`}
               >
-                <div className="w-10 h-10 rounded-full bg-camept-blue/10 text-camept-blue font-black text-base flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xs">
-                  {st.step}
+                <div className="h-16 lg:h-20 mb-6 flex items-center">
+                  <img src={logo} alt={col.name} className="h-full max-w-[200px] lg:max-w-[240px] object-contain object-left" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-base font-extrabold text-gray-800 mb-1">
+                <h3 className="text-xl lg:text-2xl font-black text-[#083f63] mb-3">
+                  {col.name}
+                </h3>
+                <p className="text-base lg:text-lg text-slate-700 leading-relaxed font-medium">
+                  {col.role}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Phrase de fin discrète */}
+        <div className="mt-auto pt-4 text-center">
+          <p className="text-xs sm:text-sm font-bold text-slate-500 tracking-wide uppercase">
+            • {content.closingSentence}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // 22. LEADER SLIDE - NOUVELLE SLIDE ULTRA-ÉPURÉE ET MINIMALISTE (Slide 23)
+  if (type === 'leader') {
+    return (
+      <div className="w-full h-full flex flex-col justify-between bg-white text-[#1f2933] overflow-hidden p-6 sm:p-10 lg:p-12">
+
+        {/* Contenu central asymétrique épuré */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center my-auto py-6">
+          
+          {/* Portrait pur à gauche (40% de l'espace) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-5 flex justify-center lg:justify-start"
+          >
+            <div className="relative w-full max-w-[420px] aspect-[1/1] rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50">
+              <img
+                src={bambaGallery4}
+                alt="Magnatié Bamba et S.E.Mme Dominique Ouattara, Première Dame"
+                className="w-full h-full object-cover object-top"
+                style={{ imageRendering: 'high-quality' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/70 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-[#f05a00] text-white inline-block mb-1 shadow-sm">
+                  • Prix d'Excellence 2024 — Palais Présidentiel
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Typographie exécutive et biographie à droite (60% de l'espace) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="lg:col-span-7 flex flex-col justify-center"
+          >
+            <span className="text-xs font-black uppercase tracking-widest text-[#f05a00] block mb-2">
+              • Leadership & Gouvernance
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-[#083f63] tracking-tight leading-none mb-3">
+              {slide.title}
+            </h1>
+            <h2 className="text-base sm:text-lg lg:text-xl font-bold text-[#f05a00] mb-6">
+              {slide.subtitle}
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-700 leading-relaxed font-medium mb-10 max-w-2xl">
+              {content.bio}
+            </p>
+
+            {/* 3 repères clés épurés en ligne horizontale */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-200">
+              {content.highlights?.map((item, idx) => (
+                <div key={idx} className={`${idx > 0 ? 'sm:border-l sm:border-slate-200 sm:pl-6' : ''}`}>
+                  <span className="block text-2xl lg:text-3xl font-black text-[#083f63] leading-none mb-1">
+                    {item.year}
+                  </span>
+                  <span className="block text-xs lg:text-sm font-bold text-[#f05a00] uppercase tracking-tight mb-1">
+                    {item.title}
+                  </span>
+                  <p className="text-xs text-slate-500 leading-snug font-medium">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* Pied de page discret */}
+        <div className="mt-auto text-center">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest">
+            • Sommet CAMEPT 2026 — Libreville, Gabon •
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // 24. FOLLOWUP SLIDE - AIRY, EXECUTIVE 2x2 BALANCED REDESIGN (Slide 24)
+  if (type === 'followup') {
+    return (
+      <div className="flex flex-col justify-between gap-4 w-full h-full text-[#1f2933] overflow-hidden p-2 sm:p-4 bg-slate-50/40">
+
+        {/* Top Title & Subtitle */}
+        <div className="flex-shrink-0 mt-1">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="px-3 py-1 rounded-full bg-[#083f63]/10 text-[#083f63] font-extrabold text-xs uppercase tracking-wider flex items-center gap-1.5">
+              <Icons.ShieldCheck className="w-4 h-4 text-[#f05a00]" />
+              <span>{slide.headerCategory || "HÉRITAGE & SUIVI"}</span>
+            </span>
+            <span className="text-xs font-bold text-[#f05a00] uppercase tracking-wide">• Redevabilité sur 3 ans</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#083f63] tracking-tight leading-tight mb-1">
+            {slide.title}
+          </h1>
+          <p className="text-sm sm:text-base text-[#1f2933]/80 font-medium leading-relaxed max-w-4xl">
+            {slide.subtitle}
+          </p>
+        </div>
+
+        {/* 2x2 Executive Grid - Harmonious & Balanced */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 flex-1 min-h-0 items-stretch my-auto py-2">
+          {content.steps?.map((st, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: idx * 0.12 }}
+              className="rounded-2xl bg-white border-2 border-slate-200/80 hover:border-[#f05a00]/50 flex flex-row items-stretch transition-all shadow-sm hover:shadow-md group overflow-hidden"
+            >
+              {/* Left Badge Column */}
+              <div className="w-20 sm:w-24 bg-gradient-to-br from-[#083f63] to-[#0a4d7a] text-white flex flex-col items-center justify-center p-3 flex-shrink-0 border-r border-white/10 group-hover:from-[#f05a00] group-hover:to-[#d04a00] transition-colors">
+                <span className="text-3xl sm:text-4xl font-black font-mono tracking-tighter leading-none text-[#f7c400] group-hover:text-white transition-colors">
+                  {st.step}
+                </span>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-white/80 mt-1">
+                  Phase
+                </span>
+              </div>
+
+              {/* Right Content Column */}
+              <div className="flex-1 flex flex-col justify-between p-4 sm:p-6 min-w-0">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="text-2xs font-extrabold uppercase tracking-wider text-[#f05a00] bg-[#f05a00]/10 px-2.5 py-0.5 rounded-full">
+                      Jalon Stratégique #{idx + 1}
+                    </span>
+                    <Icons.CheckCircle2 className="w-4 h-4 text-[#083f63] group-hover:text-[#f05a00] transition-colors flex-shrink-0" />
+                  </div>
+
+                  <h4 className="text-base sm:text-lg lg:text-xl font-black text-[#083f63] mb-2 leading-snug group-hover:text-[#f05a00] transition-colors">
                     {st.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-medium">
+
+                  <p className="text-xs sm:text-sm md:text-base text-slate-600 font-semibold leading-relaxed">
                     {st.desc}
                   </p>
                 </div>
-              </motion.div>
-            ))}
 
-            <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-camept-dark via-black to-camept-dark text-white text-center font-extrabold text-xs sm:text-sm flex items-center justify-center space-x-2.5 shadow-elevated border border-white/10">
-              <Icons.ShieldCheck className="w-5 h-5 text-camept-yellow flex-shrink-0" />
-              <span>"{content.finalMessage}"</span>
+                {/* Bottom status indicator */}
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-2xs font-bold text-slate-400">
+                  <span>Mécanisme officiel CAMEPT</span>
+                  <span className="text-[#083f63] group-hover:text-[#f05a00] font-black inline-flex items-center gap-1 transition-colors">
+                    Action effective <Icons.ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Minimal Bottom Banner */}
+        <div className="py-2.5 px-6 bg-[#083f63] text-white rounded-xl border-l-4 border-[#f05a00] shadow-md flex items-center justify-center gap-2.5 flex-shrink-0 text-center">
+          <Icons.Star className="w-4 h-4 text-[#f7c400] flex-shrink-0 fill-current" />
+          <p className="text-xs sm:text-sm font-extrabold tracking-wide">
+            {content.finalMessage}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // 23. GRAND CLOSING SLIDE - REMERCIEMENTS SOLENNELS & CLÔTURE OFFICIELLE
+  if (type === 'closing') {
+    return (
+      <div className="flex flex-col justify-between gap-4 sm:gap-5 w-full h-full text-slate-800 overflow-y-auto custom-scrollbar p-2">
+        {/* Top Header Box: Title & Subtitle */}
+        <div className="text-center bg-gradient-to-r from-[#083f63] via-[#0a4d7a] to-[#083f63] text-white p-5 sm:p-6 rounded-2xl shadow-elevated flex-shrink-0">
+          <div className="inline-flex items-center space-x-2 bg-white/10 px-3.5 py-1 rounded-full text-2xs font-extrabold text-camept-yellow uppercase tracking-widest mb-2">
+            <Icons.Award className="w-3.5 h-3.5" />
+            <span>Gratitude & Reconnaissance Institutionnelle</span>
+          </div>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight mb-2">
+            {content.title}
+          </h1>
+          <p className="text-xs sm:text-sm text-gray-200 font-medium max-w-2xl mx-auto">
+            {content.subtitle}
+          </p>
+        </div>
+
+        {/* 4 Thanks Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch w-full flex-shrink-0">
+          {content.thanks?.map((th, idx) => {
+            const accents = ['border-camept-blue', 'border-camept-orange', 'border-camept-green', 'border-amber-500'];
+            const badges = ['bg-camept-blue/10 text-camept-blue', 'bg-camept-orange/10 text-camept-orange', 'bg-camept-green/10 text-camept-green', 'bg-amber-100 text-amber-800'];
+            return (
+              <motion.div
+                key={idx}
+                className={`p-4 sm:p-5 rounded-xl bg-white shadow-card hover:shadow-elevated transition-all border-l-4 ${accents[idx % 4]} flex flex-col justify-between`}
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className={`text-2xs font-black px-2.5 py-0.5 rounded uppercase tracking-wider ${badges[idx % 4]}`}>
+                      Hommage #{idx + 1}
+                    </span>
+                    <Icons.Sparkles className="w-4 h-4 text-camept-orange flex-shrink-0" />
+                  </div>
+                  <h3 className="text-sm sm:text-base font-black text-camept-dark leading-snug mb-1">
+                    {th.target}
+                  </h3>
+                  <h4 className="text-2xs sm:text-xs font-bold text-camept-orange uppercase tracking-wide mb-2">
+                    {th.role}
+                  </h4>
+                  <p className="text-xs text-gray-600 leading-relaxed font-medium">
+                    {th.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Official 3 Logos Showcase with Perfect Transparency (mix-blend-multiply) */}
+        <div className="bg-white/95 border border-slate-200/80 rounded-2xl p-5 sm:p-6 shadow-card flex flex-col items-center justify-center flex-shrink-0">
+          <span className="text-2xs sm:text-xs font-extrabold text-slate-500 uppercase tracking-widest mb-4">
+            {content.logosTitle || "Une organisation institutionnelle signée par :"}
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 md:gap-20">
+            {/* Logo République Gabonaise */}
+            <div className="flex flex-col items-center group">
+              <img 
+                src={logoGabon} 
+                alt="République Gabonaise" 
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
+              />
+              <span className="text-2xs font-extrabold text-slate-400 mt-2 uppercase tracking-wider">République Gabonaise</span>
             </div>
+
+            {/* Logo Afrika Transtour */}
+            <div className="flex flex-col items-center group">
+              <img 
+                src={logoAfrika} 
+                alt="Afrika Transtour" 
+                className="h-14 sm:h-18 md:h-22 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
+              />
+              <span className="text-2xs font-extrabold text-slate-400 mt-2 uppercase tracking-wider">Afrika Transtour</span>
+            </div>
+
+            {/* Logo Benzei Group */}
+            <div className="flex flex-col items-center group">
+              <img 
+                src={logoBenzei} 
+                alt="Benzei Group" 
+                className="h-14 sm:h-18 md:h-22 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105"
+              />
+              <span className="text-2xs font-extrabold text-slate-400 mt-2 uppercase tracking-wider">Benzei Group</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact info bar & Final Quote */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl bg-gradient-to-r from-camept-dark via-black to-camept-dark text-white shadow-elevated border border-white/10 flex-shrink-0 mt-auto">
+          <div className="flex items-center space-x-3 text-center sm:text-left">
+            <div className="p-2 rounded-lg bg-camept-yellow/20 text-camept-yellow hidden sm:block">
+              <Icons.Globe className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-xs sm:text-sm font-black text-camept-yellow">{content.contact?.title}</h4>
+              <p className="text-2xs sm:text-xs text-gray-300 font-medium">{content.contact?.dates}</p>
+            </div>
+          </div>
+          <div className="text-2xs sm:text-xs font-mono text-gray-300 text-center sm:text-right space-y-0.5">
+            <div><span className="text-camept-orange font-bold">Web :</span> {content.contact?.web}</div>
+            <div><span className="text-camept-orange font-bold">Email :</span> {content.contact?.email}</div>
           </div>
         </div>
       </div>
