@@ -4,8 +4,8 @@ import logoGabon from '../assets/logo-gabon.png';
 import logoAfrika from '../assets/logo-afrika.png';
 import logoBenzei from '../assets/logo-benzei.png';
 
-export const SlideShell = ({ slide, children, totalSlides = 24 }) => {
-  const isSpecialSlide = slide.type === 'cover' || slide.type === 'followup' || slide.type === 'closing';
+export const SlideShell = ({ slide, children, totalSlides = 27 }) => {
+  const isSpecialSlide = slide.type === 'cover' || slide.type === 'opening_poster' || slide.type === 'final_thanks' || slide.type === 'followup' || slide.type === 'closing';
 
   // Animation variants for smooth slide transitions (350 - 600 ms)
   const slideVariants = {
@@ -56,31 +56,33 @@ export const SlideShell = ({ slide, children, totalSlides = 24 }) => {
         </div>
 
         {/* Mandatory Institutional Top Bar on ALL slides (Increased height, larger logos, pure transparent backgrounds) */}
-        <header className="relative z-20 w-full px-6 sm:px-8 lg:px-12 py-3 sm:py-3.5 bg-white/98 backdrop-blur-md border-b-2 border-[#083f63] flex items-center justify-between gap-6 flex-shrink-0 shadow-xs min-h-[90px] max-h-[135px]">
-          {/* Extreme Left: République Gabonaise */}
-          <div className="flex items-center space-x-4 sm:space-x-5">
-            <img src={logoGabon} alt="République Gabonaise" className="h-16 sm:h-20 lg:h-[96px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
-            {slide.headerCategory && slide.type !== 'cover' && (
-              <span className="hidden sm:inline-block text-[11px] sm:text-xs font-extrabold px-3.5 py-1.5 rounded bg-[#083f63]/10 text-[#083f63] tracking-wider uppercase border border-[#083f63]/20">
-                {slide.headerCategory}
-              </span>
-            )}
-          </div>
-
-          {/* Middle: Afrika Transtour */}
-          <div className="flex items-center justify-center">
-            <img src={logoAfrika} alt="Afrika Transtour" className="h-14 sm:h-[72px] lg:h-[88px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
-          </div>
-
-          {/* Right: Benzei Group + CAMEPT 2026 Badge */}
-          <div className="flex items-center space-x-4 sm:space-x-6">
-            <img src={logoBenzei} alt="Benzei Group" className="h-16 sm:h-20 lg:h-[96px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
-            <div className="hidden md:flex items-center font-sans font-black tracking-tighter text-base sm:text-lg lg:text-2xl text-[#083f63] border-l-2 border-gray-300 pl-4 sm:pl-5">
-              <span>CAMEPT</span>
-              <span className="text-[#f05a00] ml-0.5">2026</span>
+        {slide.type !== 'opening_poster' && slide.type !== 'final_thanks' && (
+          <header className="relative z-20 w-full px-6 sm:px-8 lg:px-12 py-3 sm:py-3.5 bg-white/98 backdrop-blur-md border-b-2 border-[#083f63] flex items-center justify-between gap-6 flex-shrink-0 shadow-xs min-h-[90px] max-h-[135px]">
+            {/* Extreme Left: République Gabonaise */}
+            <div className="flex items-center space-x-4 sm:space-x-5">
+              <img src={logoGabon} alt="République Gabonaise" className="h-16 sm:h-20 lg:h-[96px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+              {slide.headerCategory && slide.type !== 'cover' && (
+                <span className="hidden sm:inline-block text-[11px] sm:text-xs font-extrabold px-3.5 py-1.5 rounded bg-[#083f63]/10 text-[#083f63] tracking-wider uppercase border border-[#083f63]/20">
+                  {slide.headerCategory}
+                </span>
+              )}
             </div>
-          </div>
-        </header>
+
+            {/* Middle: Afrika Transtour */}
+            <div className="flex items-center justify-center">
+              <img src={logoAfrika} alt="Afrika Transtour" className="h-14 sm:h-[72px] lg:h-[88px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+            </div>
+
+            {/* Right: Benzei Group + CAMEPT 2026 Badge */}
+            <div className="flex items-center space-x-4 sm:space-x-6">
+              <img src={logoBenzei} alt="Benzei Group" className="h-16 sm:h-20 lg:h-[96px] w-auto object-contain bg-transparent mix-blend-multiply transition-transform duration-300 hover:scale-105" />
+              <div className="hidden md:flex items-center font-sans font-black tracking-tighter text-base sm:text-lg lg:text-2xl text-[#083f63] border-l-2 border-gray-300 pl-4 sm:pl-5">
+                <span>CAMEPT</span>
+                <span className="text-[#f05a00] ml-0.5">2026</span>
+              </div>
+            </div>
+          </header>
+        )}
 
         {/* Main Slide Content Area - Robust Scrollable with justify-start to NEVER push title under header */}
         <div className={`relative z-10 flex-1 min-h-0 flex flex-col justify-start px-4 sm:px-6 lg:px-8 ${isSpecialSlide ? 'p-0 overflow-hidden' : 'pt-3 sm:pt-4 pb-12 sm:pb-14 overflow-y-auto custom-scrollbar'}`}>

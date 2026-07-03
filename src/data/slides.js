@@ -1,6 +1,15 @@
 export const slidesData = [
   {
     id: 1,
+    type: "opening_poster",
+    title: "Affiche Officielle CAMEPT 2026",
+    subtitle: "Congrès Africain des Mines, des Énergies, du Pétrole et des Transports",
+    content: {
+      image: "/visuel-12m2-v1.png"
+    }
+  },
+  {
+    id: 2,
     type: "cover",
     title: "CAMEPT 2026",
     subtitle: "1er Congrès Africain des Mines, des Énergies, du Pétrole et des Transports",
@@ -15,7 +24,7 @@ export const slidesData = [
     }
   },
   {
-    id: 2,
+    id: 3,
     type: "outline",
     title: "Plan de la Présentation",
     subtitle: "Architecture générale et feuille de route du dossier de présentation CAMEPT 2026",
@@ -26,7 +35,7 @@ export const slidesData = [
           num: "01",
           title: "Contexte & Vision Souveraine",
           desc: "Le paradoxe africain, le positionnement stratégique du Gabon et l'ambition institutionnelle (Vision 2050).",
-          slides: "Slides 03 • 05",
+          slides: "Slides 04 • 06",
           icon: "Compass",
           color: "blue"
         },
@@ -34,7 +43,7 @@ export const slidesData = [
           num: "02",
           title: "Portefeuille de Projets : PNCD",
           desc: "Présentation des opportunités bancables dans les Mines, l'Énergie, le Pétrole et les Transports.",
-          slides: "Slide 06",
+          slides: "Slide 07",
           icon: "Layers",
           color: "orange"
         },
@@ -42,7 +51,7 @@ export const slidesData = [
           num: "03",
           title: "Plateforme & Diplomatie Économique",
           desc: "Le sommet panafricain d'investissement et l'axe d'excellence Libreville - Rabat - Abidjan.",
-          slides: "Slides 07 • 10",
+          slides: "Slides 08 • 11",
           icon: "Globe",
           color: "yellow"
         },
@@ -50,7 +59,7 @@ export const slidesData = [
           num: "04",
           title: "Architecture & Programme Détaillé",
           desc: "Les 12 Boardrooms transactionnelles, la scénographie 360° et le programme solennel des 3 journées.",
-          slides: "Slides 11 • 19",
+          slides: "Slides 12 • 20",
           icon: "Calendar",
           color: "green"
         },
@@ -58,7 +67,7 @@ export const slidesData = [
           num: "05",
           title: "Retombées Nationales & Gouvernance",
           desc: "Impact direct pour la Nation, présentation des organisateurs et mécanisme de suivi post-congres.",
-          slides: "Slides 20 • 25",
+          slides: "Slides 21 • 27",
           icon: "Award",
           color: "blue"
         }
@@ -66,7 +75,7 @@ export const slidesData = [
     }
   },
   {
-    id: 3,
+    id: 4,
     type: "paradox",
     title: "Un paradoxe que l'Afrique ne peut plus accepter",
     subtitle: "Le contraste saisissant entre la richesse du sous-sol et la captation de valeur mondiale",
@@ -93,7 +102,7 @@ export const slidesData = [
     }
   },
   {
-    id: 4,
+    id: 5,
     type: "why-gabon",
     title: "Le Gabon a tout pour ouvrir la voie",
     subtitle: "Une ambition nationale transformée en plateforme panafricaine d'investissement",
@@ -129,7 +138,7 @@ export const slidesData = [
     }
   },
   {
-    id: 5,
+    id: 6,
     type: "vision",
     title: "Une vision de souveraineté, de dignité et de transformation",
     subtitle: "L'alignement stratégique des piliers nationaux pour un développement équitable",
@@ -174,7 +183,7 @@ export const slidesData = [
     }
   },
   {
-    id: 6,
+    id: 7,
     type: "pncd",
     title: "Transformer les priorités nationales en projets bancables",
     subtitle: "Le Plan National de Capitalisation et de Diversification (PNCD 2026-2030) au cœur des négociations",
@@ -224,7 +233,7 @@ export const slidesData = [
     }
   },
   {
-    id: 7,
+    id: 8,
     type: "platform",
     title: "Le rendez-vous panafricain des secteurs stratégiques",
     subtitle: "Une plateforme d'échange au plus haut niveau pour transformer l'écosystème",
@@ -265,7 +274,7 @@ export const slidesData = [
     }
   },
   {
-    id: 8,
+    id: 9,
     type: "impact",
     title: "Accélérer la transformation structurelle",
     subtitle: "Une création de valeur multidimensionnelle pour chaque profil de participant",
@@ -307,7 +316,7 @@ export const slidesData = [
     }
   },
   {
-    id: 9,
+    id: 10,
     type: "countries",
     title: "Trois pays au cœur de la dynamique 2026",
     subtitle: "L'axe stratégique Libreville • Rabat • Abidjan pour une diplomatie d'excellence",
@@ -343,7 +352,7 @@ export const slidesData = [
     }
   },
   {
-    id: 10,
+    id: 11,
     type: "partners",
     title: "Deux Invités d'Honneur pour renforcer l'expertise",
     subtitle: "Synergies techniques, diplomatie et alliances stratégiques avec le Maroc et la Côte d'Ivoire",
@@ -378,7 +387,7 @@ export const slidesData = [
     }
   },
   {
-    id: 11,
+    id: 12,
     type: "activities",
     title: "Des formats pensés pour produire des résultats",
     subtitle: "Un écosystème événementiel à 360° combinant visibilité, débat et affaires",
@@ -431,7 +440,7 @@ export const slidesData = [
     }
   },
   {
-    id: 12,
+    id: 13,
     type: "scenography",
     title: "Scénographie & Immersion au Palais des Congrès",
     subtitle: "Une projection visuelle concrète dans les espaces de prestige, de débat et de négociation du CAMEPT",
@@ -483,7 +492,7 @@ export const slidesData = [
     }
   },
   {
-    id: 13,
+    id: 14,
     type: "boardrooms-mechanics",
     title: "Douze salles fermées pour passer au deal",
     subtitle: "Le cœur transactionnel du CAMEPT : un format de travail intensif à huis clos sous la règle de Chatham House",
@@ -499,7 +508,7 @@ export const slidesData = [
     }
   },
   {
-    id: 14,
+    id: 15,
     type: "boardrooms-deliverables",
     title: "Des engagements contractuels actés en clôture",
     subtitle: "Les 5 livrables contractuels exigés à l'issue des sessions de négociation en Boardroom",
@@ -516,7 +525,7 @@ export const slidesData = [
     }
   },
   {
-    id: 15,
+    id: 16,
     type: "ifi",
     title: "Mettre les projets face aux bons capitaux",
     subtitle: "Mobilisation des plus grandes institutions financières internationales et régionales",
@@ -548,7 +557,7 @@ export const slidesData = [
     }
   },
   {
-    id: 16,
+    id: 17,
     type: "program-overview",
     title: "Trois journées, une dynamique ascendante",
     subtitle: "De la vision souveraine aux engagements contractuels de clôture",
@@ -599,7 +608,7 @@ export const slidesData = [
     }
   },
   {
-    id: 17,
+    id: 18,
     type: "day1",
     title: "Jour 1 • Ouverture officielle & Extractifs",
     subtitle: "Mines, Pétrole et Souveraineté Économique au cœur des débats",
@@ -619,7 +628,7 @@ export const slidesData = [
     }
   },
   {
-    id: 18,
+    id: 19,
     type: "day2",
     title: "Jour 2 • Transition, Infrastructures & PPP",
     subtitle: "Énergie, Transports, Marine Marchande et Accès universel à l'Eau",
@@ -639,7 +648,7 @@ export const slidesData = [
     }
   },
   {
-    id: 19,
+    id: 20,
     type: "day3",
     title: "Jour 3 • Intégration, Engagements & Clôture",
     subtitle: "ZLECAf, Marchés Financiers, Signatures solennelles et Banquet Officiel",
@@ -657,7 +666,7 @@ export const slidesData = [
     }
   },
   {
-    id: 20,
+    id: 21,
     type: "gabon-benefits",
     title: "Un levier direct et puissant pour la Nation",
     subtitle: "Les retombées concrètes et durables du CAMEPT pour le Gabon",
@@ -704,7 +713,7 @@ export const slidesData = [
     }
   },
   {
-    id: 21,
+    id: 22,
     type: "credibility",
     title: "Une crédibilité globale pour maximiser l'impact",
     subtitle: "L'alignement d'une communication à 360°, d'une rigueur scientifique et du co-pilotage de l'État",
@@ -748,7 +757,7 @@ export const slidesData = [
     }
   },
   {
-    id: 22,
+    id: 23,
     type: "organizers",
     title: "Les Structures Organisatrices",
     subtitle: "L'alliance de l'événementiel institutionnel et du conseil stratégique international.",
@@ -770,7 +779,7 @@ export const slidesData = [
     }
   },
   {
-    id: 23,
+    id: 24,
     type: "leader",
     title: "Magnatié BAMBA",
     subtitle: "PDG de Benzei Group • DG AFRIKA TRANSTOUR • Présidente du CAMEPT",
@@ -791,7 +800,7 @@ export const slidesData = [
     }
   },
   {
-    id: 24,
+    id: 25,
     type: "followup",
     title: "Transformer le congrès en engagements suivis",
     subtitle: "L'après-CAMEPT : un mécanisme de suivi et de redevabilité sur 3 ans",
@@ -823,7 +832,7 @@ export const slidesData = [
     }
   },
   {
-    id: 25,
+    id: 26,
     type: "closing",
     title: "Remerciements solennels & Clôture officielle",
     subtitle: "La gratitude de l'organisation envers les plus hautes autorités et nos partenaires stratégiques",
@@ -859,6 +868,28 @@ export const slidesData = [
         phone: "+241 01 00 00 00 / +241 07 00 00 00"
       },
       finalQuote: "Ensemble, transformons nos richesses en souveraineté et notre vision en héritage durable pour l'Afrique."
+    }
+  },
+  {
+    id: 27,
+    type: "final_thanks",
+    title: "Remerciements & Clôture",
+    subtitle: "Gratitude de l'organisation",
+    content: {
+      message: "JE VOUS REMERCIE",
+      submessage: "POUR VOTRE ATTENTION ET VOTRE ENGAGEMENT ENVERS LA SOUVERAINETÉ ET LE DÉVELOPPEMENT DURABLE DE L'AFRIQUE.",
+      person: {
+        name: "Magnatié BAMBA",
+        role: "Directrice Générale, Afrika Transtour",
+        title: "Co-Organisatrice du CAMEPT 2026",
+        photo: "bambaGallery4"
+      },
+      logos: [
+        { name: "République Gabonaise", key: "gabon" },
+        { name: "Afrika Transtour", key: "afrika" },
+        { name: "Benzei Group", key: "benzei" },
+        { name: "CAMEPT 2026", key: "camept" }
+      ]
     }
   }
 ];

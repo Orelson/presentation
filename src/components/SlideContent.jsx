@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import * as Icons from 'lucide-react';
 import { GeometricPanel } from './GeometricPanel';
 import { StatCard, InfoCard } from './StatCard';
@@ -13,14 +13,73 @@ import logoCamept from '../assets/logo-camept.png';
 import roiMaroc from '../assets/roi-maroc.png';
 import presidentCI from '../assets/president-ci.png';
 import bambaGallery4 from '../assets/bamba-gallery-3.jpg';
+import bambaPhotoFinal from '../assets/bamba-gallery-4.jpg';
 import contextEngineer from '../assets/context-engineer.png';
 import whyGabonRig from '../assets/why-gabon-rig.jpg';
 import visionEngineer from '../assets/vision-engineer.png';
 import targetsEnergy from '../assets/targets-energy.png';
 
+const PALAIS_IMAGES = [
+  '/palais/DJI_20260303182439_0768_D-scaled.webp',
+  '/palais/DJI_20260303182451_0770_D-scaled.webp',
+  '/palais/DJI_20260303182605_0775_D-scaled.webp',
+  '/palais/DJI_20260303182645_0778_D-scaled.webp',
+  '/palais/FS5A1774-scaled.webp',
+  '/palais/FS5A1780-scaled.webp',
+  '/palais/FS5A2021-scaled.webp',
+  '/palais/FS5A2024-scaled.webp',
+  '/palais/FS5A2027-scaled.webp',
+  '/palais/FS5A2040-scaled.webp'
+];
+
+const PalaisBackgroundSlideshow = () => {
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % PALAIS_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <AnimatePresence mode="popLayout">
+        <motion.img
+          key={index}
+          src={PALAIS_IMAGES[index]}
+          alt="Palais des Congrès Omar Bongo Odimba - Libreville"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.8, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+      </AnimatePresence>
+      {/* Overlay dégradé blanc élégant pour garantir 100% de lisibilité du texte et du logo */}
+      <div className="absolute inset-0 bg-white/82 backdrop-blur-[2px] transition-all duration-500" />
+    </div>
+  );
+};
+
 export const SlideContent = ({ slide }) => {
   const { type, content } = slide;
   const [galleryTab, setGalleryTab] = React.useState(0);
+
+  // 0. OPENING POSTER SLIDE - FULLSCREEN COVER POSTER
+  if (type === 'opening_poster') {
+    return (
+      <div className="relative w-full h-full min-h-full flex items-center justify-center bg-gray-950 overflow-hidden group">
+        <img
+          src={content.image || "/visuel-12m2-v1.png"}
+          alt="Couverture Officielle CAMEPT 2026"
+          className="w-full h-full object-cover sm:object-contain object-center transition-transform duration-700 group-hover:scale-[1.01]"
+          style={{ imageRendering: 'high-quality' }}
+        />
+        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_50px_rgba(0,0,0,0.3)]" />
+      </div>
+    );
+  }
 
   // 1. COVER SLIDE - EXACT MATCH TO OFFICIAL CAMEPT POSTER
   // 1. COVER SLIDE - ULTRA-OPTIMIZED INSTITUTIONAL MASTERPIECE
@@ -28,9 +87,10 @@ export const SlideContent = ({ slide }) => {
   if (type === 'cover') {
     return (
       <div className="w-full h-full relative flex flex-col justify-between bg-white text-[#1f2933] overflow-hidden select-none font-sans p-6 sm:p-10 lg:p-14">
+        <PalaisBackgroundSlideshow />
         
         {/* TOP LAYER: Centered Sovereign Presidential Patronage (Vertical arrangement as requested) */}
-        <div className="w-full pb-4 sm:pb-5 border-b border-slate-100 flex items-center justify-center flex-shrink-0 z-20">
+        <div className="w-full pb-4 sm:pb-5 border-b border-slate-100 flex items-center justify-center flex-shrink-0 relative z-20">
           <motion.div 
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,7 +127,7 @@ export const SlideContent = ({ slide }) => {
         </div>
 
         {/* MIDDLE HERO LAYER: Centered Monumental Official Logo, Horizontal Date Pill & Widescreen Theme Box */}
-        <div className="flex-1 w-full min-h-0 flex flex-col justify-center items-center my-auto z-10 py-4 max-w-6xl mx-auto text-center">
+        <div className="flex-1 w-full min-h-0 flex flex-col justify-center items-center my-auto relative z-10 py-4 max-w-6xl mx-auto text-center">
           
           {/* Monumental Official CAMEPT Logo & 2026 Edition Badge */}
           <motion.div
@@ -99,7 +159,7 @@ export const SlideContent = ({ slide }) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-3 sm:mt-4 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 bg-slate-50/90 border border-slate-200/80 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-2xs mx-auto"
+            className="mt-3 sm:mt-4 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 bg-white/95 backdrop-blur-md border border-slate-200 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full shadow-sm mx-auto"
           >
             <span className="text-base sm:text-lg md:text-xl font-black text-[#f05a00] font-sans">
               Du 02 au 04 septembre 2026
@@ -115,7 +175,7 @@ export const SlideContent = ({ slide }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-4 sm:mt-5 w-full max-w-6xl mx-auto bg-gradient-to-r from-[#083f63]/10 via-[#083f63]/5 to-[#083f63]/10 border-2 border-[#083f63]/25 border-l-8 border-r-8 border-l-[#083f63] border-r-[#f05a00] p-5 sm:p-7 rounded-2xl shadow-md"
+            className="mt-4 sm:mt-5 w-full max-w-6xl mx-auto bg-white/90 backdrop-blur-md border-2 border-[#083f63]/30 border-l-8 border-r-8 border-l-[#083f63] border-r-[#f05a00] p-5 sm:p-7 rounded-2xl shadow-lg"
           >
             <div className="inline-block px-4 py-1 rounded-full bg-[#083f63] text-white text-xs sm:text-sm font-black uppercase tracking-widest mb-3 shadow-xs">
               ★ Thème Général du Congrès ★
@@ -127,7 +187,7 @@ export const SlideContent = ({ slide }) => {
         </div>
 
         {/* BOTTOM LAYER: Discreet Centered Signature ONLY */}
-        <div className="w-full pt-4 border-t border-slate-100 flex items-center justify-center text-3xs sm:text-2xs font-bold text-slate-400 tracking-widest uppercase flex-shrink-0 z-20">
+        <div className="w-full pt-4 border-t border-slate-100 flex items-center justify-center text-3xs sm:text-2xs font-bold text-slate-400 tracking-widest uppercase flex-shrink-0 relative z-20">
           <span>
             Organisé par <strong className="font-black text-[#083f63]">Benzei Group & Afrika Transtour</strong>
           </span>
@@ -1530,6 +1590,121 @@ export const SlideContent = ({ slide }) => {
             <div><span className="text-camept-orange font-bold">Email :</span> {content.contact?.email}</div>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  // 27. FINAL THANKS SLIDE - EXECUTIVE BLUE WITH MME BAMBA PHOTO & BALANCED LOGOS
+  if (type === 'final_thanks') {
+    return (
+      <div className="w-full h-full min-h-full flex flex-col justify-between bg-gradient-to-br from-[#083f63] via-[#052942] to-[#01121f] text-white p-6 sm:p-8 lg:p-10 relative overflow-hidden font-sans select-none">
+        
+        {/* Background Decorative Accents */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#f05a00]/20 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-500/15 to-transparent rounded-full blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:48px_48px]" />
+        </div>
+
+        {/* Top Equilibrium Bar: All Official Logos Balanced */}
+        <motion.header 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative z-20 w-full max-w-6xl mx-auto bg-white/95 backdrop-blur-md px-6 sm:px-10 py-3 sm:py-4 rounded-2xl shadow-xl border border-white/20 flex items-center justify-between gap-4 sm:gap-8 flex-shrink-0"
+        >
+          {/* République Gabonaise */}
+          <div className="flex items-center">
+            <img src={logoGabon} alt="République Gabonaise" className="h-12 sm:h-16 lg:h-[68px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
+          </div>
+          {/* Afrika Transtour */}
+          <div className="flex items-center justify-center">
+            <img src={logoAfrika} alt="Afrika Transtour" className="h-10 sm:h-14 lg:h-[60px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
+          </div>
+          {/* Benzei Group */}
+          <div className="flex items-center">
+            <img src={logoBenzei} alt="Benzei Group" className="h-12 sm:h-16 lg:h-[68px] w-auto object-contain mix-blend-multiply transition-transform hover:scale-105" />
+          </div>
+          {/* CAMEPT 2026 */}
+          <div className="flex items-center justify-center border-l-2 border-slate-200 pl-4 sm:pl-6">
+            <div className="font-sans font-black tracking-tighter text-base sm:text-xl lg:text-2xl text-[#083f63] flex items-center">
+              <span>CAMEPT</span>
+              <span className="text-[#f05a00] ml-1">2026</span>
+            </div>
+          </div>
+        </motion.header>
+
+        {/* Center Zone: Mme BAMBA Photo & Majestic Typography */}
+        <div className="relative z-10 flex-1 flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto my-auto py-6">
+          {/* Left Side: Photo of Mme BAMBA */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, x: -30 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative flex-shrink-0 group"
+          >
+            <div className="absolute -inset-2 bg-gradient-to-tr from-[#f05a00] via-camept-yellow to-white rounded-[2rem] blur-md opacity-75 group-hover:opacity-100 transition duration-500" />
+            <div className="relative w-52 h-64 sm:w-60 sm:h-76 lg:w-68 lg:h-84 rounded-[1.75rem] overflow-hidden shadow-2xl border-2 border-white/40 bg-slate-900">
+              <img 
+                src={bambaPhotoFinal} 
+                alt="Magnatié BAMBA" 
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#083f63]/95 via-[#083f63]/30 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-center">
+                <h4 className="text-base sm:text-lg font-black text-white tracking-wide">Magnatié BAMBA</h4>
+                <p className="text-[10px] sm:text-2xs font-extrabold text-camept-yellow uppercase tracking-widest mt-0.5">Directrice Générale, Afrika Transtour</p>
+                <p className="text-[9px] font-bold text-white/90 uppercase tracking-wider mt-1 bg-white/10 px-2 py-0.5 rounded-full inline-block backdrop-blur-xs border border-white/10">Co-Organisatrice CAMEPT 2026</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Side: Typography */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col items-center md:items-start text-center md:text-left space-y-5 max-w-xl"
+          >
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-camept-yellow font-black text-xs uppercase tracking-widest shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#f05a00] animate-pulse" />
+              <span>Gratitude & Clôture Officielle</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-camept-yellow drop-shadow-lg">
+              JE VOUS REMERCIE
+            </h1>
+
+            <p className="text-sm sm:text-base lg:text-lg font-medium text-slate-200 leading-relaxed max-w-lg">
+              Pour votre aimable attention, votre confiance institutionnelle et votre engagement solennel envers l’essor d’une Afrique souveraine, industrielle et prospère.
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <span className="px-4 py-2 rounded-xl bg-[#f05a00] text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-[#f05a00]/30 border border-white/20">
+                Rendez-vous à Libreville • 02-04 Sept. 2026
+              </span>
+              <span className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md text-white font-extrabold text-xs uppercase tracking-wider border border-white/20">
+                Palais des Congrès Omar Bongo
+              </span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Bottom Footer Bar */}
+        <motion.footer 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="relative z-20 w-full max-w-6xl mx-auto bg-black/40 backdrop-blur-md px-6 sm:px-8 py-3 rounded-2xl border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300 font-semibold flex-shrink-0"
+        >
+          <div className="flex items-center space-x-2">
+            <span className="w-2 h-2 rounded-full bg-camept-yellow" />
+            <span className="text-white font-extrabold">CAMEPT 2026 • LIBREVILLE, GABON</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <span>Sous le Haut Parrainage de S.E.M. Brice Clotaire OLIGUI N'GUEMA</span>
+          </div>
+        </motion.footer>
       </div>
     );
   }
