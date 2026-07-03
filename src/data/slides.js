@@ -793,9 +793,9 @@ export const slidesData = [
         { title: "Présidente", org: "CAMEPT" }
       ],
       highlights: [
-        { year: "25+ ans", title: "D'expérience", desc: "Expertise en intermédiation institutionnelle et diplomatique." },
-        { year: "MBA", title: "Sorbonne Paris", desc: "Excellence académique et vision stratégique internationale." },
-        { year: "2024", title: "Prix d'Excellence", desc: "Distinction solennelle reçue au Palais Présidentiel d'Abidjan." }
+        { year: "FISAT", title: "Commissaire Générale", desc: "Forum International des Transports : 8 éditions réussies - Partenariat CEDEAO et UEMOA." },
+        { year: "2024", title: "Prix d'Excellence", desc: "Distinction solennelle reçue au Palais Présidentiel d'Abidjan." },
+        { year: "25+ ans", title: "D'expérience", desc: "Expertise en intermédiation institutionnelle et diplomatique (MBA Sorbonne Paris)." }
       ]
     }
   },
